@@ -45,11 +45,12 @@ class Signup extends React.Component {
 
     render () {
         return(
-            <div className="login-form_container">
-                {this.renderErrors()} 
+            <div className="login-form_container">                
                 <form onSubmit={this.handleSubmit} className="login-form-box">
-                    <h1>Welcome to myBnB!</h1>
-                    <h3>Please {this.props.formType}</h3> {this.props.navLink}
+                    <div id="logo-header"></div>
+                    {this.renderErrors()} 
+                    <h3>{this.props.formType}</h3> 
+                    {this.props.otherForm} 
                     <div className="login-form">
                         
                         <label><p>Email:</p>

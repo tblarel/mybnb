@@ -3,11 +3,14 @@ import { Link } from 'react-router-dom';
 
 
 
-const Welcome = ({ currentUser, logout }) => {
+const Welcome = ({ currentUser, logout, openModal }) => {
     const sessionLinks = () => (
         <nav className="login-signup">
-            <Link to="/login">login</Link>
-            <Link to="/signup">sign up</Link>
+            <button onClick={() => openModal('login')}>login</button>
+            <button onClick={() => openModal('signup')}>signup</button>
+
+            {/* <Link to="/login">login</Link>
+            <Link to="/signup">sign up</Link> */}
         </nav>
     );
     const customWelcome = () => (

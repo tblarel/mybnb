@@ -42,13 +42,13 @@ class Login extends React.Component {
 
     render() {
         return (
-            <div className="login-form-container">
-                {this.renderErrors()}
+            <div className="login-form-container">                            
                 <form onSubmit={this.handleSubmit} className="login-form-box">
-                    <h1>Welcome to myBnB!</h1>
-                    <h3>Please {this.props.formType}</h3> {this.props.navLink}
+                    <div id="logo-header"></div>
+                    {this.renderErrors()}
+                    <h3>{this.props.formType}</h3>
+                    {this.props.otherForm} 
                     <div className="login-form">
-                        <br />
                         <label><p>Email:</p>
                             <input type="text"
                                 value={this.state.email}
