@@ -23,8 +23,8 @@ class Login extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const formUser = Object.assign({}, this.state);
-        this.props.processForm(formUser);
-        this.props.history.push('/');
+        this.props.processForm(formUser)
+            .then(() => this.props.closeModal());
 
     }
 

@@ -16,6 +16,7 @@ const mapStateToProps = ({errors}) => {
 }
 
 const mapDispatchToProps = dispatch => {
+    
     return {
         processForm: (user) => dispatch(signupUser(user)),
         otherForm: (
@@ -23,6 +24,7 @@ const mapDispatchToProps = dispatch => {
                 Already have an account?
             </button>
         ),
+        closeModal: modal => dispatch(closeModal(modal)),
     };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Signup);

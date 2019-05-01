@@ -25,7 +25,7 @@ class Signup extends React.Component {
         e.preventDefault();
         const formUser = Object.assign({}, this.state);
         this.props.processForm(formUser)
-            .then(() => this.props.history.push('/'));
+            .then(() => this.props.closeModal());
         // this.props.signupUser(formUser)
     }
 
