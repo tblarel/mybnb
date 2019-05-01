@@ -33,10 +33,15 @@ header{
     justify-content: space-between;
 }
 
+.header-group {
+    display: inline-flex;
+}
+
 .header-group > h2 {
+    padding-top: 5px;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-    font-size: 2vh;
+    font-weight: 200;
+    font-size: 1.5vh;
     color: white;
     margin-right: 30px;    
 }
@@ -85,7 +90,23 @@ header{
     background-position: 50% 50%;
     background-image: url(./airbnb_dark1.jpg);
     height: 100%;
-    margin-top: -20px;
+    /* margin-top: -20px; */
+}
+
+.splash-search-container {
+    padding: 190px 0 0 10vw;
+    max-width: 500px;
+}
+
+.splash-search-container  h1 {
+    text-align: left;
+    padding-left: 12%;
+    margin-bottom: 5px;
+    min-width: 200px;
+    overflow: wrap;
+    font-size: 30px;
+    color: #484848;
+
 }
 
 .login-form-container{
@@ -246,13 +267,36 @@ header > a:first-of-type{
     list-style: none;
     color: red;
     font-weight: bold;
-    text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
     font-size: 14px;
 }
 
 .login-form-box ul > li {
     padding-bottom: 2px;
 }
+
+.dropdown-input {
+    min-width: 73%;
+    max-width: 80%;
+    min-height:45px;
+    background-color: white;
+    border: 2px solid #AEAEAE;
+    color: #AEAEAE;
+    margin: 0 auto;
+    height: 42px;
+    padding: 20px 0px 20px 10px;
+    border-radius: 3px;
+    -webkit-box-shadow: 2px 2px 5px 0px #7b7b7b26;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow:    2px 2px 5px 0px #7b7b7b26;  /* Firefox 3.5 - 3.6 */
+    box-shadow:         2px 2px 5px 0px #7b7b7b26;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+}
+
+.dropdown-input:focus {
+    outline: none;
+    border: 2px solid #3844A2;
+    color:black;
+    box-shadow: none;
+}
+
 
 .modal-background {
   position: fixed;

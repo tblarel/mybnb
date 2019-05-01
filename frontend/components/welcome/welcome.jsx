@@ -11,9 +11,9 @@ const Welcome = ({ currentUser, logout, openModal }) => {
         </nav>
     );
     const customWelcome = () => (
-        <hgroup className="header-group">
+        <hgroup className="header-group login-signup">
             <h2 className="header-name">Hi, {currentUser.fname} {currentUser.lname}!</h2>
-            <button className="header-button" onClick={logout}>Log Out</button>
+            <button className="header-button" onClick={logout}>log out</button>
         </hgroup>
     );
 
