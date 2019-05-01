@@ -10,6 +10,7 @@ class Login extends React.Component {
             password: '',
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleDemoLogin = this.handleDemoLogin.bind(this);
         this.update = this.update.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
     }
@@ -18,6 +19,16 @@ class Login extends React.Component {
         return e => this.setState({
             [field]: e.currentTarget.value
         });
+    }
+
+    handleDemoLogin(e) {
+        e.preventDefault();
+        const demoUser = {
+            email: 'email',
+            password: 'password'
+        };
+        this.props.processForm(demoUser)
+            .then(() => this.props.closeModal());
     }
 
     handleSubmit(e) {
@@ -67,6 +78,11 @@ class Login extends React.Component {
                             value={this.props.formType}
                         />
                     </div>
+                        <input className="session-submit demo"
+                            type="submit"
+                            value="Demo User"
+                            onClick={this.handleDemoLogin}
+                        />
                     {this.props.otherForm} 
                 </form>
             </div>

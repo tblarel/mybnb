@@ -223,18 +223,36 @@ header > a:first-of-type{
     font-weight: 400;
     font-size: 1.6vh;
     color: white;
-    background-color: #F7441C;
+    background: rgb(247,68,28);
+    background: linear-gradient(315deg,
+                 rgba(247,68,28,1) 0%,
+                 rgba(248,75,81,1) 100%);
     text-align: center;
 }
 
 .session-submit[type="text"] {
     text-align: center !important;
 }
-.login-form > input {
-  
-    /* min-width: 50%; */
+
+.demo {
+    margin: 0px 0px 30px 0px;
+    background: linear-gradient(15deg,
+                 #234F9B 0%,
+                 #133979 100%);
 }
 
+.login-form-box ul {
+    margin-left: -5%;
+    list-style: none;
+    color: red;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+    font-size: 14px;
+}
+
+.login-form-box ul > li {
+    padding-bottom: 2px;
+}
 
 .modal-background {
   position: fixed;
