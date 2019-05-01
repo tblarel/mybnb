@@ -24,8 +24,9 @@ class Signup extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const formUser = Object.assign({}, this.state);
-        this.props.signupUser(formUser)
-            .then( () => this.props.history.push('/'));
+        this.props.processForm(formUser)
+            .then(() => this.props.history.push('/'));
+        // this.props.signupUser(formUser)
     }
 
     render () {

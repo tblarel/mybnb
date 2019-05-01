@@ -14,8 +14,9 @@ const mapStateToProps = ({erors}) => {
     }
 }
 
-const mapDispatchToProps = dispatch => ({
-    signupUser: formUser => dispatch(signupUser(formUser))
-});
-
+const mapDispatchToProps = dispatch => {
+    return {
+        processForm: (user) => dispatch(signupUser(user)),
+    };
+};
 export default connect(mapStateToProps, mapDispatchToProps)(Signup);
