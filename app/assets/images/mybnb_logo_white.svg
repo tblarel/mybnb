@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400px" height="400px" viewBox="0 0 400 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+    <title>LogoOnly_white</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M133.41,249 C102.47,217.603529 87,191.268849 87,169.99596 C87,148.723072 102.166667,148.103432 132.5,168.137042 C162.833333,146.018232 178,146.637872 178,169.99596 C178,193.354049 163.136667,219.688729 133.41,249 Z" id="path-1"></path>
+        <filter x="-17.6%" y="-15.5%" width="137.4%" height="140.0%" filterUnits="objectBoundingBox" id="filter-2">
+            <feMorphology radius="11.5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="1" dy="2" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feMorphology radius="11.5" operator="erode" in="SourceAlpha" result="shadowInner"></feMorphology>
+            <feOffset dx="1" dy="2" in="shadowInner" result="shadowInner"></feOffset>
+            <feComposite in="shadowOffsetOuter1" in2="shadowInner" operator="out" result="shadowOffsetOuter1"></feComposite>
+            <feGaussianBlur stdDeviation="1.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.238307823   0 0 0 0 0.238307823   0 0 0 0 0.238307823  0 0 0 0.0979959239 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="LogoOnly_white" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="LogoMirror" transform="translate(67.000000, 50.000000)">
+            <path d="M142,4.49889191 C138.583785,-0.874696332 134.303616,0.0627138835 128.833061,0.0627138835 C117.682519,0.0627138835 105.238578,16.3688959 91.5012398,48.9812598 C33.0118676,159.651519 2.71261151,221.320256 0.603471537,233.987472 C-2.42645407,252.184804 4.79434946,296.277899 49.0822813,300.711024 C78.6075692,303.66644 108.36901,283.952663 138.366603,241.569693" id="Path-2" stroke="#FDFDFD" stroke-width="23"></path>
+            <path d="M267,4.10510934 C263.584718,-1.26621404 255.266922,0.176069477 249.797862,0.176069477 C238.650366,0.176069477 226.209825,16.4753787 212.47624,49.0739972 C154.002848,159.697611 123.71187,221.340356 121.603307,234.002233 C118.574209,252.191895 125.79304,296.266406 170.068871,300.697662 C199.586092,303.651833 228.867371,284.956902 257.912707,244.612869" id="Path-2" stroke="#FDFDFD" stroke-width="23" transform="translate(194.000000, 150.500000) scale(-1, 1) translate(-194.000000, -150.500000) "></path>
+            <g id="Path-3">
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                <use stroke="#FDFDFD" stroke-width="23" xlink:href="#path-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>

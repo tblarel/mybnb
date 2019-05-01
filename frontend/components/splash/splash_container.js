@@ -3,8 +3,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import  Splash  from './splash';
 
-const mapStateToProps = ({ errors }) => {
+const mapStateToProps = ({ errors, session, entities: { users } }) => {
     return {
+        currentUser: users[session.id],
+        errors: errors
     };
 };
 

@@ -8,26 +8,27 @@ import {
     Link,
     HashRouter
 } from 'react-router-dom';
-// import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 
 import SignupContainer from './session/signup_container';
 import LogInContainer from './session/login_container';
 import SplashContainer from './splash/splash_container';
-
 import WelcomeContainer from './welcome/welcome_container';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
+
 
 const App = () => (
-    <div>
-        <header>
+    <div id="app">
+        {/* <header>
             <Link to="/" className="header-link">
+                
                 <div className="icon"></div>
             </Link>
             <WelcomeContainer />
-        </header>
+        </header> */}
         <Switch>
-            <Route path="/signup" component={SignupContainer}></Route>
-            <Route path="/login" component={LogInContainer}></Route>
+            <Route exact path="/signup" component={SignupContainer} />
+            <Route exact path="/login" component={LogInContainer} />
             <Route path="/" component={SplashContainer} />
         </Switch>
     </div>

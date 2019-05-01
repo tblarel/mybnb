@@ -14,14 +14,181 @@
  *= require_self
  */
 
- header{
-     display: flex;
-     justify-content: space-between;
- }
+ html, body, #app, #app>div {
+    height: 100vh;
+}
+body{
+    /* FOR HELP WITH DEBUGGING, REMOVE THIS LATER!!! */
+    background-color: black;
+    /* FOR HELP WITH DEBUGGING, REMOVE THIS LATER!!! */
+}
 
- .icon{
-     width: 50px;
-     height: 50px;
-     background-image: url(./logo.svg);
-     background-size: 50px 50px;
- }
+header{
+    position: fixed;
+    padding-top:20px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-group > h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 2vh;
+    color: white;
+    margin-right: 30px;    
+}
+
+.header-button, .session-submit {
+    padding: 5px 20px 5px 20px;
+    border-radius:5px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 1.5vh;
+    color: black;
+    border:none;
+}
+
+
+
+.header-button:hover {
+    cursor: pointer;
+}
+
+.splash-page > h1 {
+    padding-top: 300px;
+    text-align: center;
+    color: white;
+}
+
+.icon-white{
+    width: 50px;
+    height: 50px;
+    background-image: url(./mybnb_logo_white.svg);
+    background-size: 50px 50px;
+}
+
+.splash-page{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-image: url(./airbnb_dark1.jpg);
+    height: 100%;
+    margin-top: -20px;
+}
+
+.login-form-container{
+    display: flex;
+    justify-content: space-evenly;
+    align-self: flex-start;
+}
+
+.login-signup{
+    align-self: center;
+}
+
+.login-signup > a {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 2vh;
+    color: white;
+    text-decoration: none;
+    margin-right: 30px;
+}
+
+.login-signup > a:last-of-type {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+header > a:first-of-type{
+    margin-left: 20px;
+}
+
+.login-form-box{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0 auto;
+    width: 50%;
+    align-self: center;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #F4F4F4;
+    padding: 10px;
+    border-radius:10px;
+    justify-content: center;
+
+}
+.login-form-box > * {
+    min-width: 100%;
+    text-align: center;
+}
+
+.login-form-box > .login-form {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.login-form-box > .login-form > label {
+    
+    text-align: left;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    min-width: 100%;
+    margin-bottom: 5px;
+}
+
+.login-form p {
+    padding: 5px 0px 5px 20%;
+    margin-bottom: 10px;
+}
+
+.login-form-box > a {
+    padding-bottom: 20px;
+}
+
+.login-form > label > input {
+    min-width: 60%;
+    max-width: 80%;
+    background-color: white;
+    border: none;
+    box-shadow: 2px black;
+    margin: 0 auto;
+    /* margin: 10px 0 10px -10px; */
+    padding: 10px 0px 10px 10px;
+    border-radius: 6px;
+    -webkit-box-shadow: 0px 1px 5px 0px #cccccc3d;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow:    0px 1px 5px 0px #cccccc3d;  /* Firefox 3.5 - 3.6 */
+    box-shadow:         0px 1px 5px 0px #cccccc3d;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+}
+
+.session-submit{ 
+    min-width: 60%;
+    max-width: 80%;
+    margin: 30px auto 30px auto ;
+    padding: 15px 20px 15px 20px;
+    border-radius:5px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 1.6vh;
+    color: white;
+    background-color: #F7441C;
+    text-align: center;
+}
+
+.session-submit[type="text"] {
+    text-align: center !important;
+}
+.login-form > input {
+  
+    /* min-width: 50%; */
+}
+
+.login-form > label > input:focus {
+    outline: none;
+    border: 2px solid #3844A2;
+}

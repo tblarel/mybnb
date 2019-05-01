@@ -7,10 +7,11 @@ import { Link } from 'react-router-dom';
 import  Signup  from './signup';
 
 
-const mapStateToProps = ({erors}) => {
+const mapStateToProps = ({errors}) => {
     return {
+        errors: errors.session,
         formType: 'Sign Up',
-        navLink : <Link to="/login"> Log in Instead</Link>
+        navLink : <Link to="/login"> Already have an account? <br/> Log in Instead</Link>
     }
 }
 

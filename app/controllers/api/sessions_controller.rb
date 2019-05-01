@@ -6,10 +6,12 @@ class Api::SessionsController < ApplicationController
             params[:user][:password]
         )
         if @user
+            puts("logging in #{@user}")
             login(@user)
             render "api/users/show"
         else
-            render json: ["Invalid email/password"]
+            puts("invalid login ")
+            render json: ["Invalid email/password"], status: 401
         end
     end
 
