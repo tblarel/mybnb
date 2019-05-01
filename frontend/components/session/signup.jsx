@@ -49,10 +49,8 @@ class Signup extends React.Component {
                 <form onSubmit={this.handleSubmit} className="login-form-box">
                     <div id="logo-header"></div>
                     {this.renderErrors()} 
-                    <h3>{this.props.formType}</h3> 
-                    {this.props.otherForm} 
-                    <div className="login-form">
-                        
+                    {/* <h3>{this.props.formType}</h3>  */}
+                    <div className="login-form">                        
                         <label><p>Email:</p>
                             <input  type="text"
                                     value ={this.state.email}
@@ -87,6 +85,7 @@ class Signup extends React.Component {
                                 value={this.props.formType} 
                         />
                     </div>
+                    {this.props.otherForm} 
                 </form>
             </div>
         );

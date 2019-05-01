@@ -114,11 +114,11 @@ header{
 }
 
 .modal-switch {
-    padding: 0px 30% 0px 30%;
+    padding: 0px 10% 10px 10%;
     background: none;
     border:none;
     color:rgb(26, 153, 196);
-    font-size: 1.4vh;
+    font-size: 1.5vh;
     text-decoration: underline;
 }
 
@@ -170,8 +170,8 @@ header > a:first-of-type{
 }
 
 .login-form p {
-    padding: 5px 0px 5px 15%;
-    margin-bottom: 10px;
+    padding: 5px 0px 0px 15%;
+    margin-bottom: 5px;
     color: #AEAEAE;
 }
 
@@ -216,7 +216,7 @@ header > a:first-of-type{
     box-shadow:         2px 2px 5px 0px #7b7b7ba8;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
     min-width: 72%;
     max-width: 80%;
-    margin: 30px auto 30px auto ;
+    margin: 30px auto 15px auto ;
     padding: 15px 20px 15px 20px;
     border-radius:5px;
     font-family: 'Montserrat', sans-serif;

@@ -46,8 +46,7 @@ class Login extends React.Component {
                 <form onSubmit={this.handleSubmit} className="login-form-box">
                     <div id="logo-header"></div>
                     {this.renderErrors()}
-                    <h3>{this.props.formType}</h3>
-                    {this.props.otherForm} 
+                    {/* <h3>{this.props.formType}</h3> */}
                     <div className="login-form">
                         <label><p>Email:</p>
                             <input type="text"
@@ -68,6 +67,7 @@ class Login extends React.Component {
                             value={this.props.formType}
                         />
                     </div>
+                    {this.props.otherForm} 
                 </form>
             </div>
         );
