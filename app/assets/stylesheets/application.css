@@ -68,6 +68,15 @@ header{
     color: white;
 }
 
+.login-form > .error {
+    text-align: left;
+    padding: 0px;
+    color: red;
+    min-width: 70%;
+    margin: 0px;
+    font-size: 12px;
+}
+
 .icon-white{
     width: 50px;
     height: 50px;
@@ -90,7 +99,6 @@ header{
     background-position: 50% 50%;
     background-image: url(./airbnb_dark1.jpg);
     height: 100%;
-    /* margin-top: -20px; */
 }
 
 .splash-search-container {
@@ -101,7 +109,7 @@ header{
 .splash-search-container  h1 {
     text-align: left;
     padding-left: 12%;
-    margin-bottom: 5px;
+    margin: 20px 0 8px 0;
     min-width: 200px;
     overflow: wrap;
     font-size: 30px;
@@ -160,13 +168,12 @@ header > a:first-of-type{
 .login-form-box{
     font-family: 'Montserrat', sans-serif;
     margin: 0 auto;
-    /* width: 40%; */
     align-self: center;
     display: flex;
     flex-wrap: wrap;
     background-color: #ffffff;
     padding: 10px;
-    border-radius:5px;
+    border-radius:3px;
     justify-content: center;
 
 }
@@ -194,6 +201,10 @@ header > a:first-of-type{
     padding: 5px 0px 0px 15%;
     margin-bottom: 5px;
     color: #AEAEAE;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .5px;
+
 }
 
 .login-form-box > a {
@@ -231,6 +242,10 @@ header > a:first-of-type{
     color:black;
     box-shadow: none;
 }
+
+.login-form > input:last-of-type {
+    margin-bottom: 30px;
+}
 .session-submit{ 
     -webkit-box-shadow: 2px 2px 5px 0px #7b7b7ba8;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
     -moz-box-shadow:    2px 2px 5px 0px #7b7b7ba8;  /* Firefox 3.5 - 3.6 */
@@ -249,6 +264,16 @@ header > a:first-of-type{
                  rgba(247,68,28,1) 0%,
                  rgba(248,75,81,1) 100%);
     text-align: center;
+}
+.session-submit:hover{
+    background: rgb(218, 62, 27);
+    background: linear-gradient(315deg,
+                rgb(243, 74, 37) 0%, 
+                rgb(230, 70, 76) 100%);
+}
+
+.demo:hover{
+    background: #133979;
 }
 
 .session-submit[type="text"] {
@@ -309,8 +334,19 @@ header > a:first-of-type{
 }
 
 .modal-child {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+    opacity: 0;
+    -webkit-transition: opacity, transform 1s ease;
+    -moz-transition: opacity, transform 1s ease;
+    -ms-transition: opacity, transform 1s ease;
+    -o-transition: opacity, transform 1s ease;
+    transition: opacity, transform 1s ease;
+    position: absolute;
+    margin: 20vh 35% 15% 35%;
+    transform: scale(1.0);
+}
+
+.visible {
+    opacity: 1;
+    transform: scale(1.1);
+
 }

@@ -39,19 +39,27 @@ class Login extends React.Component {
 
     }
 
-    renderErrors() {        
+    renderErrors() {      
+        // debugger  
         return(
-            <ul>
-                {this.props.errors.map((error, i) => (
-                    <li key={`error-${i}`}>
-                        {error}
-                    </li>
-                ))}
-            </ul>
+            null
+            // <ul>
+            //     {this.props.errors.map((error, i) => (
+            //         <li key={`error-${i}`}>
+            //             {error}
+            //         </li>å
+            //     ))}
+            // </ul>
         );
     };
 
+    componentDidMount() {
+        let ele = document.getElementsByClassName("modal-child");
+        setTimeout(function () { ele[0].className += " visible"; }, 0);
+    }
+
     render() {
+        
         return (
             <div className="login-form-container">                            
                 <form onSubmit={this.handleSubmit} className="login-form-box">

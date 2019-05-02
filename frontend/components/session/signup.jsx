@@ -1,8 +1,8 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
-
 class Signup extends React.Component {
+
     constructor(props) {
         super(props);
         this.state = {
@@ -43,14 +43,34 @@ class Signup extends React.Component {
         // );
     };
 
+    componentDidMount() {
+        let ele = document.getElementsByClassName("modal-child");
+        setTimeout(function () { ele[0].className += " visible"; }, 0);
+    }
+
+
     render () {
 
         // debugger
-        // let emailError;
-        // if( this.props.errors.length > 1 && Object.keys(this.props.errors.errors).includes("email")) {
-        //     emailError = <p>{this.props.errors.errors["email"]}</p>;
-        // }
+        let emailError;
+        if( (this.props.errors.errors != undefined) && Object.keys(this.props.errors.errors).includes("email")) {
+            emailError = <p className="error">Email {this.props.errors.errors["email"]}</p>;
+        }
+
+        let passwordError;
+        if ((this.props.errors.errors != undefined) && Object.keys(this.props.errors.errors).includes("password")) {
+            passwordError = <p className="error">Password {this.props.errors.errors["password"]}</p>;
+        }
         
+        let fnameError;
+        if ((this.props.errors.errors != undefined) && Object.keys(this.props.errors.errors).includes("fname")) {
+            fnameError = <p className="error">First Name {this.props.errors.errors["fname"]}</p>;
+        }
+
+        let lnameError;
+        if ((this.props.errors.errors != undefined) && Object.keys(this.props.errors.errors).includes("lname")) {
+            lnameError = <p className="error">Last Name {this.props.errors.errors["lname"]}</p>;
+        }
         // debugger
 
     
@@ -70,7 +90,7 @@ class Signup extends React.Component {
                             
 
                         </label> 
-                        {/* {emailError} */}
+                        {emailError}
                         <label><p>Password:</p>
                             <input type="password"
                                 value={this.state.password}
@@ -78,6 +98,7 @@ class Signup extends React.Component {
                                 className="login-input"
                             />
                         </label>
+                        {passwordError}
                         <label><p>First Name:</p>
                             <input type="text"
                                 value={this.state.fname}
@@ -85,6 +106,7 @@ class Signup extends React.Component {
                                 className="login-input"
                             />
                         </label>
+                        {fnameError}
                         <label><p>Last Name:</p>
                             <input type="text"
                                 value={this.state.lname}
@@ -92,7 +114,7 @@ class Signup extends React.Component {
                                 className="login-input"
                             />
                         </label>
-                       
+                        {lnameError}
                         <input className="session-submit" 
                                 type="submit" 
                                 value={this.props.formType} 
