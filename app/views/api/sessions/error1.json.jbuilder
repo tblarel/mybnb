@@ -1,3 +1,3 @@
-@error = { email: "invalid email"}
+@error = { password: "invalid password"}
 
-json.extract! @error, :email
+json.extract! @error, :password
