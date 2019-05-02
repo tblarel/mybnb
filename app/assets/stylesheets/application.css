@@ -166,7 +166,7 @@ header > a:first-of-type{
     flex-wrap: wrap;
     background-color: #ffffff;
     padding: 10px;
-    border-radius:10px;
+    border-radius:5px;
     justify-content: center;
 
 }

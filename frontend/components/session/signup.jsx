@@ -32,18 +32,28 @@ class Signup extends React.Component {
 
     renderErrors() {
         
-        return (
-            <ul>
-                {this.props.errors.map((error, i) => (
-                    <li key={`error-${i}`}>
-                        {error}
-                    </li>
-                ))}
-            </ul>
-        );
+        // return (
+        //     <ul>
+        //         {this.props.errors.map((error, i) => (
+        //             <li key={`error-${i}`}>
+        //                 {error}
+        //             </li>
+        //         ))}
+        //     </ul>
+        // );
     };
 
     render () {
+
+        // debugger
+        // let emailError;
+        // if( this.props.errors.length > 1 && Object.keys(this.props.errors.errors).includes("email")) {
+        //     emailError = <p>{this.props.errors.errors["email"]}</p>;
+        // }
+        
+        // debugger
+
+    
         return(
             <div className="login-form_container">                
                 <form onSubmit={this.handleSubmit} className="login-form-box">
@@ -57,7 +67,10 @@ class Signup extends React.Component {
                                     onChange={this.update('email')}
                                     className="login-input"
                             />
+                            
+
                         </label> 
+                        {/* {emailError} */}
                         <label><p>Password:</p>
                             <input type="password"
                                 value={this.state.password}
