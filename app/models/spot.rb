@@ -32,4 +32,11 @@ class Spot < ApplicationRecord
         foreign_key: :host_id,
         class_name: 'User'
 
+    has_many :spot_features,
+        foreign_key: :spot_id,
+        class_name: 'SpotFeature'
+
+    has_many :features, 
+        through: :spot_features,
+        source: :feature
 end

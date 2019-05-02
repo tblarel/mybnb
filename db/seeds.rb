@@ -23,3 +23,13 @@ spots = Spot.create([   { title: 'Downtown Loft', home_type: 'Entire Apartment',
                         description: 'Beautiful home minutes from the beach', lat:122.92, long:456.013,
                         price: 205, address: '222 Street Street', num_bedrooms: 4, num_beds: 6, num_guest: 8 },
                     ])
+
+
+features = Feature.create  ([   { name: 'Wifi' },
+                                { name: 'Parking' },
+                            ])
+
+spot_features = SpotFeature.create([    { feature_id: 1, spot_id: 1 },
+                                        { feature_id: 2, spot_id: 1 },
+                                        { feature_id: 2, spot_id: 2 },
+                                    ])
