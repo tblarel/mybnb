@@ -29,14 +29,14 @@ class SplashSearch extends React.Component {
                                 <option value="">How Many Guests?</option>
                             </select>
                         </label>
-                        <label><p>CHECK IN</p>
+                        <label className="date"><p>CHECK IN</p>
                             <input type="text"
                                 value="Start Date"
                                 // onChange={this.update('fname')}
                                 className="login-input"
                             />
                         </label>
-                        <label><p>CHECK OUT</p>
+                        <label className="date"><p>CHECK OUT</p>
                             <input type="text"
                                 value="End Date"
                                 // onChange={this.update('lname')}

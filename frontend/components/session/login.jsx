@@ -12,7 +12,6 @@ class Login extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleDemoLogin = this.handleDemoLogin.bind(this);
         this.update = this.update.bind(this);
-        this.renderErrors = this.renderErrors.bind(this);
     }
 
     update(field) {
@@ -39,33 +38,36 @@ class Login extends React.Component {
 
     }
 
-    renderErrors() {      
-        // debugger  
-        return(
-            null
-            // <ul>
-            //     {this.props.errors.map((error, i) => (
-            //         <li key={`error-${i}`}>
-            //             {error}
-            //         </li>å
-            //     ))}
-            // </ul>
-        );
-    };
-
     componentDidMount() {
-        let ele = document.getElementsByClassName("modal-child");
-        setTimeout(function () { ele[0].className += " visible"; }, 0);
+        let modalEle = document.getElementsByClassName("modal-child");
+        let backgroundEle = document.getElementsByClassName("modal-background");
+
+        setTimeout(function () {
+            console.log(`found  ${modalEle}`)    
+            modalEle[0].className += " visible";
+        }, 0);
+        setTimeout(function () {
+            console.log(`found  ${backgroundEle}`);
+            backgroundEle[0].className += " visible"; 
+        }, 0);
     }
 
     render() {
         
+        let emailError;
+        if ((this.props.errors != undefined && this.props.errors.email != undefined) ) {
+            emailError = <p className="error"> {this.props.errors.email}</p>;
+        }
+
+        let passwordError;
+        if ((this.props.errors != undefined && this.props.errors.password != undefined) ) {
+            passwordError = <p className="error"> {this.props.errors.password}</p>;
+        }
+
         return (
             <div className="login-form-container">                            
                 <form onSubmit={this.handleSubmit} className="login-form-box">
                     <div id="logo-header"></div>
-                    {this.renderErrors()}
-                    {/* <h3>{this.props.formType}</h3> */}
                     <div className="login-form">
                         <label><p>Email:</p>
                             <input type="text"
@@ -74,6 +76,7 @@ class Login extends React.Component {
                                 className="login-input"
                             />
                         </label>
+                        {emailError}
                         <label><p>Password:</p>
                             <input type="password"
                                 value={this.state.password}
@@ -81,6 +84,7 @@ class Login extends React.Component {
                                 className="login-input"
                             />
                         </label>
+                        {passwordError}
                         <input className="session-submit"
                             type="submit"
                             value={this.props.formType}

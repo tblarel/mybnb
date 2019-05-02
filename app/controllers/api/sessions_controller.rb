@@ -12,10 +12,9 @@ class Api::SessionsController < ApplicationController
         else
             @user = User.find_by(email: params[:user][:email])
             if @user
-                puts("invalid pwd ")
-                render json: ["Invalid password"],  status: 401
-            else    
-                render json: ["Invalid email and password"], status: 401
+                render "api/sessions/error1", status: 401
+            else  
+                render "api/sessions/error2", status: 401
             end
         end
     end

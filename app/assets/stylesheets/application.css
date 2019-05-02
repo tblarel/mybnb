@@ -73,7 +73,7 @@ header{
     padding: 0px;
     color: red;
     min-width: 70%;
-    margin: 0px;
+    margin: 0px 0px -10px 0px;
     font-size: 12px;
 }
 
@@ -324,24 +324,31 @@ header > a:first-of-type{
 
 
 .modal-background {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0.7);
-  z-index: 10;
+    opacity: 0;
+    -webkit-transition: opacity 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
+    -moz-transition: opacity 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
+    -ms-transition: opacity 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
+    -o-transition: opacity 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
+    transition: opacity 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
+    position: absolute;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 10;
 }
 
 .modal-child {
     opacity: 0;
-    -webkit-transition: opacity, transform 1s ease;
-    -moz-transition: opacity, transform 1s ease;
-    -ms-transition: opacity, transform 1s ease;
-    -o-transition: opacity, transform 1s ease;
-    transition: opacity, transform 1s ease;
+    -webkit-transition: opacity, transform 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
+    -moz-transition: opacity, transform 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
+    -ms-transition: opacity, transform 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
+    -o-transition: opacity, transform 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
+    transition: opacity, transform 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
     position: absolute;
-    margin: 20vh 35% 15% 35%;
+    margin: 16vh 35% 15% 35%;
     transform: scale(1.0);
 }
 
@@ -349,4 +356,9 @@ header > a:first-of-type{
     opacity: 1;
     transform: scale(1.1);
 
+}
+
+ .login-form-box > .login-form > .date {
+    min-width: 20%;
+    max-width: 39%;
 }

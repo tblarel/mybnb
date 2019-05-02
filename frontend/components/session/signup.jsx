@@ -26,32 +26,26 @@ class Signup extends React.Component {
         const formUser = Object.assign({}, this.state);
         this.props.processForm(formUser)
             .then(() => this.props.closeModal());
-        // this.props.signupUser(formUser)
     }
 
 
-    renderErrors() {
-        
-        // return (
-        //     <ul>
-        //         {this.props.errors.map((error, i) => (
-        //             <li key={`error-${i}`}>
-        //                 {error}
-        //             </li>
-        //         ))}
-        //     </ul>
-        // );
-    };
-
     componentDidMount() {
-        let ele = document.getElementsByClassName("modal-child");
-        setTimeout(function () { ele[0].className += " visible"; }, 0);
+        let modalEle = document.getElementsByClassName("modal-child");
+        let backgroundEle = document.getElementsByClassName("modal-background");
+
+        setTimeout(function () {
+            console.log(`found  ${modalEle}`)
+            modalEle[0].className += " visible";
+        }, 0);
+        setTimeout(function () {
+            console.log(`found  ${backgroundEle}`);
+            backgroundEle[0].className += " visible";
+        }, 0);
     }
 
 
     render () {
 
-        // debugger
         let emailError;
         if( (this.props.errors.errors != undefined) && Object.keys(this.props.errors.errors).includes("email")) {
             emailError = <p className="error">Email {this.props.errors.errors["email"]}</p>;
@@ -71,15 +65,11 @@ class Signup extends React.Component {
         if ((this.props.errors.errors != undefined) && Object.keys(this.props.errors.errors).includes("lname")) {
             lnameError = <p className="error">Last Name {this.props.errors.errors["lname"]}</p>;
         }
-        // debugger
-
     
         return(
             <div className="login-form_container">                
                 <form onSubmit={this.handleSubmit} className="login-form-box">
                     <div id="logo-header"></div>
-                    {this.renderErrors()} 
-                    {/* <h3>{this.props.formType}</h3>  */}
                     <div className="login-form">                        
                         <label><p>Email:</p>
                             <input  type="text"
