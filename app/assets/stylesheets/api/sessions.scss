@@ -1,3 +1,238 @@
 // Place all the styles related to the Api::Sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.login-form-container{
+    display: flex;
+    justify-content: space-evenly;
+    align-self: flex-start;
+}
+
+.login-signup{
+    align-self: center;
+}
+
+.login-signup > button {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 2vh;
+    color: white;
+    text-decoration: none;
+    margin-right: 30px;
+    background: none;
+    border: none;
+}
+
+.login-signup > button:hover {
+    cursor: pointer;
+}
+
+.login-form > .error {
+    text-align: left;
+    padding: 0px;
+    color: red;
+    min-width: 70%;
+    margin: 0px 0px -10px 0px;
+    font-size: 12px;
+}
+
+
+.login-form-box{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0 auto;
+    align-self: center;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius:3px;
+    justify-content: center;
+    max-width: 78%;
+
+}
+.login-form-box > * {
+    min-width: 100%;
+    text-align: center;
+}
+
+.login-form-box > .login-form {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.login-form-box > .login-form > label {
+    
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    min-width: 100%;
+    margin-bottom: 5px;
+}
+
+.login-form p {
+    padding: 5px 0px 0px 15%;
+    margin-bottom: 5px;
+    color: #AEAEAE;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .5px;
+
+}
+
+.login-form-box > a {
+    padding-bottom: 20px;
+}
+
+.login-form-box > h3 {
+    font-size: 2.5vh;
+    margin-top: -20px;
+    margin-bottom: 10px;
+}
+
+.login-form p:first-child {
+    margin-top: 10px;
+}
+
+.login-form > label > input {
+    min-width: 70%;
+    max-width: 80%;
+    background-color: white;
+    border: 2px solid #AEAEAE;
+    color: #AEAEAE;
+    margin: 0 auto;
+    /* margin: 10px 0 10px -10px; */
+    padding: 10px 0px 10px 10px;
+    border-radius: 3px;
+    -webkit-box-shadow: 2px 2px 5px 0px #7b7b7b26;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow:    2px 2px 5px 0px #7b7b7b26;  /* Firefox 3.5 - 3.6 */
+    box-shadow:         2px 2px 5px 0px #7b7b7b26;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+}
+
+.login-form > label > input:focus {
+    outline: none;
+    border: 2px solid #3844A2;
+    color:black;
+    box-shadow: none;
+}
+
+.login-form > input:last-of-type {
+    margin-bottom: 30px;
+}
+
+
+.session-submit{ 
+    -webkit-box-shadow: 2px 2px 5px 0px #7b7b7ba8;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow:    2px 2px 5px 0px #7b7b7ba8;  /* Firefox 3.5 - 3.6 */
+    box-shadow:         2px 2px 5px 0px #7b7b7ba8;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+    min-width: 72%;
+    max-width: 80%;
+    margin: 30px auto 15px auto ;
+    padding: 15px 20px 15px 20px;
+    border-radius:5px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 1.6vh;
+    color: white;
+    background: rgb(247,68,28);
+    background: linear-gradient(315deg,
+                 rgba(247,68,28,1) 0%,
+                 rgba(248,75,81,1) 100%);
+    text-align: center;
+}
+.session-submit:hover{
+    background: rgb(218, 62, 27);
+    background: linear-gradient(315deg,
+                rgb(243, 74, 37) 0%, 
+                rgb(230, 70, 76) 100%);
+}
+
+.demo:hover{
+    background: #133979;
+}
+
+.session-submit[type="text"] {
+    text-align: center !important;
+}
+
+.demo {
+    margin: 0px 0px 30px 0px;
+    background: linear-gradient(15deg,
+                 #234F9B 0%,
+                 #133979 100%);
+}
+
+.login-form-box ul {
+    margin-left: -5%;
+    list-style: none;
+    color: red;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.login-form-box ul > li {
+    padding-bottom: 2px;
+}
+
+
+/// MODAL STYLES ///
+
+
+.modal-switch {
+    padding: 0px 10% 10px 10%;
+    background: none;
+    border:none;
+    color:rgb(26, 153, 196);
+    font-size: 1.5vh;
+    text-decoration: underline;
+}
+
+.modal-switch:hover {
+    cursor: pointer;
+}
+
+.modal-switch:focus, textarea {
+    border: none;
+    outline: none;
+}
+
+.modal-background {
+    opacity: 0;
+    -webkit-transition: opacity 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
+    -moz-transition: opacity 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
+    -ms-transition: opacity 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
+    -o-transition: opacity 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
+    transition: opacity 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
+    position: absolute;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 10;
+}
+
+.modal-child {
+    opacity: 0;
+    -webkit-transition: opacity, transform 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
+    -moz-transition: opacity, transform 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
+    -ms-transition: opacity, transform 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
+    -o-transition: opacity, transform 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
+    transition: opacity, transform 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
+    position: absolute;
+    margin: 16vh 35% 15% 35%;
+    transform: scale(1.0);
+}
+
+.visible {
+    opacity: 1;
+    transform: scale(1.1);
+
+}
+
+ .login-form-box > .login-form > .date {
+    min-width: 20%;
+    max-width: 39%;
+}

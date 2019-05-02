@@ -22,6 +22,10 @@ spots = Spot.create([   { title: 'Downtown Loft', home_type: 'Entire Apartment',
                         { title: 'Cozy Townhouse', home_type: 'Entire Home', host_id: 2, loc_id: 2, 
                         description: 'Beautiful home minutes from the beach', lat:122.92, long:456.013,
                         price: 205, address: '222 Street Street', num_bedrooms: 4, num_beds: 6, num_guest: 8 },
+
+                        { title: 'Small Closet', home_type: 'Shared Home', host_id: 2, loc_id: 1, 
+                        description: 'Its a small closet', lat:122.92, long:456.013,
+                        price: 15, address: '333 Street Street', num_bedrooms: 1, num_beds: 1, num_guest: 1 },
                     ])
 
 

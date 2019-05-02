@@ -5,12 +5,18 @@ import { Link } from 'react-router-dom';
 class SplashSearch extends React.Component {
     constructor(props) {
         super(props);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+        this.props.history.push('/locations')
     }
 
     render() {
         return (
             <div className="splash-search-container">
-                <form className="login-form-box">
+                <form className="login-form-box" onSubmit={this.handleSubmit}>
                     <h1>Book unique homes and experiences.</h1>
                     {/* <div id="logo-header"></div> */}
                     <div className="login-form">

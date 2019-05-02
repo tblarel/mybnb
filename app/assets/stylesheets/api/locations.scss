@@ -1,3 +1,25 @@
 // Place all the styles related to the Api::Locations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.locations-page {
+    background:#ffffff;
+    height: 100%;
+}
+
+.locations-page > h1 {
+    margin: 0;
+    text-align: center;
+    padding-top: 200px;
+}
+
+.login-signup > .dark {
+    color: black;
+}
+
+.icon-color{
+    width: 50px;
+    height: 50px;
+    background-image: url(../mybnb_logo_color.svg);
+    background-size: 50px 50px;
+}

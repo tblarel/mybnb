@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter} from 'react-router-dom';
 import SplashSearch from './splash_search';
 
 
@@ -15,4 +15,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(null, null)(SplashSearch);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SplashSearch));
