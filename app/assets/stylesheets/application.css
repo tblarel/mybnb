@@ -175,6 +175,7 @@ header > a:first-of-type{
     padding: 10px;
     border-radius:3px;
     justify-content: center;
+    max-width: 78%;
 
 }
 .login-form-box > * {
