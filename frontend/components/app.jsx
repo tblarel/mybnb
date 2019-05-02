@@ -32,9 +32,9 @@ const App = () => (
         <Switch>
             <Route exact path="/spots" component={SpotsContainer} />
             <Route exact path="/locations" component={LocationsContainer} />
-            <Route exact path="/signup" component={SignupContainer} />
-            <Route exact path="/login" component={LogInContainer} />
-            <Route exact path="/" component={SplashContainer} />
+            <AuthRoute exact path="/signup" component={SignupContainer} />
+            <AuthRoute exact path="/login" component={LogInContainer} />
+            <Route path="/" component={SplashContainer} />
         </Switch>
     </div>
 );
