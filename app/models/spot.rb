@@ -28,4 +28,8 @@ class Spot < ApplicationRecord
         foreign_key: :loc_id,
         class_name: 'Location'
 
+    belongs_to :host,
+        foreign_key: :host_id,
+        class_name: 'User'
+
 end

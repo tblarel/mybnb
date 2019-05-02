@@ -1,0 +1,1 @@
+json.extract! @location, :id, :name, :lat, :long
