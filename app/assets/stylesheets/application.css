@@ -85,10 +85,10 @@ header{
 }
 
 #logo-header {
-    margin-top: -40px;
-    width: 370px;
-    height: 150px;
-    background-size: 370px 200px;
+    margin-top: -3vw;
+    width: 37vw;
+    height: 15vw;
+    background-size: 30vw 17vw;
     min-width: 100px;
     background-image: url(./LogoLg_v1.png);
 }
