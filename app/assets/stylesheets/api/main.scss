@@ -63,6 +63,10 @@ header > a:first-of-type{
     color: white;
 }
 
+.content-container {
+    background-color: #fdfdfd;
+}
+
 #logo-header {
     margin-top: -3vw;
     width: 30vw;
@@ -78,7 +82,7 @@ header > a:first-of-type{
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 50%;
-    background-image: url(../airbnb_dark1.jpg);
+    background-image: url(../airbnb_dark2.jpg);
     height: 100%;
 }
 
@@ -126,6 +130,7 @@ header > a:first-of-type{
     -moz-box-shadow:    2px 2px 5px 0px #7b7b7b26;  /* Firefox 3.5 - 3.6 */
     box-shadow:         2px 2px 5px 0px #7b7b7b26;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
     padding-bottom: 12px;
+    z-index: 2;
 }
 
 

@@ -6,7 +6,8 @@ class Api::LocationsController < ApplicationController
 
     def show
         @location = Location.find(params[:id])
-        render "api/locations/show"
+        @spots = @location.spots
+        render "api/locations/show",locals: {location: @location, spots: @spots}
     end
     
 end

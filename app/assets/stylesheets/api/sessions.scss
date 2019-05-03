@@ -29,7 +29,7 @@
 }
 
 .login-form > .error {
-    text-align: left;
+    text-align: center;
     padding: 0px;
     color: red;
     min-width: 70%;
@@ -146,6 +146,7 @@
     background: linear-gradient(315deg,
                 rgb(243, 74, 37) 0%, 
                 rgb(230, 70, 76) 100%);
+    cursor: pointer;
 }
 
 .demo:hover{
@@ -180,16 +181,17 @@
 
 
 .modal-switch {
-    padding: 0px 10% 10px 10%;
+    padding: 0px 10% 20px 10%;
     background: none;
     border:none;
     color:rgb(26, 153, 196);
     font-size: 1.5vh;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .modal-switch:hover {
     cursor: pointer;
+    text-decoration: underline;
 }
 
 .modal-switch:focus, textarea {
@@ -199,11 +201,11 @@
 
 .modal-background {
     opacity: 0;
-    -webkit-transition: opacity 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
-    -moz-transition: opacity 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
-    -ms-transition: opacity 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
-    -o-transition: opacity 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
-    transition: opacity 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
+    -webkit-transition: opacity 0.6s cubic-bezier(0.18, 0.63, 0.38, 0.91);
+    -moz-transition: opacity 0.6s cubic-bezier(0.18, 0.63, 0.38, 0.91);
+    -ms-transition: opacity 0.6s cubic-bezier(0.18, 0.63, 0.38, 0.91);
+    -o-transition: opacity 0.6s cubic-bezier(0.18, 0.63, 0.38, 0.91);
+    transition: opacity 0.6s cubic-bezier(0.18, 0.63, 0.38, 0.91);
     position: absolute;
     position: fixed;
     top: 0;
@@ -222,7 +224,7 @@
     -o-transition: opacity, transform 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
     transition: opacity, transform 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
     position: absolute;
-    margin: 12vh 35% 15% 35%;
+    margin: 12vh 25% 15% 25%;
     transform: scale(0.9);
 }
 
