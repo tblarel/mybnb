@@ -20,12 +20,22 @@ class LocationsIndex extends React.Component {
 
     componentDidMount() {
         this.props.findAllLocations();
-        this.setState ({
-            currentlyDisplayed: this.props.locations
-        });
+        // this.setState ({
+        //     currentlyDisplayed: this.props.locations
+        // });
     }
 
+    componentDidUpdate(prevProps, prevState) {
+        if(prevProps.locations !== this.props.locations) {
+            this.setState({
+                currentlyDisplayed: this.props.locations
+            });
+        }
+    }
+
+
     update(e) {
+        
         $("html, body").animate({scrollTop: 0}, 'fast'); // Scroll User to top of page
         let newList;
         if (e.currentTarget.value=== '') {

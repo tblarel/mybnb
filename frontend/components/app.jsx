@@ -32,6 +32,7 @@ const App = () => (
         <Switch>
             <Route exact path="/spots" component={SpotsContainer} />
             <Route exact path="/locations" component={LocationsContainer} />
+            <Route path="/spots" component={SpotsContainer} />
             <AuthRoute exact path="/signup" component={SignupContainer} />
             <AuthRoute exact path="/login" component={LogInContainer} />
             <Route path="/" component={SplashContainer} />

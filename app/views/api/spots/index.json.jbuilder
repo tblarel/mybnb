@@ -1,6 +1,7 @@
 
 @spots.each do |spot|
-    json.set! spot.id do 
+    json.set! spot.id do
+        json.id spot.id 
         json.name spot.title
         json.home_type spot.home_type
         json.host spot.host.fname

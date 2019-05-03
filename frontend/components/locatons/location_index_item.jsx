@@ -6,17 +6,21 @@ class LocationIndexItem extends React.Component {
 
     constructor(props) {
         super(props);
-        // this.handleClick = this.handleClick.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
-    handleClick() {
-
+    handleClick(e) {
+        e.preventDefault();
+        this.props.history.push({
+            pathname: '/spots',
+            state: { loc: this.props.loc.name }
+        })
     }
 
     render () {
         const { name, lat, long, num_spots } = this.props.loc;
         return (
-            <div class="location-item">
+            <div className="location-item" onClick={this.handleClick}>
                 <h1>{name}</h1>
                 <h3>{num_spots} listings</h3>
             </div>
