@@ -13,6 +13,14 @@ users = User.create([   { email: 'email', password:'password', fname:'Demo', lna
 
 locations = Location.create([   { name: 'San Francisco, California', lat:123.99, long:456.001 },
                                 { name: 'Los Angeles, California', lat:789.22, long:123.22 },
+                                { name: 'Seattle, Washington', lat:789.22, long:123.22 },
+                                { name: 'New York, New York', lat:789.22, long:123.22 },
+                                { name: 'Washington, D.C.', lat:789.22, long:123.22 },
+                                { name: 'Miami, Florida', lat:789.22, long:123.22 },
+                                { name: 'San Diego, California', lat:789.22, long:123.22 },
+                                { name: 'Sacramento, California', lat:789.22, long:123.22 },
+                                { name: 'Aspen, Colorado', lat:789.22, long:123.22 },
+                                { name: 'Barcelona, Spain', lat:789.22, long:123.22 },
                             ])
 
 spots = Spot.create([   { title: 'Downtown Loft', home_type: 'Entire Apartment', host_id: 1, loc_id: 1, 

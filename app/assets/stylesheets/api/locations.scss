@@ -3,14 +3,48 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .locations-page {
-    background:#ffffff;
-    height: 100%;
+    background:#fdfdfd;
+    height: initial;
 }
 
-.locations-page > h1 {
+.locations-page > .page-search > h1 {
     margin: 0;
     text-align: center;
-    padding-top: 200px;
+    padding-top: 100px;
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    padding-left: 80px;
+    color: #333333;
+}
+
+.page-search {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.search-box{
+    margin: 100px 50px 0 0;
+    background-color: #ffffff;
+    -webkit-box-shadow: 1px 2px 5px 1px #67656524;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow:    1px 2px 5px 1px #67656524;  /* Firefox 3.5 - 3.6 */
+    box-shadow:         1px 2px 5px 1px #67656524;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+    width: 280px;
+    height: 40px;
+    padding: 0px 0px 0px 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px; 
+    font-weight: 200;
+    border: none;
+    color: #AEAEAE;
+    border-radius: 3px;
+    display: flex;
+}
+
+.search-box:focus {
+    outline: none;
+    border: none;
+    color:black;
 }
 
 .login-signup > .dark {
@@ -22,4 +56,42 @@
     height: 50px;
     background-image: url(../mybnb_logo_color.svg);
     background-size: 50px 50px;
+}
+
+.locations-container {
+    max-width: 90vw;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.location-item {
+    height: 300px;
+    min-width: 200px;
+    max-width: 200px;
+    margin: 0px 10px 40px 10px;
+    background-color: #dad1d1;
+    border-radius:10px;
+    font-family: 'Montserrat', sans-serif;
+    -webkit-box-shadow: 3px 4px 10px 1px #24202045;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow:    3px 4px 10px 1px #24202045;  /* Firefox 3.5 - 3.6 */
+    box-shadow:         3px 4px 10px 1px #24202045;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+    background-image: linear-gradient(to bottom, rgba(252, 245, 217, 0.52), rgba(19, 24, 71, 0.623)), url(../sf2.jpg);
+    background-size: 600px 300px;
+    color:white;
+    text-shadow: 1px 1px 2px rgba(58, 58, 58, 1);
+}
+
+
+.location-item > h1 {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 100%;
+}
+
+.location-item > h3 {
+    font-size: 14px;
+    font-weight:200;
+    text-align: center;
 }

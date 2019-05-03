@@ -9,7 +9,7 @@ body{
 
 header{
     position: fixed;
-    padding-top:20px;
+    padding-top:12px;
     left: 0;
     top: 0;
     width: 100%;
@@ -83,7 +83,7 @@ header > a:first-of-type{
 }
 
 .splash-search-container {
-    padding: 190px 0 0 10vw;
+    padding: 140px 0 0 10vw;
     max-width: 500px;
 }
 
@@ -118,6 +118,14 @@ header > a:first-of-type{
     border: 2px solid #3844A2;
     color:black;
     box-shadow: none;
+}
+
+.top-nav {
+    background-color: #ffffff;
+    -webkit-box-shadow: 2px 2px 5px 0px #7b7b7b26;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow:    2px 2px 5px 0px #7b7b7b26;  /* Firefox 3.5 - 3.6 */
+    box-shadow:         2px 2px 5px 0px #7b7b7b26;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+    padding-bottom: 12px;
 }
 
 

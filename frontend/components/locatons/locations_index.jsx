@@ -22,21 +22,25 @@ class LocationsIndex extends React.Component {
         
         return(
             <div className="content-container">
-                <header>
+                <header className="top-nav">
                     <Link to="/" className="header-link">
                         <div className="icon-color"></div>
                     </Link>
                     <DarkWelcomeContainer />
                 </header>
                 <div className="locations-page">
-                    <h1>Test Locations Page</h1>
-                    
-                    {Object.values(this.props.locations).map(location => (
-                        <LocationIndexItem
-                            loc={location}
-                            key={location.id}
-                        />
-                    ))} 
+                    <div className="page-search">
+                        <h1>Where to?</h1>
+                        <input className="search-box" value="Search"></input>
+                    </div>
+                    <div class="locations-container">
+                        {Object.values(this.props.locations).map(location => (
+                            <LocationIndexItem
+                                loc={location}
+                                key={location.id}
+                            />
+                        ))} 
+                    </div>
                 </div>
             </div>
         );

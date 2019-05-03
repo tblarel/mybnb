@@ -14,12 +14,11 @@ class LocationIndexItem extends React.Component {
     }
 
     render () {
-        const { name, lat, long } = this.props.loc;
+        const { name, lat, long, num_spots } = this.props.loc;
         return (
-            <div class="location-container">
+            <div class="location-item">
                 <h1>{name}</h1>
-                <h3>{lat}</h3>
-                <h3>{long}</h3>
+                <h3>{num_spots} listings</h3>
             </div>
         );
     }

@@ -222,13 +222,13 @@
     -o-transition: opacity, transform 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
     transition: opacity, transform 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
     position: absolute;
-    margin: 16vh 35% 15% 35%;
-    transform: scale(1.0);
+    margin: 12vh 35% 15% 35%;
+    transform: scale(0.9);
 }
 
 .visible {
     opacity: 1;
-    transform: scale(1.1);
+    transform: scale(1.0);
 
 }
 
