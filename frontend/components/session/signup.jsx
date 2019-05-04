@@ -72,7 +72,7 @@ class Signup extends React.Component {
                     <div id="logo-header"></div>
                     <div className="login-form">                        
                         <label><p>Email:</p>
-                            <input  type="text"
+                            <input  type="email"
                                     value ={this.state.email}
                                     onChange={this.update('email')}
                                     className="login-input"

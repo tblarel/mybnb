@@ -61,7 +61,7 @@
 
 .locations-container {
     max-width: 95vw;
-    padding: 0 2vw 0vw 10vw;
+    padding: 0 1vw 0vw 10vw;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
@@ -80,7 +80,7 @@
     -webkit-box-shadow: 3px 4px 10px 1px #24202045;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
     -moz-box-shadow:    3px 4px 10px 1px #24202045;  /* Firefox 3.5 - 3.6 */
     box-shadow:         3px 4px 10px 1px #24202045;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
-    background-image: linear-gradient(to bottom, rgba(212, 197, 145, 0.393), rgba(37, 39, 63, 0.66)), url(../la.jpg);
+    background-image: linear-gradient(to bottom, rgba(212, 197, 145, 0.393), rgba(37, 39, 63, 0.66)), url(../la.png);
     background-size: 640px 300px;
     color:white;
     text-shadow: 1px 1px 2px rgba(58, 58, 58, 1);
@@ -91,6 +91,20 @@
     -o-transition: opacity 1.2s cubic-bezier(0.18, 0.63, 0.38, 0.91);
     transition: opacity 1.2s cubic-bezier(0.18, 0.63, 0.38, 0.91);
 }
+
+.location-item:nth-child(2n) {
+    background-image: linear-gradient(to bottom, rgba(212, 197, 145, 0.393), rgba(37, 39, 63, 0.66)), url(../sf2.jpg);
+}
+
+.location-item:nth-child(3n) {
+    background-image: linear-gradient(to bottom, rgba(212, 197, 145, 0.393), rgba(37, 39, 63, 0.66)), url(../cityscape.png);
+}
+
+.location-item:nth-child(4n) {
+    background-image: linear-gradient(to bottom, rgba(212, 197, 145, 0.393), rgba(37, 39, 63, 0.66)), url(../spain.png);
+}
+
+
 
 .location-item:hover {
     cursor: pointer;

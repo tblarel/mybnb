@@ -31,19 +31,23 @@ class SpotIndexItem extends React.Component {
     }
 
     render() {
-        const { name, home_type, host, description, features, price } = this.props.spot;
+        const { name, home_type, host, description, features, price, num_beds } = this.props.spot;
         return (
             <div className="spot-item" onClick={this.handleClick}>
                 <div className="spot-img"></div>
                 <div className="features">
+                    <h3>{home_type} </h3>
                     {this.renderFeatures(features)}
                 </div>
-                <h1>{name}</h1>
-                <h2>${price}/night</h2> 
                 <div className="spot-details-line">
-                    <h3>{home_type} </h3>
+                    <h1>{name}</h1>
                     <h3>{host} </h3>
                 </div>
+                <div className="priceline">
+                    <h2>${price}/night</h2> 
+                    <h2>{num_beds} beds</h2>
+                </div>
+                
             </div>
         );
     }

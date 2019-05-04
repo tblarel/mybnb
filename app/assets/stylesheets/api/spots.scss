@@ -6,9 +6,18 @@
     width: 600px;
 }
 
+.spots-container {
+    max-width: 95vw;
+    padding: 0 2.5vw 0vw 10vw;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
 .spot-item{
     // background-color: lightblue; //FOR DEBUGGING ONLY
-    padding: 5px 0px;
+    padding: 5px 5px;
     margin: 20px 5px;
     width: 320px;
     height: 300px;
@@ -17,8 +26,8 @@
 .spot-img{
     width: 300px;
     height: 200px;
-    background-image: url(../placeholder_spot.png);
-    background-size: 300px 240px;
+    background-image: url(../temp_pic.png);
+    background-size: 300px 200px;
     margin: 0 auto;
     border-radius: 5px;
     -webkit-box-shadow: 2px 3px 6px 0px #24202038;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
@@ -26,14 +35,14 @@
     box-shadow:         2px 3px 6px 0px #24202038;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
 }
 
-.spot-item > h1 {
-    margin-top: 0px;
+.spot-item  h1 {
     padding-left: 10px;
     font-size: 16px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 900;
 
 }
+
 
 .spot-item  h3 {
     font-size: 12px;
@@ -50,28 +59,63 @@
     font-weight: 100;
 }
 
+.features > h3:first-of-type  {
+    color: black;
+    background-color: #ffffff00;
+    font-size: 12px;
+    margin-right:auto;
+    padding-left:5px;
+    font-weight: 300;
+}
+
+
+
+.features > h3 {
+    color: #358bda;
+    font-size:12px;
+    display: inline;
+    margin: 10px 5px 5px 0;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
 .features {
     padding-left: 5px;
     margin-top: 0px;
+    margin-bottom: 10px;
     display: flex;
+    align-items: center;
+    justify-content: flex-end;
     font-size: 12px;
     font-family: 'Montserrat', sans-serif;
-}
-
-.features > h3 {
-    display: inline;
-    padding: 0px 5px;
-    color: #358bda;
-    font-weight: 600;
 
 }
+
+// .features > h3 {
+//     display: inline;
+//     padding: 0px 5px;
+//     color: #358bda;
+//     font-weight: 600;
+
+// }
 
 .spot-details-line{
     margin-top: -15px;
     display: flex;
     justify-content: space-between;
+    align-items: baseline;
 }
 
 .spot-details-line > h3:last-of-type {
     margin-right: 10px;
+}
+
+.priceline {
+    display: flex;
+    justify-content: space-between;
+}
+
+.priceline > h2:last-of-type {
+    margin-right: 10px;
+    font-weight:800;
 }
