@@ -28,7 +28,6 @@ class SpotsIndex extends React.Component {
     }
 
     componentDidMount() {
-        debugger
         this.props.findAllSpots();
         if (_.isEmpty(this.props.locations) ) {
             this.props.findAllLocations();
@@ -38,7 +37,6 @@ class SpotsIndex extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevState) {
-        debugger
         if (prevProps.spots !== this.props.spots) {
             this.setState({
                 currentlyDisplayed: this.props.spots
@@ -112,15 +110,20 @@ class SpotsIndex extends React.Component {
                     <Link to="/" className="header-link">
                         <div className="icon-color"></div>
                     </Link>
+                    <div className="search-box-container">
+                        <select className="search-box-spots" onChange={this.updateLoc}>
+                            {this.renderDropdowns(Object.values(this.props.locations))}
+                        </select>
+                    </div>
                     <DarkWelcomeContainer />
                 </header>
                 <div className="locations-page">
                     <div className="page-search">
                         <h1 id="search-spots">Search {this.state.location} </h1>
-                        { this.renderOptions() }
+                        {/* { this.renderOptions() } */}
                     </div>
                     <div className="spots-container">
-                        <SpotIndexList currentList={this.state.currentlyDisplayed} />
+                        <SpotIndexList currentLoc={this.state.location} spots={this.props.spots}/>
                         {/* { this.renderSpots() } */}
                     </div>
                 </div>
