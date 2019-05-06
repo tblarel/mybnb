@@ -75,7 +75,7 @@ class SpotShow extends React.Component {
                                         </div>
                                         <div className="spot-number-item">
                                             <div className="spot-number-icon" id="bed"></div>
-                                            <h3>{this.state.spot.num_beds} bed</h3>
+                                            <h3>{this.state.spot.num_beds} beds</h3>
                                         </div>
                                         <div className="spot-number-item">
                                             <div className="spot-number-icon" id="guests"></div>
@@ -89,7 +89,22 @@ class SpotShow extends React.Component {
                                 </div>
                             </div>
                             <h3>{this.state.spot.description}</h3>
+                            <div className="review-score">
+                                <div className="stars"></div>
+                                <p className="star-score"><strong>Average Review:</strong> <br>
+                                </br> 4.52 Stars</p>
+                                <br />
+                            </div>
+                            <br /> <br /> 
                             <hr></hr>
+                            <h2>Home Ammeneties</h2>
+                            <ul>
+                                {this.renderFeatures()}
+                            </ul>
+                            <br/> <br/> 
+                            
+                            <hr></hr>
+                            <h2>Reviews</h2>
                             <ul>
                                 {this.renderFeatures()}
                             </ul>

@@ -237,7 +237,12 @@
 .main-photo{
     height: 100%;
     width: 60%;
-    background-color: lightcoral;
+    background-color: rgba(240, 128, 128, 0);
+    -webkit-transition: opacity, transform 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
+    -moz-transition: opacity, transform 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
+    -ms-transition: opacity, transform 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
+    -o-transition: opacity, transform 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
+    transition: opacity, transform 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
 }
 
 .photo-row{
@@ -249,10 +254,19 @@
 
 .other-photo{
     box-sizing: border-box;
-    background-color: lightgreen;
-    border:1px solid rgba(0, 0, 0, 0.24);
+    background-color: rgba(144, 238, 144, 0);
+    // border:1px solid rgba(0, 0, 0, 0.24);
     height: 100%;
     width: 100%;
+    -webkit-transition: opacity, transform 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
+    -moz-transition: opacity, transform 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
+    -ms-transition: opacity, transform 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
+    -o-transition: opacity, transform 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
+    transition: opacity, transform 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
+}
+
+.other-photo:hover, .main-photo:hover{
+    transform:scale(1.1);
 }
 
 .spot-details-box {
@@ -263,6 +277,7 @@
 .spot-details-box  h1 {
     color: #333333;
     font-size: 34px;
+    max-width: 280px;
     letter-spacing: 2px;
     font-family: 'Montserrat', sans-serif;
 }
@@ -294,7 +309,7 @@
     font-weight:100;
     font-size:14px;
     color: #333333;
-    list-style-type: none;
+    list-style-type: disc;
 }
 
 .spot-numbers {
@@ -332,8 +347,8 @@
 }
 .left-box {
     width: 50%;
-    height: 500px;
     padding-left: 20%;
+    margin-bottom: 50px;
 }
 
 
@@ -351,7 +366,7 @@
 }
 
 .left-box-img h3 {
-    text-align: center;
+    text-align: center !important;
 }
 
 .host-img{
@@ -440,4 +455,24 @@
 .left-form, .right-form{
     text-align: left;
     width: 50%;
+}
+
+.review-score{
+    display: flex;
+}
+
+.star-score{
+    font-family: 'Montserrat', sans-serif;
+    text-align: left;
+    font-weight:300;
+    font-size: 14px;
+    width: 100%;
+}
+
+.star-score strong {
+    font-weight: 800 !important;
+}
+
+.star-score br {
+    font-size: 18px;
 }
