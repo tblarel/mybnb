@@ -11,7 +11,17 @@ export const receiveAllSpots = spots => ({
     spots
 });
 
+export const receiveASpot = spot => ({
+    type: RECEIVE_SPOT,
+    spot
+});
+
 export const fetchAllSpots = () => dispatch => {
     APIUtil.fetchSpots()
         .then( spots => dispatch(receiveAllSpots(spots)));
+}
+
+export const fetchASpot = id => dispatch => {
+    APIUtil.fetchSpot(id)
+        .then(spot => dispatch(receiveASpot(spot)));
 }

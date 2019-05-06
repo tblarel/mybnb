@@ -19,12 +19,10 @@ class SpotsIndex extends React.Component {
             currentlyDisplayed: this.props.spots,
             location: location
         };
-        // this.renderSpots = this.renderSpots.bind(this);
         this.renderOptions = this.renderOptions.bind(this);
         this.renderDropdowns = this.renderDropdowns.bind(this);
         this.updateLoc = this.updateLoc.bind(this);
         this.filterSpotsByLocation = this.filterSpotsByLocation.bind(this);
-
     }
 
     componentDidMount() {
@@ -33,7 +31,6 @@ class SpotsIndex extends React.Component {
             this.props.findAllLocations();
         }
         this.filterSpotsByLocation();
-
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -42,10 +39,6 @@ class SpotsIndex extends React.Component {
                 currentlyDisplayed: this.props.spots
             });
         }
-        // this.filterSpotsByLocation();
-        // }else if (prevState.currentlyDisplayed !== this.state.currentlyDisplayed) {
-        //     this.filterSpotsByLocation();
-        // }
     }
 
     filterSpotsByLocation() {
@@ -61,18 +54,6 @@ class SpotsIndex extends React.Component {
         });
     }
 
-
-    // renderSpots() {
-    //     return (
-    //         Object.values(this.state.currentlyDisplayed).map(spot => (
-    //             <SpotIndexItem
-    //                 spot={spot}
-    //                 key={spot.id}
-    //             />
-    //         ))
-    //     )
-    // }
-
     renderDropdowns(locations) {
         return( locations.map( location => {
             if(location.name !== this.state.location)
@@ -84,10 +65,40 @@ class SpotsIndex extends React.Component {
 
     renderOptions() {
         return(
-            <div>
-                <select className="search-box" onChange={this.updateLoc}>
-                    {this.renderDropdowns(Object.values(this.props.locations))}
-                </select>
+            <div className="spot-filters">
+                <label> Guests: 
+                    <select className="top-search-box" onChange={this.updateGuests}>
+                        <option value='1' selected="selected"> 1 Guest </option>
+                        <option value='2' > 2 Guests </option>
+                        <option value='3' > 3 Guests </option>
+                        <option value='4' > 4 Guests </option>
+                        <option value='5' > 5 Guests </option>
+                        <option value='6' > 6 Guests </option>
+                    </select>
+                </label>
+                <label> Check In: 
+                    <select className="top-search-box" onChange={this.updateGuests}>
+                        <option value='1' selected="selected"> Start </option>
+                        <option value='2' > 2 Guests </option>
+                        <option value='3' > 3 Guests </option>
+                        <option value='4' > 4 Guests </option>
+                        <option value='5' > 5 Guests </option>
+                        <option value='6' > 6 Guests </option>
+                    </select>
+                </label>
+
+                <label> Check Out:
+                    <select className="top-search-box" onChange={this.updateGuests}>
+                        <option value='1' selected="selected"> End </option>
+                        <option value='2' > 2 Guests </option>
+                        <option value='3' > 3 Guests </option>
+                        <option value='4' > 4 Guests </option>
+                        <option value='5' > 5 Guests </option>
+                        <option value='6' > 6 Guests </option>
+                    </select>
+                </label>
+
+
             </div>
         );
     }
@@ -100,7 +111,6 @@ class SpotsIndex extends React.Component {
                 currentlyDisplayed: newList,
                 location: e.currentTarget.value
         });
-        // this.filterSpotsByLocation();
     }
     
     render() {
@@ -118,13 +128,12 @@ class SpotsIndex extends React.Component {
                     <DarkWelcomeContainer />
                 </header>
                 <div className="locations-page">
-                    <div className="page-search">
+                    <div className="spots-page-search">
                         <h1 id="search-spots">Search {this.state.location} </h1>
-                        {/* { this.renderOptions() } */}
                     </div>
+                    {this.renderOptions()}
                     <div className="spots-container">
                         <SpotIndexList currentLoc={this.state.location} spots={this.props.spots}/>
-                        {/* { this.renderSpots() } */}
                     </div>
                 </div>
             </div>

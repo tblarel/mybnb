@@ -15,6 +15,7 @@ import LogInContainer from './session/login_container';
 import SplashContainer from './splash/splash_container';
 import WelcomeContainer from './welcome/welcome_container';
 import SpotsContainer from './spots/spots_container';
+import SpotShowContainer from './spots/spot_show_container';
 import LocationsContainer from './locatons/locations_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
@@ -32,7 +33,8 @@ const App = () => (
         <Switch>
             <Route exact path="/spots" component={SpotsContainer} />
             <Route exact path="/locations" component={LocationsContainer} />
-            <Route path="/spots" component={SpotsContainer} />
+            <Route exact path="/spots/:id" component={SpotShowContainer} />
+            <Route exact path="/spots" component={SpotsContainer} />
             <AuthRoute exact path="/signup" component={SignupContainer} />
             <AuthRoute exact path="/login" component={LogInContainer} />
             <Route path="/" component={SplashContainer} />

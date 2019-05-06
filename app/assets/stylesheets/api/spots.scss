@@ -2,6 +2,48 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@media only screen and (max-width: 1250px) { 
+    .spot-details-box{
+        display: block !important;
+    }
+    
+    .right-box{
+        margin: 0 auto;
+        padding-bottom: 40px;
+    }
+
+    .photo-row{
+        display: block !important;
+        width: 20% !important;
+    }
+}
+
+
+// TEMP STYLES FOR PLACEHOLDER IMAGES
+
+    #photo1{
+        background-image: url(../airbnb.png);
+        background-size:cover;    
+    }
+    #photo2{
+        background-image: url(../cityscape.png);
+        background-size:cover;    
+    }
+    #photo3{
+        background-image: url(../sf2.jpg);
+        background-size:cover;    
+    }
+    #photo4{
+        background-image: url(../spain.png);
+        background-size:cover;    
+    }
+    #photo5{
+        background-image: url(../temp_pic.png);
+        background-size:cover;    
+    }
+//
+ 
+
 #search-spots{
     width: 600px;
 }
@@ -96,14 +138,6 @@
 
 }
 
-// .features > h3 {
-//     display: inline;
-//     padding: 0px 5px;
-//     color: #358bda;
-//     font-weight: 600;
-
-// }
-
 .spot-details-line{
     margin-top: -15px;
     display: flex;
@@ -123,4 +157,287 @@
 .priceline > h2:last-of-type {
     margin-right: 10px;
     font-weight:800;
+}
+
+.top-search-box {
+    margin: 5px 20px 0 0;    
+    background-color: #ffffff;
+    -webkit-box-shadow: 1px 2px 5px 1px #67656524;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow:    1px 2px 5px 1px #67656524;  /* Firefox 3.5 - 3.6 */
+    box-shadow:         1px 2px 5px 1px #67656524;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+    width: 200px;
+    height: 40px;
+    padding: 0px 0px 0px 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px; 
+    font-weight: 200;
+    border: none;
+    color: #AEAEAE;
+    border-radius: 3px;
+    display: flex; 
+    -webkit-transition: transform 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
+    -moz-transition: transform 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
+    -ms-transition: transform 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
+    -o-transition: transform 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
+    transition: transform 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
+}
+
+.spots-page-search {
+    max-width: 90vw;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto 10px auto;
+}
+
+
+.locations-page > .spots-page-search > h1 {
+    margin: 0;
+    text-align: center;
+    padding-top: 100px;
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    padding-left: 80px;
+    color: #333333;
+}
+
+.spot-filters {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.spot-filters > label:last-of-type {
+    margin-right: 15%;
+}
+
+.spot-filters > label {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    color: #333333;
+
+}
+
+.top-search-box:focus {
+    outline: none;
+    transform: scale(1.1);
+    color: black;
+}
+
+#app > .spot-container{
+    height:auto;
+    background-color: #ffffff;
+}
+
+.photos-container{
+    padding-top: 72px; 
+    height: 500px;
+    width: 100%;
+    display: flex;
+}
+
+.main-photo{
+    height: 100%;
+    width: 60%;
+    background-color: lightcoral;
+}
+
+.photo-row{
+
+    width: 40vw;
+    height:50%;
+    display: inline-block;
+}
+
+.other-photo{
+    box-sizing: border-box;
+    background-color: lightgreen;
+    border:1px solid rgba(0, 0, 0, 0.24);
+    height: 100%;
+    width: 100%;
+}
+
+.spot-details-box {
+    color: #333333;
+    display: flex;
+}
+
+.spot-details-box  h1 {
+    color: #333333;
+    font-size: 34px;
+    letter-spacing: 2px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.spot-details-box  h2 {
+    color: #333333;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    margin-top: -20px;
+}
+
+.spot-details-box h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight:100;
+    font-size:14px;
+    color: #333333;
+}
+
+.spot-details-box hr { 
+    border: 0;
+    height: 0;
+    border-top: 1.5px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1.5px solid rgba(255, 255, 255, 0.3);
+
+}
+.spot-details-box ul {
+    font-family: 'Montserrat', sans-serif;
+    font-weight:100;
+    font-size:14px;
+    color: #333333;
+    list-style-type: none;
+}
+
+.spot-numbers {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.spot-numbers h3 {
+    padding: 0 20px 0 0;
+    font-weight:600;
+    font-size:14px;
+}
+
+.spot-number-icon{
+    background-size: 30px 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 25px;
+    height: 20px;
+    margin-left:30%;
+    margin-bottom: -10px;
+}
+
+#bedroom {
+    background-image: url(../bedroom_icon.svg);
+}
+
+#bed {
+    background-image: url(../bed_icon.svg);
+    margin-left:15%;
+}
+
+#guests {
+    background-image: url(../guests_icon.svg);
+}
+.left-box {
+    width: 50%;
+    height: 500px;
+    padding-left: 20%;
+}
+
+
+.left-box-text > p {
+    font-size: 13px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: italic;
+    font-weight:900;
+    color: #F27230;
+    margin-bottom: -14px;
+}
+.left-box-img{
+    margin: -60px 20px 0px 20px;
+    padding-left:20%;
+}
+
+.left-box-img h3 {
+    text-align: center;
+}
+
+.host-img{
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    background-image: url(../tb.jpg);
+    background-size: cover;
+
+}
+
+
+.container{
+    display: flex;
+}
+
+
+
+.right-box {
+    width: 50%;
+    padding-right:15%;
+    display: flex;
+    justify-content: right;
+    flex-direction: row-reverse;
+}
+
+.booking-box {
+    background-color: red;
+    margin-top:50px;
+    margin-bottom:50px;
+    height:600px;
+    overflow: hidden;    
+}
+
+.booking-box h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size:14px;
+    font-weight: 500;
+}
+
+.right-box > form {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    align-self: flex-start; 
+    margin-top: 40px;  
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #ffffff;
+    border-radius:3px;
+    justify-content: center;
+    padding:10px;
+    border: 1px solid #67656524;
+   
+}
+
+.book-form {
+    padding:10px;
+    min-width: 400px;
+}
+
+.book-form .dropdown-input {
+    border: 2px solid #AEAEAE;
+    box-shadow: none;
+}
+
+.book-form p {
+    margin-bottom: 5px;
+}
+
+.form-row {
+    display: flex;
+}
+.book-form .dropdown-input{
+    min-height: 25px;
+    max-height: 30px;
+    padding: 10px 10px;
+}
+
+.book-form .session-submit {
+    font-size:14px;
+    width:100%;
+        border-radius: 50px;
+}
+
+
+.left-form, .right-form{
+    text-align: left;
+    width: 50%;
 }

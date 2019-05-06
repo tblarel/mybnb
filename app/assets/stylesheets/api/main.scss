@@ -37,7 +37,7 @@ header > a:first-of-type{
 
 .header-button, .session-submit {
     padding: 5px 20px 5px 20px;
-    border-radius:5px;
+    border-radius:25px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     font-size: 1.5vh;
@@ -64,7 +64,8 @@ header > a:first-of-type{
 }
 
 .content-container {
-    background-color: #fdfdfd;
+    background: #fdfdfd;
+    height: initial;
 }
 
 #logo-header {

@@ -119,6 +119,12 @@
     -ms-transition: opacity 1.2s cubic-bezier(0.18, 0.63, 0.38, 0.91);
     -o-transition: opacity 1.2s cubic-bezier(0.18, 0.63, 0.38, 0.91);
     transition: opacity 1.2s cubic-bezier(0.18, 0.63, 0.38, 0.91);
+
+    -webkit-transition: transform 1.2s cubic-bezier(0.18, 0.63, 0.38, 0.91);
+    -moz-transition: transform 1.2s cubic-bezier(0.18, 0.63, 0.38, 0.91);
+    -ms-transition: transform 1.2s cubic-bezier(0.18, 0.63, 0.38, 0.91);
+    -o-transition: transform 1.2s cubic-bezier(0.18, 0.63, 0.38, 0.91);
+    transition: transform 1.2s cubic-bezier(0.18, 0.63, 0.38, 0.91);
 }
 
 .location-item:nth-child(2n) {
@@ -138,6 +144,8 @@
 .location-item:hover {
     cursor: pointer;
     opacity: 1.0;
+    transform: scale(1.05);
+
 }
 
 

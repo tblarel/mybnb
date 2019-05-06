@@ -20,7 +20,7 @@ class SpotIndexItem extends React.Component {
         if(features !== undefined) {
            return (
                 Object.values(features).map( feature => (
-                    <h3>{feature}</h3>
+                    <h3 key={feature.id}>{feature}</h3>
                 ))
            ); 
         } else {

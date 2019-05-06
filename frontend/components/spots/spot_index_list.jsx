@@ -37,16 +37,14 @@ class SpotIndexList extends React.Component {
 
 
     render() {
-        // filterByLocations();
-        //  debugger
         if(this.state.currentlyDisplayed != undefined) {
             return(       
-                Object.values(this.state.currentlyDisplayed).map(spot => (
+                Object.values(this.state.currentlyDisplayed).map(
+                    spot => (
                         <SpotIndexItem
                             spot={spot}
-                            key={spot.id}
-                        />
-                    ))
+                            key={spot.id}/>
+                ))
             )
         } else {
             return (
