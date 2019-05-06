@@ -57,14 +57,31 @@
     justify-content: flex-start;
 }
 
+.spots-container > h1 {
+    font-family: 'Montserrat', sans-serif;
+    color:  #333333;
+    font-size: 20px;
+    text-align: center;
+    margin: 40px auto;
+}
+
 .spot-item{
     // background-color: lightblue; //FOR DEBUGGING ONLY
     padding: 5px 5px;
     margin: 20px 5px;
     width: 320px;
     height: 300px;
+    -webkit-transition: transform 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
+    -moz-transition: transform 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
+    -ms-transition: transform 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
+    -o-transition: transform 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
+    transition: transform 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
 }
 
+.spot-item:hover {
+    transform: scale(1.02);
+    cursor: pointer;
+}
 .search-box-container {
     margin-right: auto;
     margin-left: 50px;
@@ -266,7 +283,8 @@
 }
 
 .other-photo:hover, .main-photo:hover{
-    transform:scale(1.1);
+    transform:scale(1.05);
+    cursor: pointer;
 }
 
 .spot-details-box {

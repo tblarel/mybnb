@@ -17,11 +17,13 @@ class SpotsIndex extends React.Component {
         this.state = {
             searchTerm: '',
             currentlyDisplayed: this.props.spots,
-            location: location
+            location: location,
+            guests: '1',
         };
         this.renderOptions = this.renderOptions.bind(this);
         this.renderDropdowns = this.renderDropdowns.bind(this);
         this.updateLoc = this.updateLoc.bind(this);
+        this.updateGuests = this.updateGuests.bind(this);
         this.filterSpotsByLocation = this.filterSpotsByLocation.bind(this);
     }
 
@@ -63,6 +65,7 @@ class SpotsIndex extends React.Component {
         }))
     }
 
+
     renderOptions() {
         return(
             <div className="spot-filters">
@@ -77,7 +80,7 @@ class SpotsIndex extends React.Component {
                     </select>
                 </label>
                 <label> Check In: 
-                    <select className="top-search-box" onChange={this.updateGuests}>
+                    <select className="top-search-box" onChange={this.updateCheckIn}>
                         <option value='1' selected="selected"> Start </option>
                         <option value='2' > 2 Guests </option>
                         <option value='3' > 3 Guests </option>
@@ -88,7 +91,7 @@ class SpotsIndex extends React.Component {
                 </label>
 
                 <label> Check Out:
-                    <select className="top-search-box" onChange={this.updateGuests}>
+                    <select className="top-search-box" onChange={this.updateCheckOut}>
                         <option value='1' selected="selected"> End </option>
                         <option value='2' > 2 Guests </option>
                         <option value='3' > 3 Guests </option>
@@ -97,7 +100,6 @@ class SpotsIndex extends React.Component {
                         <option value='6' > 6 Guests </option>
                     </select>
                 </label>
-
 
             </div>
         );
@@ -111,6 +113,12 @@ class SpotsIndex extends React.Component {
                 currentlyDisplayed: newList,
                 location: e.currentTarget.value
         });
+    }
+
+    updateGuests(e) {
+        this.setState({
+            guests: e.currentTarget.value
+        })
     }
     
     render() {
@@ -133,7 +141,7 @@ class SpotsIndex extends React.Component {
                     </div>
                     {this.renderOptions()}
                     <div className="spots-container">
-                        <SpotIndexList currentLoc={this.state.location} spots={this.props.spots}/>
+                        <SpotIndexList currentLoc={this.state.location} guests={this.state.guests} spots={this.props.spots}/>
                     </div>
                 </div>
             </div>
