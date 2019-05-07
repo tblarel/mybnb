@@ -2,6 +2,7 @@
     display: flex;
     max-height: 40px;
     margin-top: 5px;
+    transform: scale(.90);
 }
 
 .DateInput, .DayPicker_weekHeader,.DayPicker_focusRegion  {
@@ -19,4 +20,8 @@
 .DateInput_input{
     font-size: 16px;
     color: #AEAEAE;
+}
+
+.DateRangePicker > div {
+    margin: 0 auto;
 }

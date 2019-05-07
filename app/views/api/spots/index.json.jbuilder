@@ -4,6 +4,7 @@
         json.name spot.title
         json.home_type spot.home_type
         json.host spot.host.fname
+        json.host_lname spot.host.lname
         json.city spot.location.name
         json.loc_id spot.loc_id
         json.description spot.description

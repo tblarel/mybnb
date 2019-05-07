@@ -48,7 +48,7 @@
     padding: 10px;
     border-radius:3px;
     justify-content: center;
-    max-width: 78%;
+    max-width: 75%;
 
 }
 .login-form-box > * {
@@ -67,9 +67,37 @@
     text-align: left;
     display: flex;
     flex-direction: column;
-    min-width: 100%;
+    min-width: 72%;
     margin-bottom: 5px;
 }
+
+.search-form-box {
+     font-family: 'Montserrat', sans-serif;
+    margin: 0 auto;
+    align-self: center;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius:3px;
+    justify-content: center;
+    max-width: 82%;
+}
+
+.search-form-box > .search-form {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.search-form-box > .search-form > label {
+    
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+}
+
 
 .login-form p {
     padding: 5px 0px 0px 15%;
@@ -126,11 +154,11 @@
     -webkit-box-shadow: 2px 2px 5px 0px #7b7b7ba8;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
     -moz-box-shadow:    2px 2px 5px 0px #7b7b7ba8;  /* Firefox 3.5 - 3.6 */
     box-shadow:         2px 2px 5px 0px #7b7b7ba8;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
-    min-width: 72%;
-    max-width: 80%;
+    min-width: 40%;
+    max-width: 45%;
     margin: 30px auto 15px auto ;
     padding: 15px 20px 15px 20px;
-    border-radius:25px;
+    border-radius:5px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     font-size: 1.6vh;

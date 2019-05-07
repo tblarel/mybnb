@@ -14,11 +14,26 @@ class SpotShow extends React.Component {
             spot: this.props.spots[this.props.match.params.id]
         };
         this.renderFeatures = this.renderFeatures.bind(this);
+        this.calculateFees = this.calculateFees.bind(this);
+    }
+    calculateFees(spot) {
+        let price = spot.price
+        let fees = spot.num_guest * 5.64;
+        let taxes = (price + fees) * .08;
+        let subtotal = price + fees + taxes;
+        this.setState({
+            price: price,
+            fees: fees.toFixed(2),
+            taxes: taxes.toFixed(2),
+            subtotal: subtotal.toFixed(2)
+        }); 
     }
 
     componentDidMount() {
         if (_.isEmpty(this.props.spots)) {
             this.props.findAllSpots();
+        } if (this.state !== undefined && this.state.spot !== undefined) {
+            this.calculateFees(this.state.spot);
         }
     }
 
@@ -27,8 +42,11 @@ class SpotShow extends React.Component {
             this.setState({
                 spot: this.props.spots[this.state.id]
             });
+            this.calculateFees(this.props.spots[this.state.id]);
         }
     }
+
+    
 
     renderFeatures() {
         return (
@@ -84,7 +102,7 @@ class SpotShow extends React.Component {
                                     </div>
                                     <div className="left-box-img">
                                         <div class="host-img"></div>
-                                        <h3>{this.state.spot.host}</h3>
+                                        <h3>{this.state.spot.host} {this.state.spot.host_lname}</h3>
                                     </div>
                                 </div>
                             </div>
@@ -122,7 +140,11 @@ class SpotShow extends React.Component {
                                                         <option value="">1 Guest</option>
                                                     </select>
                                                 </label>
-                                                <h3>${this.state.spot.price} per night</h3> 
+                                                <h3 className="subtotal">${this.state.price} per night</h3>
+                                                <h3 className="subtotal">${this.state.fees} cleaning fee</h3> 
+                                                <h3 className="subtotal">${this.state.taxes} taxes and fees</h3> 
+                                                <hr></hr>
+                                                <h3 className="subtotal">${ this.state.subtotal }</h3>
                                             </div>
                                             <div className="right-form">
                                                 <label className="date"><p>Check Out</p>
