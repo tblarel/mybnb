@@ -58,7 +58,9 @@ class SpotShow extends React.Component {
 
 
     render() {
+
         if ( ! _.isEmpty(this.props.spots) && this.state.spot !== undefined) {
+            
             return(
 
                 <div className="spot-container">
@@ -101,7 +103,7 @@ class SpotShow extends React.Component {
                                         </div>                            
                                     </div>
                                     <div className="left-box-img">
-                                        <div class="host-img"></div>
+                                        <div class="host-img" style={ {backgroundImage: `url(${this.state.spot.host_img_url})`  }}></div>
                                         <h3>{this.state.spot.host} {this.state.spot.host_lname}</h3>
                                     </div>
                                 </div>

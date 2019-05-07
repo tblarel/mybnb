@@ -23,7 +23,6 @@ class SpotIndexList extends React.Component {
     }
 
     filterbyAll() {
-        debugger
         let newList;
         if (this.props.currentLoc === '') {
             newList = this.props.spots;

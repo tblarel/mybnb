@@ -12,10 +12,20 @@ class Api::UsersController < ApplicationController
             # render json: @user.errors.full_messages, status: 422
         end
     end
+    
+    def show
+        @user = User.with_attached_photo.find(params[:id])
+        render :show
+    end
+
+    def index
+        @users = User.all
+        render :index
+    end
 
     private
 
     def user_params
-        params.require(:user).permit(:email,:password,:fname,:lname)
+        params.require(:user).permit(:email,:password,:fname,:lname,:photo)
     end
 end

@@ -1,6 +1,11 @@
  html, body, #app, #app>div {
     height: 100vh;
 }
+
+select {
+    -webkit-appearance: none;
+    -webkit-border-radius: 0px; 
+}
 body{
     /* FOR HELP WITH DEBUGGING, REMOVE THIS LATER!!! */
     background-color: black;
@@ -120,7 +125,16 @@ header > a:first-of-type{
 
 .dropdown-input:focus {
     outline: none;
-    border: 2px solid #3844A2;
+    border-bottom: 1px solid #6bb3b7;
+    outline: none;
+    color:black;
+    box-shadow: none;
+}
+
+.dropdown-input:active {
+    outline: none;
+    border-bottom: 1px solid #6bb3b7;
+    outline: none;
     color:black;
     box-shadow: none;
 }
@@ -133,4 +147,70 @@ header > a:first-of-type{
     padding-bottom: 12px;
     z-index: 2;
 }
+
+.top-options{
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    width: 100%;
+}
+
+.search-form p {
+    font-size: 14px;
+    font-weight: 400;
+    color: #484848;
+}
+
+.when > p {
+    padding-left: 12px;
+}
+
+.option-dropdown {
+    height: 41px;
+    width: 168px;
+    margin: 10px 0px 15px 5px;
+    border: 1px solid #dcdcdc;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 0px !important;
+    font-size: 14.4px;
+    color: #757575;
+    padding-left: 6px;
+}
+
+
+.where .option-dropdown{
+    margin-right: 6px;
+    margin-left: 0px;
+
+}
+
+.search-submit{ 
+    -webkit-box-shadow: 2px 2px 5px 0px #3b353546;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow:    2px 2px 5px 0px #3b353546;  /* Firefox 3.5 - 3.6 */
+    box-shadow:         2px 2px 5px 0px #3b353546;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+    min-width: 40%;
+    max-width: 45%;
+    margin: 30px auto 15px 52.5% ;
+    padding: 15px 20px 15px 20px;
+    border-radius:2px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    color: white;
+    background: rgb(247,68,28);
+    background: linear-gradient(315deg,
+                 rgba(247,68,28,1) 0%,
+                 rgba(248,75,81,1) 100%);
+    text-align: center;
+    border: none;
+}
+.search-submit:hover{
+    background: rgb(218, 62, 27);
+    background: linear-gradient(315deg,
+                rgb(243, 74, 37) 0%, 
+                rgb(230, 70, 76) 100%);
+    cursor: pointer;
+}
+
+
 

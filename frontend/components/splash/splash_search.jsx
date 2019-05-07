@@ -24,22 +24,29 @@ class SplashSearch extends React.Component {
                     <h1>Book unique homes and experiences.</h1>
                     {/* <div id="logo-header"></div> */}
                     <div className="search-form">
-                        <label><p>WHERE</p>
-                            <input type="text"
-                                value="Where to?"
-                                // onChange={this.update('email')}
-                                className="login-input"
-                            />
-                        </label>
-                        <label><p>GUESTS</p>
-                            <select name="guests"
-                                // onChange={this.update('password')}
-                                className="dropdown-input"
-                            >
-                                <option value="">How Many Guests?</option>
-                            </select>
-                        </label>
-                        <label> Dates:
+                        <div className="top-options">
+                            <label className="where">
+                                {/* <p>Where:</p> */}
+                                <select name="loc"
+                                    // onChange={this.update('password')}
+                                    className="option-dropdown"
+                                >
+                                    <option value="">Where To</option>
+                                </select>
+                            </label>
+                            <label className="guests">
+                                {/* <p>Guests:</p> */}
+                                <select name="guests"
+                                    // onChange={this.update('password')}
+                                    className="option-dropdown"
+                                >
+                                    <option value="">How Many Guests</option>
+                                </select>
+                            </label>
+                        </div>
+                        
+                        <label className="when"> 
+                            {/* <p>Dates:</p> */}
                             <DateRangePicker
                                         startDate={this.state.startDate} // momentPropTypes.momentObj or null,
                                         startDateId="your_unique_start_date_id" // PropTypes.string.isRequired,
@@ -51,7 +58,7 @@ class SplashSearch extends React.Component {
                                     />
                         </label>
 
-                        <input className="session-submit"
+                        <input className="search-submit"
                             type="submit"
                             value="Search"
                         />

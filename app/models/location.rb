@@ -12,6 +12,7 @@
 
 class Location < ApplicationRecord
     validates :lat, :long, :name, presence: true
+    has_one_attached :photo
 
     has_many :spots,
         foreign_key: :loc_id,
