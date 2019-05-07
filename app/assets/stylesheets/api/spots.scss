@@ -107,6 +107,12 @@
 
 }
 
+.spot-container > .top-nav {
+    -webkit-box-shadow: 2px 2px 5px 0px #13111123;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow:    2px 2px 5px 0px #13111123;  /* Firefox 3.5 - 3.6 */
+    box-shadow:         2px 2px 5px 0px #13111123;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+}
+
 
 .spot-item  h3 {
     font-size: 12px;
@@ -183,7 +189,7 @@
     -moz-box-shadow:    1px 2px 5px 1px #67656524;  /* Firefox 3.5 - 3.6 */
     box-shadow:         1px 2px 5px 1px #67656524;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
     width: 200px;
-    height: 40px;
+    height: 46px;
     padding: 0px 0px 0px 10px;
     font-family: 'Montserrat', sans-serif;
     font-size: 12px; 
@@ -198,6 +204,22 @@
     -o-transition: transform 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
     transition: transform 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
 }
+
+.guest-search-box{
+    margin: 5px 20px 0 0;    
+    background-color: #ffffff;
+    width: 200px;
+    height: 46px;
+    padding: 0px 0px 0px 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px; 
+    font-weight: 200;
+    color: #484848;
+    border-radius: 0px ;
+    display: flex; 
+    border:1px solid #dbdbdb;
+}
+
 
 .spots-page-search {
     max-width: 90vw;
@@ -219,17 +241,16 @@
 
 .spot-filters {
     display: flex;
-    justify-content: flex-end;
-}
-
-.spot-filters > label:last-of-type {
-    margin-right: 15%;
+    max-width: 90vw;
+    padding-left: 10%;
+    justify-content: flex-start;
 }
 
 .spot-filters > label {
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     color: #333333;
+
 
 }
 
@@ -393,7 +414,9 @@
     height: 75px;
     background-image: url(../tb.jpg);
     background-size: cover;
-
+    -webkit-box-shadow:  1px 2px 6px 0px #24202057;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow:     1px 2px 6px 0px #24202057;  /* Firefox 3.5 - 3.6 */
+    box-shadow:          1px 2px 6px 0px #24202057;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
 }
 
 
@@ -446,7 +469,6 @@
 }
 
 .book-form .dropdown-input {
-    border: 2px solid #AEAEAE;
     box-shadow: none;
 }
 

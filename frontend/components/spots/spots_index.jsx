@@ -4,6 +4,7 @@ import DarkWelcomeContainer from '../welcome/dark_welcome_container';
 import SpotIndexItem from './spot_index_item';
 import SpotIndexList from './spot_index_list';
 import { filter } from 'lodash';
+import { DateRangePicker, SingleDatePicker, DayPickerRangeController } from 'react-dates';
 
 class SpotsIndex extends React.Component {
     constructor(props) {
@@ -70,7 +71,7 @@ class SpotsIndex extends React.Component {
         return(
             <div className="spot-filters">
                 <label> Guests: 
-                    <select className="top-search-box" onChange={this.updateGuests}>
+                    <select className="guest-search-box" onChange={this.updateGuests}>
                         <option value='1' selected="selected"> 1 Guest </option>
                         <option value='2' > 2 Guests </option>
                         <option value='3' > 3 Guests </option>
@@ -79,28 +80,18 @@ class SpotsIndex extends React.Component {
                         <option value='6' > 6 Guests </option>
                     </select>
                 </label>
-                <label> Check In: 
-                    <select className="top-search-box" onChange={this.updateCheckIn}>
-                        <option value='1' selected="selected"> Start </option>
-                        <option value='2' > 2 Guests </option>
-                        <option value='3' > 3 Guests </option>
-                        <option value='4' > 4 Guests </option>
-                        <option value='5' > 5 Guests </option>
-                        <option value='6' > 6 Guests </option>
-                    </select>
-                </label>
 
-                <label> Check Out:
-                    <select className="top-search-box" onChange={this.updateCheckOut}>
-                        <option value='1' selected="selected"> End </option>
-                        <option value='2' > 2 Guests </option>
-                        <option value='3' > 3 Guests </option>
-                        <option value='4' > 4 Guests </option>
-                        <option value='5' > 5 Guests </option>
-                        <option value='6' > 6 Guests </option>
-                    </select>
+                <label> Dates: 
+                    <DateRangePicker
+                        startDate={this.state.startDate} // momentPropTypes.momentObj or null,
+                        startDateId="your_unique_start_date_id" // PropTypes.string.isRequired,
+                        endDate={this.state.endDate} // momentPropTypes.momentObj or null,
+                        endDateId="your_unique_end_date_id" // PropTypes.string.isRequired,
+                        onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })} // PropTypes.func.isRequired,
+                        focusedInput={this.state.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
+                        onFocusChange={focusedInput => this.setState({ focusedInput })} // PropTypes.func.isRequired,
+                     />
                 </label>
-
             </div>
         );
     }

@@ -1,0 +1,22 @@
+.DateRangePicker {
+    display: flex;
+    max-height: 40px;
+    margin-top: 5px;
+}
+
+.DateInput, .DayPicker_weekHeader,.DayPicker_focusRegion  {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.DateInput_1 {
+    padding-right: 30px;
+}
+
+.DateRangePickerInput_arrow{
+    margin:  0 20px;
+} 
+
+.DateInput_input{
+    font-size: 16px;
+    color: #AEAEAE;
+}

@@ -18,7 +18,9 @@ import SpotsContainer from './spots/spots_container';
 import SpotShowContainer from './spots/spot_show_container';
 import LocationsContainer from './locatons/locations_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
-
+import 'react-dates/initialize';
+import 'react-dates/lib/css/_datepicker.css';
+import '../../app/assets/stylesheets/api/react_dates_overrides.css';
 
 const App = () => (
     <div id="app">

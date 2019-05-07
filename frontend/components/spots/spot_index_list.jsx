@@ -58,8 +58,7 @@ class SpotIndexList extends React.Component {
     }
 
 
-    render() {
-        debugger
+    render() { 
         if(this.state.currentlyDisplayed !== undefined ) {
             if (Object.keys(this.state.currentlyDisplayed).length >= 1) {
                 return(       
@@ -71,7 +70,6 @@ class SpotIndexList extends React.Component {
                     ))
                 )
             } else {
-                debugger
                 return(
                     <h1>Sorry, no homes are currently available in {this.props.currentLoc} that match your criteria.</h1>
                 )

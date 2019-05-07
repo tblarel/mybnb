@@ -125,7 +125,7 @@ class SpotShow extends React.Component {
                                                 <h3>${this.state.spot.price} per night</h3> 
                                             </div>
                                             <div className="right-form">
-                                                <label className="date"><p>CHECK IN</p>
+                                                <label className="date"><p>Check Out</p>
                                                     <select name="guests"
                                                         // onChange={this.update('password')}
                                                         className="dropdown-input"
@@ -133,7 +133,7 @@ class SpotShow extends React.Component {
                                                         <option value="">Start</option>
                                                     </select>
                                                 </label>
-                                                <label className="date"><p>CHECK OUT</p>
+                                                <label className="date"><p>Check In</p>
                                                     <select name="guests"
                                                         // onChange={this.update('password')}
                                                         className="dropdown-input"
