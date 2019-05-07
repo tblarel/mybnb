@@ -12,6 +12,9 @@
 #  updated_at      :datetime         not null
 #
 
+require 'open-uri'
+
+
 class User < ApplicationRecord
     attr_reader :password
     validates :email, :session_token, presence: true, uniqueness:true
@@ -20,7 +23,7 @@ class User < ApplicationRecord
     has_one_attached :photo
 
 
-    after_initialize :ensure_session_token
+    after_initialize :ensure_session_token, :ensure_photo
 
     def self.find_by_credentials(email,password) 
         user = User.find_by(email: email)
@@ -47,6 +50,13 @@ class User < ApplicationRecord
 
     def ensure_session_token
         generate_new_session_token unless self.session_token
+    end
+
+    def ensure_photo
+        unless photo.attached?
+        file = open('https://s3-us-west-2.amazonaws.com/mybnb-seeds/blank.jpg')
+        self.photo.attach(io: file, filename: 'blank.jpg')
+        end
     end
 
     def new_session_token
