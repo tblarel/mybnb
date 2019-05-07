@@ -28,14 +28,54 @@ locations = Location.create([   { name: 'San Francisco, California', lat:123.99,
                                 { name: 'Los Angeles, California', lat:789.22, long:123.22 },
                                 { name: 'Paris, France', lat:789.22, long:123.22 },
                                 { name: 'New York, New York', lat:789.22, long:123.22 },
-                                { name: 'Washington, D.C.', lat:789.22, long:123.22 },
+                                { name: 'Seattle, Washington', lat:789.22, long:123.22 },
                                 { name: 'Miami, Florida', lat:789.22, long:123.22 },
-                                { name: 'San Diego, California', lat:789.22, long:123.22 },
                                 { name: 'London, England', lat:789.22, long:123.22 },
                                 { name: 'Whistler, Canada', lat:789.22, long:123.22 },
                                 { name: 'Aspen, Colorado', lat:789.22, long:123.22 },
                                 { name: 'Barcelona, Spain', lat:789.22, long:123.22 },
                             ])
+
+file = open('https://s3-us-west-2.amazonaws.com/mybnb-seeds/sf2.jpg')
+loc = Location.first
+loc.photo.attach(io: file, filename: 'sf2.jpg')
+
+file = open('https://s3-us-west-2.amazonaws.com/mybnb-seeds/la.jpg')
+loc = Location.find(2)
+loc.photo.attach(io: file, filename: 'la.jpg')
+
+file = open('https://s3-us-west-2.amazonaws.com/mybnb-seeds/paris1.jpeg')
+loc = Location.find(3)
+loc.photo.attach(io: file, filename: 'paris1.jpeg')
+
+file = open('https://s3-us-west-2.amazonaws.com/mybnb-seeds/ny.jpeg')
+loc = Location.find(4)
+loc.photo.attach(io: file, filename: 'ny.jpeg')
+
+file = open('https://s3-us-west-2.amazonaws.com/mybnb-seeds/seattle.jpeg')
+loc = Location.find(5)
+loc.photo.attach(io: file, filename: 'seattle.jpg')
+
+file = open('https://s3-us-west-2.amazonaws.com/mybnb-seeds/miami.jpeg')
+loc = Location.find(6)
+loc.photo.attach(io: file, filename: 'miami.jpeg')
+
+file = open('https://s3-us-west-2.amazonaws.com/mybnb-seeds/london.jpeg')
+loc = Location.find(7)
+loc.photo.attach(io: file, filename: 'london.jpeg')
+
+file = open('https://s3-us-west-2.amazonaws.com/mybnb-seeds/whistler.jpeg')
+loc = Location.find(8)
+loc.photo.attach(io: file, filename: 'whistler.jpeg')
+
+file = open('https://s3-us-west-2.amazonaws.com/mybnb-seeds/aspen.jpeg')
+loc = Location.find(9)
+loc.photo.attach(io: file, filename: 'aspen.jpeg')
+
+file = open('https://s3-us-west-2.amazonaws.com/mybnb-seeds/spain.jpg')
+loc = Location.find(10)
+loc.photo.attach(io: file, filename: 'spain.jpg')
+
 
 spots = Spot.create([   
                         ### SAN FRANCISOCO ###
@@ -134,12 +174,12 @@ spots = Spot.create([
                         Includes dishwasher, garbage disposal, Kuerig coffee machine, Cuisinart toaster oven, electric kettle and all the cookware necessary to make a gourmet meal.', lat:122.92, long:456.013,
                         price: 55, address: '007 Street Street', num_bedrooms: 3, num_beds: 6, num_guest: 8 },
 
-                        { title: 'Quaint Cabin', home_type: 'Entire Home', host_id: 2, loc_id: 11, 
+                        { title: 'Quaint Cabin', home_type: 'Entire Home', host_id: 2, loc_id: 10, 
                         description: 'Beautiful spacious loft minutes from downtown. Kitchen – Modern with stone counters, European wood cabinetry, professional series Frigidaire kitchen appliances. 
                         Includes dishwasher, garbage disposal, Kuerig coffee machine, Cuisinart toaster oven, electric kettle and all the cookware necessary to make a gourmet meal.', lat:122.92, long:456.013,
                         price: 95, address: '008 Street Street', num_bedrooms: 2, num_beds: 5, num_guest: 6 },
 
-                        { title: 'Plain Old Home', home_type: 'Entire Home', host_id: 2, loc_id: 12, 
+                        { title: 'Plain Old Home', home_type: 'Entire Home', host_id: 2, loc_id: 8, 
                         description: 'Beautiful spacious loft minutes from downtown. Kitchen – Modern with stone counters, European wood cabinetry, professional series Frigidaire kitchen appliances. 
                         Includes dishwasher, garbage disposal, Kuerig coffee machine, Cuisinart toaster oven, electric kettle and all the cookware necessary to make a gourmet meal.', lat:122.92, long:456.013,
                         price: 55, address: '009 Street', num_bedrooms: 2, num_beds: 5, num_guest: 6 },

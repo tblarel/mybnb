@@ -18,9 +18,10 @@ class LocationIndexItem extends React.Component {
     }
 
     render () {
-        const { name, lat, long, num_spots } = this.props.loc;
+        const { name, lat, long, num_spots, photo_url } = this.props.loc;
         return (
-            <div className="location-item" onClick={this.handleClick}>
+            <div className="location-item" onClick={this.handleClick}
+                style={{ backgroundImage: `linear-gradient(to bottom, rgba(212, 197, 145, 0.193), rgba(37, 39, 63, 0.26)), url(${photo_url})` }}>
                 <h1>{name}</h1>
                 <h3>{num_spots} listings</h3>
             </div>
