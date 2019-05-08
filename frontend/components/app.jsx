@@ -21,6 +21,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import 'react-dates/initialize';
 import 'react-dates/lib/css/_datepicker.css';
 import '../../app/assets/stylesheets/api/react_dates_overrides.css';
+import search_container from './spots/search_container';
 
 const App = () => (
     <div id="app">
@@ -37,6 +38,8 @@ const App = () => (
             <Route exact path="/locations" component={LocationsContainer} />
             <Route exact path="/spots/:id" component={SpotShowContainer} />
             <Route exact path="/spots" component={SpotsContainer} />
+            <Route path="/search" component={search_container} />
+
             <AuthRoute exact path="/signup" component={SignupContainer} />
             <AuthRoute exact path="/login" component={LogInContainer} />
             <Route path="/" component={SplashContainer} />

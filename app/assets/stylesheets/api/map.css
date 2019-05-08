@@ -1,0 +1,8 @@
+#map-container{
+    height: 92vh;
+    width: 40vw;
+}
+
+#map-container > div {
+    height: 100%;
+}

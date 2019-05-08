@@ -12,7 +12,7 @@ class LocationIndexItem extends React.Component {
     handleClick(e) {
         e.preventDefault();
         this.props.history.push({
-            pathname: '/spots',
+            pathname: '/search',
             state: { loc: this.props.loc.name }
         })
     }

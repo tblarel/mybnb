@@ -46,11 +46,18 @@
 
 #search-spots{
     width: 600px;
+    margin: 0;
+    text-align: center;
+    padding-top: 10px;
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    padding-left: 80px;
+    color: #333333;
 }
 
 .spots-container {
     max-width: 95vw;
-    padding: 0 2.5vw 0vw 10vw;
+    padding: 0 0 0 80px;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
@@ -229,15 +236,15 @@
 }
 
 
-.locations-page > .spots-page-search > h1 {
-    margin: 0;
-    text-align: center;
-    padding-top: 100px;
-    text-align: left;
-    font-family: 'Montserrat', sans-serif;
-    padding-left: 80px;
-    color: #333333;
-}
+// .locations-page > .spots-page-search > h1 {
+//     margin: 0;
+//     text-align: center;
+//     padding-top: 100px;
+//     text-align: left;
+//     font-family: 'Montserrat', sans-serif;
+//     padding-left: 80px;
+//     color: #333333;
+// }
 
 .spot-filters {
     display: flex;
@@ -526,4 +533,20 @@
 }
 .subtotal:first-of-type{
     margin-top:20px;
+}
+
+.two-half-container{
+    display: flex;
+}
+
+.left-half{
+    max-width:60%;
+}
+
+.right-half{
+    padding-right: 0;
+    padding-left: 10px;
+    position: fixed;
+    left: 60vw;
+    margin-top:-50px;
 }

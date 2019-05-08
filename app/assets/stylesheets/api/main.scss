@@ -8,7 +8,7 @@ select {
 }
 body{
     /* FOR HELP WITH DEBUGGING, REMOVE THIS LATER!!! */
-    background-color: black;
+    background-color:#fdfdfd;
     /* FOR HELP WITH DEBUGGING, REMOVE THIS LATER!!! */
 }
 
@@ -26,6 +26,11 @@ header > a:first-of-type{
     margin-left: 20px;
 }
 
+#app > .page-content-container {
+    height: auto;
+    background: #fdfdfd;
+
+}
 
 .header-group {
     display: inline-flex;

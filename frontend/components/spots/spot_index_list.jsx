@@ -14,6 +14,14 @@ class SpotIndexList extends React.Component {
 
     }
 
+    componentDidMount() {
+        this.props.findAllSpots();
+        if (_.isEmpty(this.props.locations)) {
+            this.props.findAllLocations();
+        }
+    }
+
+
     componentDidUpdate(prevProps, prevState) {
         if (prevProps.spots !== this.props.spots) {
             this.filterByLocations()
