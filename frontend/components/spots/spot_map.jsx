@@ -35,6 +35,8 @@ class SpotMap extends React.Component {
     componentDidUpdate(prevProps, prevState) {
         if(prevProps.lat !== this.props.lat || prevProps.long !== this.props.long) {
             this.map.panTo({lat:this.props.lat, lng:this.props.long})
+            debugger
+            this.map.setZoom(this.props.zoom);
         }
 
         if (this.props.singleSpot) {
@@ -49,7 +51,7 @@ class SpotMap extends React.Component {
     createMap(lat,long) {
         const mapOptions = {
             center: { lat: this.props.lat, lng: this.props.long }, 
-            zoom: 10.5,
+            zoom: this.props.zoom,
             styles: [
                 {
                     "featureType": "all",

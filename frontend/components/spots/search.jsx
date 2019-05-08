@@ -24,11 +24,13 @@ class Search extends React.Component {
             loc: location,
             guests: '1',
             lat: lat,
-            long: long
+            long: long,
+            zoom: 10.5
         };
         this.renderDropdowns = this.renderDropdowns.bind(this);
         this.updateLoc = this.updateLoc.bind(this);
         this.findLatAndLong = this.findLatAndLong.bind(this);
+        this.calcZoom = this.calcZoom.bind(this);
     }
 
     componentDidMount() {
@@ -60,6 +62,33 @@ class Search extends React.Component {
         }))
     }
 
+    calcZoom(location) {
+        switch(location){
+            case "San Francisco, California":
+                return 11.5;
+            case "Los Angeles, California":
+                return 10.5;
+            case "Paris, France":
+                return 13;
+            case "New York, New York":
+                return 12.5;
+            case "Seattle, Washington":
+                return 11;
+            case "Miami, Florida":
+                return 11;
+            case "London, England":
+                return 11.5;
+            case "Whistler, Canada":
+                return 12.0;
+            case "Aspen, Colorado":
+                return 12;
+            case "Barcelona, Spain":
+                return 12;
+            default:
+                return 10.5;
+        }
+    }
+
     updateLoc(e) {
         let this_location = e.currentTarget.value;
         let coords = this.findLatAndLong(this_location);
@@ -67,11 +96,13 @@ class Search extends React.Component {
             this.setState({
                 loc: this_location,
                 lat: coords[0],
-                long: coords[1]
+                long: coords[1],
+                zoom: this.calcZoom(this_location)
             });
         } else {
             this.setState({
                 loc: this_location,
+                zoom: this.calcZoom("blank")
             })
         }
     }
@@ -104,7 +135,8 @@ class Search extends React.Component {
                             <SpotMap spots={this.props.spots} 
                                     location={this.state.loc} 
                                     lat={this.state.lat} 
-                                    long={this.state.long} 
+                                    long={this.state.long}
+                                    zoom={this.state.zoom} 
                                     updateFilter={this.props.updateFilter}
                                     singleSpot={false} />
                         </div>
