@@ -1,7 +1,7 @@
 require 'open-uri'
 
 locations = Location.create([   { name: 'San Francisco, California', lat:37.77, long:-122.41 }, 
-                                { name: 'Los Angeles, California', lat:34.05, long:-118.24 },
+                                { name: 'Los Angeles, California', lat:34.00, long:-118.32 },
                                 { name: 'Paris, France', lat:48.86, long:2.35 },
                                 { name: 'New York, New York', lat:40.71, long:-74.00 },
                                 { name: 'Seattle, Washington', lat:47.61, long:-122.33 },

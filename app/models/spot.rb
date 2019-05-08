@@ -19,6 +19,7 @@
 #  updated_at   :datetime         not null
 #
 
+
 class Spot < ApplicationRecord
     validates :title, :home_type, :host_id, :loc_id, :description, :lat, :long, :price,
                 :num_bedrooms, :num_beds, :num_guest, presence: true
@@ -39,4 +40,13 @@ class Spot < ApplicationRecord
     has_many :features, 
         through: :spot_features,
         source: :feature
+
+    def self.in_bounds(bounds)
+        self.where("lat < ?", bounds[:northEast][:lat])
+            .where("lat > ?", bounds[:southWest][:lat])
+            .where("long > ?", bounds[:southWest][:lng])
+            .where("long < ?", bounds[:northEast][:lng])
+    end
+
+
 end

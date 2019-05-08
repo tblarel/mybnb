@@ -3,20 +3,23 @@ import { connect } from 'react-redux';
 import Search from './search';
 import { fetchAllSpots } from '../../actions/spot_actions';
 import { fetchAllLocations } from '../../actions/location_actions';
+import { updateFilter } from '../../actions/filter_actions';
+import { asArray } from '../../reducers/selectors';
+
 
 
 const mapStateToProps = state => {
     return {
-        spots: state.entities.spots,
+        spots: asArray(state.entities.spots),
         locations: state.entities.locations
     }
 }
 
-const mapDispatchToProps = dispatch => {
-    return {
-        findAllSpots: () => dispatch(fetchAllSpots()),
-        findAllLocations: () => dispatch(fetchAllLocations())
-    }
-}
+
+const mapDispatchToProps = dispatch => ({
+    updateFilter: (filter, value) => dispatch(updateFilter(filter, value)),
+    findAllSpots: () => dispatch(fetchAllSpots()),
+    findAllLocations: () => dispatch(fetchAllLocations())
+})
 
 export default connect(mapStateToProps, mapDispatchToProps)(Search);

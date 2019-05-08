@@ -15,7 +15,6 @@ class Search extends React.Component {
         if (this.props.location.state === undefined) {
             location = 'San Francisco, California';
         } else {
-            debugger
             location = this.props.location.state.loc;
             let coords = this.findLatAndLong(location);
             lat = coords[0];
@@ -30,11 +29,9 @@ class Search extends React.Component {
         this.renderDropdowns = this.renderDropdowns.bind(this);
         this.updateLoc = this.updateLoc.bind(this);
         this.findLatAndLong = this.findLatAndLong.bind(this);
-
     }
 
     componentDidMount() {
-        this.props.findAllSpots();
         if (_.isEmpty(this.props.locations)) {
             this.props.findAllLocations();
         }
@@ -67,7 +64,6 @@ class Search extends React.Component {
         let this_location = e.currentTarget.value;
         let coords = this.findLatAndLong(this_location);
         if (coords !== [0.0,0.0]) {
-            debugger       
             this.setState({
                 loc: this_location,
                 lat: coords[0],
@@ -82,39 +78,40 @@ class Search extends React.Component {
 
 
     render() {
-        debugger
-        return(
-            <div className="page-content-container">
-                <h1>hi</h1>
-                <header className="top-nav">
-                    <Link to="/" className="header-link">
-                        <div className="icon-color"></div>
-                    </Link>
-                    <div className="search-box-container">
-                        <select className="search-box-spots" onChange={this.updateLoc}>
-                            {this.renderDropdowns(Object.values(this.props.locations))}
-                        </select>
-                    </div>
-                    <DarkWelcomeContainer />
-                </header>                        
-                <h1 id="search-spots">Search {this.state.loc} </h1>
-                <div className='two-half-container'>
-                    <div className='left-half'>
-                        <div className="spots-container">
-                            <SpotIndexList spots={this.props.spots} 
-                                            currentLoc={this.state.loc} 
-                                            guests={this.state.guests} 
-                                            spots={this.props.spots}
-                                findAllSpots={this.props.findAllSpots}
-                                findAllLocations={this.props.findAllLocations}/>
+            // debugger
+            return(
+                <div className="page-content-container">
+                    <h1>hi</h1>
+                    <header className="top-nav">
+                        <Link to="/" className="header-link">
+                            <div className="icon-color"></div>
+                        </Link>
+                        <div className="search-box-container">
+                            <select className="search-box-spots" onChange={this.updateLoc}>
+                                {this.renderDropdowns(Object.values(this.props.locations))}
+                            </select>
                         </div>
-                    </div>
-                    <div className='right-half'>
-                        <SpotMap spots={this.props.spots} location={this.state.loc} lat={this.state.lat} long={this.state.long}/>
-                    </div>
-                </div> 
-            </div>
-        );
+                        <DarkWelcomeContainer />
+                    </header>                        
+                    <h1 id="search-spots">Search {this.state.loc} </h1>
+                    <div className='two-half-container'>
+                        <div className='left-half'>
+                            <div className="spots-container">
+                                <SpotIndexList spots={this.props.spots} />
+                            </div>
+                        </div>
+                        <div className='right-half'>
+                            <SpotMap spots={this.props.spots} 
+                                    location={this.state.loc} 
+                                    lat={this.state.lat} 
+                                    long={this.state.long} 
+                                    updateFilter={this.props.updateFilter}
+                                    singleSpot={false} />
+                        </div>
+                    </div> 
+                </div>
+            );
+           
     }
 
 }

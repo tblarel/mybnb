@@ -38,22 +38,26 @@ spots = Spot.create([
 
     { title: 'Cozy Condo', home_type: 'Entire Home', host_id: 2, loc_id: 2, 
     description: 'Beautiful spacious loft minutes from downtown. Kitchen – Modern with stone counters, European wood cabinetry, professional series Frigidaire kitchen appliances. 
-    Includes dishwasher, garbage disposal, Kuerig coffee machine, Cuisinart toaster oven, electric kettle and all the cookware necessary to make a gourmet meal.', lat:122.92, long:456.013,
+    Includes dishwasher, garbage disposal, Kuerig coffee machine, Cuisinart toaster oven, electric kettle and all the cookware necessary to make a gourmet meal.', 
+    lat:34.07, long:-118.347,
     price: 220, address: '22 Street Street', num_bedrooms: 3, num_beds: 4, num_guest: 6 },
 
     { title: 'Huge Beach Mansion', home_type: 'Entire Home', host_id: 1, loc_id: 2, 
     description: 'Beautiful spacious loft minutes from downtown. Kitchen – Modern with stone counters, European wood cabinetry, professional series Frigidaire kitchen appliances. 
-    Includes dishwasher, garbage disposal, Kuerig coffee machine, Cuisinart toaster oven, electric kettle and all the cookware necessary to make a gourmet meal.', lat:122.92, long:456.013,
+    Includes dishwasher, garbage disposal, Kuerig coffee machine, Cuisinart toaster oven, electric kettle and all the cookware necessary to make a gourmet meal.', 
+    lat:33.978, long:-118.47,
     price: 405, address: '122422 Street Street', num_bedrooms: 4, num_beds: 6, num_guest: 8 },
 
     { title: 'Spacious Downtown Apartment', home_type: 'Entire Apartment', host_id: 3, loc_id: 2, 
     description: 'Beautiful spacious loft minutes from downtown. Kitchen – Modern with stone counters, European wood cabinetry, professional series Frigidaire kitchen appliances. 
-    Includes dishwasher, garbage disposal, Kuerig coffee machine, Cuisinart toaster oven, electric kettle and all the cookware necessary to make a gourmet meal.', lat:122.92, long:456.013,
+    Includes dishwasher, garbage disposal, Kuerig coffee machine, Cuisinart toaster oven, electric kettle and all the cookware necessary to make a gourmet meal.', 
+    lat:34.044, long:-118.25,
     price: 205, address: '22 Street Street', num_bedrooms: 2, num_beds: 3, num_guest: 5 },
 
     { title: 'Small Studio', home_type: 'Entire Apartment', host_id: 1, loc_id: 2, 
     description: 'Beautiful spacious loft minutes from downtown. Kitchen – Modern with stone counters, European wood cabinetry, professional series Frigidaire kitchen appliances. 
-    Includes dishwasher, garbage disposal, Kuerig coffee machine, Cuisinart toaster oven, electric kettle and all the cookware necessary to make a gourmet meal.', lat:122.92, long:456.013,
+    Includes dishwasher, garbage disposal, Kuerig coffee machine, Cuisinart toaster oven, electric kettle and all the cookware necessary to make a gourmet meal.', 
+    lat:33.99, long:-118.214,
     price: 109, address: '221 Street Street', num_bedrooms: 1, num_beds: 1, num_guest: 2 },
 
     ### PARIS, FRANCE ###
