@@ -52,7 +52,7 @@
     text-align: left;
     font-family: 'Montserrat', sans-serif;
     padding-left: 80px;
-    color: #333333;
+    color: #444;
 }
 
 .spots-container {
@@ -66,7 +66,7 @@
 
 .spots-container > h1 {
     font-family: 'Montserrat', sans-serif;
-    color:  #333333;
+    color:  #444;
     font-size: 20px;
     text-align: center;
     margin: 40px auto;
@@ -138,7 +138,7 @@
 }
 
 .features > h3:first-of-type  {
-    color: black;
+    color: #444;
     background-color: #ffffff00;
     font-size: 12px;
     margin-right:auto;
@@ -267,7 +267,7 @@
 .spot-filters > label {
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
-    color: #333333;
+    color: #555555;
 
 
 }
@@ -327,12 +327,12 @@
 }
 
 .spot-details-box {
-    color: #333333;
+    color: #444;
     display: flex;
 }
 
 .spot-details-box  h1 {
-    color: #333333;
+    color: #444;
     font-size: 34px;
     max-width: 280px;
     letter-spacing: 2px;
@@ -340,7 +340,7 @@
 }
 
 .spot-details-box  h2 {
-    color: #333333;
+    color: #444;
     font-size: 16px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 200;
@@ -351,7 +351,7 @@
     font-family: 'Montserrat', sans-serif;
     font-weight:100;
     font-size:14px;
-    color: #333333b0
+    color: #444;
 }
 
 .spot-details-box hr { 
@@ -365,7 +365,7 @@
     font-family: 'Montserrat', sans-serif;
     font-weight:100;
     font-size:14px;
-    color: #333333;
+    color: #444;
     list-style-type: disc;
 }
 
@@ -391,16 +391,16 @@
 }
 
 #bedroom {
-    background-image: url(../bedroom_icon.svg);
+    background-image: url(https://s3-us-west-2.amazonaws.com/mybnb-seeds/bedroom_icon.svg);
 }
 
 #bed {
-    background-image: url(../bed_icon.svg);
+    background-image: url(https://s3-us-west-2.amazonaws.com/mybnb-seeds/bed_icon.svg);
     margin-left:15%;
 }
 
 #guests {
-    background-image: url(../guests_icon.svg);
+    background-image: url(https://s3-us-west-2.amazonaws.com/mybnb-seeds/guests_icon.svg);
     margin-left:20%;
 
 }
@@ -421,8 +421,12 @@
 }
 .left-box-img{
     margin: -60px 0px 0px 20px;
-    margin-left:20%;
+    margin-left:40%;
     text-align: center;
+    display: flex;
+    width: 100px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 
@@ -434,7 +438,6 @@
     border-radius: 50%;
     width: 75px;
     height: 75px;
-    // background-image: url(../tb.jpg);
     background-size: cover;
     -webkit-box-shadow:  1px 2px 6px 0px #24202057;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
     -moz-box-shadow:     1px 2px 6px 0px #24202057;  /* Firefox 3.5 - 3.6 */
@@ -446,11 +449,9 @@
     display: flex;
 }
 
-
-
 .right-box {
     width: 50%;
-    padding-right:15%;
+    padding-right:10%;
     display: flex;
     justify-content: right;
     flex-direction: row-reverse;

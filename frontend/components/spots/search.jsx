@@ -3,6 +3,8 @@ import { withRouter, Link } from 'react-router-dom';
 import DarkWelcomeContainer from '../welcome/dark_welcome_container';
 import SpotIndexList from './spot_index_list';
 import SpotMap from './spot_map';
+import FilterForm from './filter_form';
+
 
 class Search extends React.Component {
 
@@ -123,10 +125,18 @@ class Search extends React.Component {
                             </select>
                         </div>
                         <DarkWelcomeContainer />
-                    </header>                        
+                    </header>
+                   
                     <h1 id="search-spots">Search {this.state.loc} </h1>
                     <div className='two-half-container'>
-                        <div className='left-half'>
+                        <div className='left-half'> 
+                            <FilterForm
+                                minGuest={this.props.minGuest}
+                                maxGuest={this.props.maxGuest}
+                                minPrice={this.props.minPrice}
+                                maxPrice={this.props.maxPrice}
+                                updateFilter={this.props.updateFilter}
+                            />   
                             <div className="spots-container">
                                 <SpotIndexList spots={this.props.spots} />
                             </div>

@@ -11,7 +11,11 @@ import { asArray } from '../../reducers/selectors';
 const mapStateToProps = state => {
     return {
         spots: asArray(state.entities.spots),
-        locations: state.entities.locations
+        locations: state.entities.locations,
+        minGuest: state.ui.filters.minGuest,
+        maxGuest: state.ui.filters.maxGuest,
+        minPrice: state.ui.filters.minPrice,
+        maxPrice: state.ui.filters.maxPrice
     }
 }
 

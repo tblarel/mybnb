@@ -1,7 +1,12 @@
 class Api::SpotsController < ApplicationController
     def index
         @spots = bounds ? Spot.in_bounds(bounds) : Spot.all
-        # @spots = Spot.all
+        if params[:minGuest] && params[:maxGuest]
+            @spots = @spots.where(num_guest: guest_range)
+        end
+        if params[:minPrice] && params[:maxPrice]
+            @spots = @spots.where(price: price_range)
+        end
         render "api/spots/index"
     end
 
@@ -11,6 +16,14 @@ class Api::SpotsController < ApplicationController
     end
 
     private
+
+    def guest_range
+        (params[:minGuest]..params[:maxGuest])
+    end
+
+    def price_range
+        (params[:minPrice]..params[:maxPrice])
+    end
 
     def bounds
         params[:bounds]

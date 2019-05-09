@@ -52,59 +52,41 @@ class SpotMap extends React.Component {
             zoom: this.props.zoom,
             styles: [
                 {
-                    "featureType": "all",
-                    "elementType": "labels",
-                    "stylers": [
-                        {
-                            "visibility": "off"
-                        }
-                    ]
-                },
-                {
-                    "featureType": "landscape",
-                    "elementType": "all",
-                    "stylers": [
-                        {
-                            "visibility": "on"
-                        },
-                        {
-                            "color": "#f3f4f4"
-                        }
-                    ]
-                },
-                {
-                    "featureType": "landscape.man_made",
-                    "elementType": "geometry",
-                    "stylers": [
-                        {
-                            "weight": 0.9
-                        },
-                        {
-                            "visibility": "off"
-                        }
-                    ]
-                },
-                {
-                    "featureType": "poi.park",
+                    "featureType": "landscape.natural",
                     "elementType": "geometry.fill",
                     "stylers": [
                         {
                             "visibility": "on"
                         },
                         {
-                            "color": "#83cead"
+                            "color": "#e0efef"
                         }
                     ]
                 },
                 {
-                    "featureType": "road",
-                    "elementType": "all",
+                    "featureType": "poi",
+                    "elementType": "geometry.fill",
                     "stylers": [
                         {
                             "visibility": "on"
                         },
                         {
-                            "color": "#ffffff"
+                            "hue": "#1900ff"
+                        },
+                        {
+                            "color": "#c0e8e8"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road",
+                    "elementType": "geometry",
+                    "stylers": [
+                        {
+                            "lightness": 100
+                        },
+                        {
+                            "visibility": "simplified"
                         }
                     ]
                 },
@@ -118,26 +100,14 @@ class SpotMap extends React.Component {
                     ]
                 },
                 {
-                    "featureType": "road.highway",
-                    "elementType": "all",
+                    "featureType": "transit.line",
+                    "elementType": "geometry",
                     "stylers": [
                         {
                             "visibility": "on"
                         },
                         {
-                            "color": "#fee379"
-                        }
-                    ]
-                },
-                {
-                    "featureType": "road.arterial",
-                    "elementType": "all",
-                    "stylers": [
-                        {
-                            "visibility": "on"
-                        },
-                        {
-                            "color": "#fee379"
+                            "lightness": 700
                         }
                     ]
                 },
@@ -146,10 +116,7 @@ class SpotMap extends React.Component {
                     "elementType": "all",
                     "stylers": [
                         {
-                            "visibility": "on"
-                        },
-                        {
-                            "color": "#7fc8ed"
+                            "color": "#7dcdcd"
                         }
                     ]
                 }

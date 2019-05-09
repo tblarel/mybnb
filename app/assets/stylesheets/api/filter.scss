@@ -1,0 +1,32 @@
+.filter-row{
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+    color: #444;
+    margin-top: 25px;
+    justify-content: flex-start;
+}
+
+.filter-row > div {
+    display: flex;
+    justify-content: flex-start;
+    width: 160px;
+    padding: 0 10px;
+    position: relative;
+}
+
+.filter-row > div > input {
+    width: 140px;
+}
+
+.filter-row > div:first-of-type {
+    margin-left: 80px;
+}
+
+.filter-row > div > label {
+    position: absolute;
+    height: 10px;
+    left: 15px;
+    top: -10px;
+    width: 140px;
+    font-size:12px;
+}
