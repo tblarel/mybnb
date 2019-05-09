@@ -490,8 +490,8 @@
     min-width: 400px;
 }
 
-.book-form .dropdown-input {
-    box-shadow: none;
+.book-form .DateRangePicker {
+    width: 396px;
 }
 
 .book-form p {
@@ -501,22 +501,30 @@
 .form-row {
     display: flex;
 }
-.book-form .dropdown-input{
-    min-height: 25px;
-    max-height: 30px;
-    padding: 10px 10px;
+
+.book-form > .form-row:nth-of-type(2){
+    margin-top:30px;
 }
 
-.book-form .session-submit {
-    font-size:14px;
-    width:100%;
-        border-radius: 50px;
+.book-form > .form-row:last-of-type{
+    margin-top:-30px;
 }
 
-
-.left-form, .right-form{
+.right-form{
     text-align: left;
-    width: 50%;
+    width: 40%;
+}
+
+.right-form .option-dropdown {
+    width: 144px;
+}
+
+.left-form{
+    text-align: left;
+    padding-right: 10px;
+    padding-left: 20px;
+    width: 48%;
+    margin-top: -18px;
 }
 
 .review-score{
@@ -539,8 +547,9 @@
     font-size: 18px;
 }
 
-.subtotal {
+.left-form  .subtotal {
     margin: 0px auto;
+    font-size: 15px;
 }
 .subtotal:first-of-type{
     margin-top:20px;

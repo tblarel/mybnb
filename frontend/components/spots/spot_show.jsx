@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import DarkWelcomeContainer from '../welcome/dark_welcome_container';
+import { DateRangePicker, SingleDatePicker, DayPickerRangeController } from 'react-dates';
 
 class SpotShow extends React.Component {
 
@@ -13,7 +14,6 @@ class SpotShow extends React.Component {
         };
     }
     calculateFees(spot) {
-        debugger
         let price = spot.price
         let fees = spot.num_guest * 5.64;
         let taxes = (price + fees) * .08;
@@ -32,7 +32,7 @@ class SpotShow extends React.Component {
                 this.calculateFees(this.props.spot);
             }
             this.props.findASpot(this.props.match.params.id);
-        } else if( this.props.spot) {
+        } if( this.props.spot) {
             this.calculateFees(this.props.spot)
         }
     }
@@ -43,6 +43,8 @@ class SpotShow extends React.Component {
             .then( spot => {
                 this.calculateFees(spot)
             })
+        } if(this.state.price === undefined && this.props.spot) {
+            this.calculateFees(this.props.spot)
         }
 
     }
@@ -59,8 +61,9 @@ class SpotShow extends React.Component {
 
 
     render() {
-        if (this.props.spot !== undefined && this.props.spot.photo_urls !== undefined) {
-            debugger        
+        if (this.props.spot !== undefined 
+            && this.props.spot.photo_urls !== undefined
+            && this.state.price !== undefined) {
             return(
                 <div className="spot-container">
                     <header className="top-nav">
@@ -142,36 +145,37 @@ class SpotShow extends React.Component {
                                 <form>
                                     <div className="book-form">
                                         <div className="form-row">
+                                            <label className="when">
+                                                <DateRangePicker
+                                                    startDate={this.state.startDate} // momentPropTypes.momentObj or null,
+                                                    startDateId="your_unique_start_date_id" // PropTypes.string.isRequired,
+                                                    endDate={this.state.endDate} // momentPropTypes.momentObj or null,
+                                                    endDateId="your_unique_end_date_id" // PropTypes.string.isRequired,
+                                                    onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })} // PropTypes.func.isRequired,
+                                                    focusedInput={this.state.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
+                                                    onFocusChange={focusedInput => this.setState({ focusedInput })} // PropTypes.func.isRequired,
+                                                />
+                                            </label>
+                                        </div>
+                                        <div className="form-row">
                                             <div className="left-form">
-                                                <label><p>GUESTS</p>
-                                                    <select name="guests"
-                                                        className="dropdown-input">
-                                                        <option value="">1 Guest</option>
-                                                    </select>
-                                                </label>
                                                 <h3 className="subtotal">${this.state.price} per night</h3>
                                                 <h3 className="subtotal">${this.state.fees} cleaning fee</h3> 
                                                 <h3 className="subtotal">${this.state.taxes} taxes and fees</h3> 
                                                 <hr></hr>
                                                 <h3 className="subtotal">${ this.state.subtotal }</h3>
-                                            </div>
+                                            </div>                                                
                                             <div className="right-form">
-                                                <label className="date"><p>Check Out</p>
+                                                  <label>
                                                     <select name="guests"
-                                                        className="dropdown-input">
-                                                        <option value="">Start</option>
+                                                        className="option-dropdown">
+                                                        <option value="">1 Guest</option>
                                                     </select>
-                                                </label>
-                                                <label className="date"><p>Check In</p>
-                                                    <select name="guests"
-                                                        className="dropdown-input">
-                                                        <option value="">End</option>
-                                                    </select>
-                                                </label>                                            
+                                                </label>                                          
                                             </div> 
                                         </div>
                                         <div className="form-row">
-                                            <input className="session-submit"
+                                            <input className="search-submit"
                                                 type="submit"
                                                 value="Request To Book"
                                             />
