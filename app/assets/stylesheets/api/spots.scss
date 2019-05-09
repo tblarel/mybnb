@@ -123,7 +123,8 @@
 
 .spot-item  h3 {
     font-size: 12px;
-    padding-left: 10px;
+    padding-left: 0px;
+    padding-right: 2px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
 }
@@ -145,15 +146,25 @@
     font-weight: 300;
 }
 
+.features > h3:first-of-type::after{
+    content: '';
+}
 
+.features > h3:last-of-type::after{
+    content: '';
+}
 
 .features > h3 {
     color: #358bda;
     font-size:12px;
     display: inline;
-    margin: 10px 5px 5px 0;
-    letter-spacing: 1px;
-    font-weight: 600;
+    margin: 10px 0px 2px 1px;
+    letter-spacing: 0px;
+    font-weight: 300;
+}
+
+.features > h3::after{
+    content: ' |'
 }
 
 .features {

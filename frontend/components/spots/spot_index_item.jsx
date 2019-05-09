@@ -19,10 +19,16 @@ class SpotIndexItem extends React.Component {
     renderFeatures(features) {
         if(features !== undefined) {
            return (
-                Object.values(features).map( feature => (
-                    <h3 key={feature.id}>{feature}</h3>
-                ))
-           ); 
+                Object.values(features).map( (feature, index) => {
+                    if (index <= 3) {
+                        return(
+                            <h3 key={feature.id}>{feature}</h3>
+                        ) 
+                    }else {
+                        return;
+                    }
+                }         
+            ))
         } else {
             return (
                 <h3>No features</h3>

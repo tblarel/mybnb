@@ -77,7 +77,7 @@ class Search extends React.Component {
             case "Miami, Florida":
                 return 11;
             case "London, England":
-                return 11.5;
+                return 11;
             case "Whistler, Canada":
                 return 12.0;
             case "Aspen, Colorado":
