@@ -1,5 +1,8 @@
 require 'open-uri'
 
+User.destroy_all()
+
+
 users = User.create([   { email: 'email@email.com', password:'password', fname:'Demo', lname: 'User' },
                         { email: 'tblarel@gmail.com', password:'password', fname:'Tristan', lname: 'Blarel' }, 
                         { email: 'ngolo@fff.fr', password:'password', fname:'Ngolo', lname: 'Kanté' },  

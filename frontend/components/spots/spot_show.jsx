@@ -6,17 +6,14 @@ class SpotShow extends React.Component {
 
     constructor(props) {
         super(props);
-        if (_.isEmpty(this.props.spots)) {
-            this.props.findAllSpots();
-        }
-        this.state = {
-            id: this.props.match.params.id,
-            spot: this.props.spots[this.props.match.params.id]
-        };
         this.renderFeatures = this.renderFeatures.bind(this);
         this.calculateFees = this.calculateFees.bind(this);
+        this.state = {
+
+        };
     }
     calculateFees(spot) {
+        debugger
         let price = spot.price
         let fees = spot.num_guest * 5.64;
         let taxes = (price + fees) * .08;
@@ -30,27 +27,31 @@ class SpotShow extends React.Component {
     }
 
     componentDidMount() {
-        if (_.isEmpty(this.props.spots)) {
-            this.props.findAllSpots();
-        } if (this.state !== undefined && this.state.spot !== undefined) {
-            this.calculateFees(this.state.spot);
+        if (this.props.spot === undefined || this.props.spot.photo_urls === undefined) {
+            if(this.props.spot){
+                this.calculateFees(this.props.spot);
+            }
+            this.props.findASpot(this.props.match.params.id);
+        } else if( this.props.spot) {
+            this.calculateFees(this.props.spot)
         }
     }
 
     componentDidUpdate(prevProps, prevState) {
-        if(prevProps.spots !== this.props.spots) {
-            this.setState({
-                spot: this.props.spots[this.state.id]
-            });
-            this.calculateFees(this.props.spots[this.state.id]);
+        if(this.props.match.params.id !== prevProps.match.params.id) {
+            this.props.findASpot(this.props.match.params.id)
+            .then( spot => {
+                this.calculateFees(spot)
+            })
         }
+
     }
 
     
 
     renderFeatures() {
         return (
-            Object.values(this.state.spot.features).map(feature => (
+            Object.values(this.props.spot.features).map(feature => (
                     <li>{feature}</li>     
             ))
         )
@@ -58,11 +59,9 @@ class SpotShow extends React.Component {
 
 
     render() {
-
-        if ( ! _.isEmpty(this.props.spots) && this.state.spot !== undefined) {
-            
+        if (this.props.spot !== undefined && this.props.spot.photo_urls !== undefined) {
+            debugger        
             return(
-
                 <div className="spot-container">
                     <header className="top-nav">
                         <Link to="/" className="header-link">
@@ -71,44 +70,54 @@ class SpotShow extends React.Component {
                         <DarkWelcomeContainer />
                     </header>
                     <div className="photos-container">
-                        <div className="main-photo" id="photo1"></div>
+                        <div className="main-photo" id="photo1"
+                            style={{ backgroundImage: `url(${this.props.spot.photo_urls[0]})` }}>
+                        </div>
                     <div className="photo-row">
-                        <div className="other-photo" id="photo2"></div>
-                            <div className="other-photo" id="photo3"></div>
+                        <div className="other-photo" id="photo2"
+                            style={{ backgroundImage: `url(${this.props.spot.photo_urls[1]})` }}>
+                        </div>
+                            <div className="other-photo" id="photo3" 
+                            style={{ backgroundImage: `url(${this.props.spot.photo_urls[2]})` }}>
+                        </div>
                     </div>
                     <div className="photo-row">                    
-                            <div className="other-photo" id="photo4"></div>
-                            <div className="other-photo" id="photo5"></div>
+                            <div className="other-photo" id="photo4" 
+                                style={{ backgroundImage: `url(${this.props.spot.photo_urls[3]})` }}>
+                            </div>
+                            <div className="other-photo" id="photo5" 
+                                style={{ backgroundImage: `url(${this.props.spot.photo_urls[4]})` }}>
+                            </div>
                     </div>
                     </div>
                     <div className="spot-details-box">
                         <div className="left-box">
                             <div className="left-box-text">
-                                <p> {this.state.spot.home_type} </p>
-                                <h1>{this.state.spot.name}</h1>
-                                <h2>{this.state.spot.city}</h2>
-                                <div class="container">
+                                <p> {this.props.spot.home_type} </p>
+                                <h1>{this.props.spot.name}</h1>
+                                <h2>{this.props.spot.city}</h2>
+                                <div className="container">
                                     <div className="spot-numbers">
                                         <div className="spot-number-item">
                                             <div className="spot-number-icon" id="bedroom"></div>                                
-                                            <h3>{this.state.spot.num_bedrooms} bedrooms</h3>
+                                            <h3>{this.props.spot.num_bedrooms} bedrooms</h3>
                                         </div>
                                         <div className="spot-number-item">
                                             <div className="spot-number-icon" id="bed"></div>
-                                            <h3>{this.state.spot.num_beds} beds</h3>
+                                            <h3>{this.props.spot.num_beds} beds</h3>
                                         </div>
                                         <div className="spot-number-item">
                                             <div className="spot-number-icon" id="guests"></div>
-                                            <h3>{this.state.spot.num_guest} guests</h3>
+                                            <h3>{this.props.spot.num_guest} guests</h3>
                                         </div>                            
                                     </div>
                                     <div className="left-box-img">
-                                        <div class="host-img" style={ {backgroundImage: `url(${this.state.spot.host_img_url})`  }}></div>
-                                        <h3>{this.state.spot.host} {this.state.spot.host_lname}</h3>
+                                        <div class="host-img" style={ {backgroundImage: `url(${this.props.spot.host_img_url})`  }}></div>
+                                        <h3>{this.props.spot.host} {this.props.spot.host_lname}</h3>
                                     </div>
                                 </div>
                             </div>
-                            <h3>{this.state.spot.description}</h3>
+                            <h3>{this.props.spot.description}</h3>
                             <div className="review-score">
                                 <div className="stars"></div>
                                 <p className="star-score"><strong>Average Review:</strong> <br>
@@ -136,9 +145,7 @@ class SpotShow extends React.Component {
                                             <div className="left-form">
                                                 <label><p>GUESTS</p>
                                                     <select name="guests"
-                                                        // onChange={this.update('password')}
-                                                        className="dropdown-input"
-                                                    >
+                                                        className="dropdown-input">
                                                         <option value="">1 Guest</option>
                                                     </select>
                                                 </label>
@@ -151,17 +158,13 @@ class SpotShow extends React.Component {
                                             <div className="right-form">
                                                 <label className="date"><p>Check Out</p>
                                                     <select name="guests"
-                                                        // onChange={this.update('password')}
-                                                        className="dropdown-input"
-                                                    >
+                                                        className="dropdown-input">
                                                         <option value="">Start</option>
                                                     </select>
                                                 </label>
                                                 <label className="date"><p>Check In</p>
                                                     <select name="guests"
-                                                        // onChange={this.update('password')}
-                                                        className="dropdown-input"
-                                                    >
+                                                        className="dropdown-input">
                                                         <option value="">End</option>
                                                     </select>
                                                 </label>                                            

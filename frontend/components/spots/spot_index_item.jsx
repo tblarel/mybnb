@@ -37,10 +37,12 @@ class SpotIndexItem extends React.Component {
     }
 
     render() {
-        const { name, home_type, host, description, features, price, num_beds } = this.props.spot;
+        const { name, home_type, host, description, features, price, num_beds, photo_url } = this.props.spot;
         return (
             <div className="spot-item" onClick={this.handleClick}>
-                <div className="spot-img"></div>
+                <div className="spot-img"
+                    style={{ backgroundImage: `url(${photo_url})` }}>
+                </div>
                 <div className="features">
                     <h3>{home_type} </h3>
                     {this.renderFeatures(features)}

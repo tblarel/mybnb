@@ -25,6 +25,8 @@ class Spot < ApplicationRecord
                 :num_bedrooms, :num_beds, :num_guest, presence: true
     validates :address, presence: true, uniqueness: true
 
+    has_many_attached :photos
+
     belongs_to :location,
         foreign_key: :loc_id,
         class_name: 'Location'

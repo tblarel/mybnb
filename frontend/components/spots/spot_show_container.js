@@ -5,9 +5,9 @@ import { fetchASpot } from '../../actions/spot_actions';
 import { fetchAllSpots } from '../../actions/spot_actions';
 
 
-const mapStateToProps = state => {
+const mapStateToProps = (state,ownprops) => {
     return {
-        spots: state.entities.spots,
+        spot: state.entities.spots[ownprops.match.params.id]
     }
 }
 

@@ -207,6 +207,4 @@ spot_features = SpotFeature.create([
     { feature_id: 5, spot_id: 38 },
     { feature_id: 6, spot_id: 38 },
 
-
-
 ])

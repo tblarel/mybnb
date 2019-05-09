@@ -2,8 +2,8 @@ json.set! @spot.id do
     json.name @spot.title
     json.home_type @spot.home_type
     json.host @spot.host.fname
-    json.host_lname spot.host.lname
-    json.host_img_url url_for(spot.host.photo)
+    json.host_lname @spot.host.lname
+    json.host_img_url url_for(@spot.host.photo)
     json.city @spot.location.name
     json.loc_id @spot.loc_id
     json.description @spot.description
@@ -19,4 +19,6 @@ json.set! @spot.id do
     json.num_bedrooms @spot.num_bedrooms
     json.num_beds @spot.num_beds
     json.num_guest @spot.num_guest
+    json.photo_url url_for(@spot.photos.first) 
+    json.photo_urls @spot.photos.map { |file| url_for(file) }
 end

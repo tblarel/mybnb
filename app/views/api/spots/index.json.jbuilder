@@ -21,5 +21,6 @@
         json.num_bedrooms spot.num_bedrooms
         json.num_beds spot.num_beds
         json.num_guest spot.num_guest
+        json.photo_url url_for(spot.photos.first) 
     end
 end

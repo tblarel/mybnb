@@ -21,7 +21,6 @@ class SpotMap extends React.Component {
     }
     
     componentDidMount() {
-        // debugger
         this.createMap(this.props.lat,this.props.long);
         this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
         if (this.props.singleSpot) {
@@ -35,7 +34,6 @@ class SpotMap extends React.Component {
     componentDidUpdate(prevProps, prevState) {
         if(prevProps.lat !== this.props.lat || prevProps.long !== this.props.long) {
             this.map.panTo({lat:this.props.lat, lng:this.props.long})
-            debugger
             this.map.setZoom(this.props.zoom);
         }
 
