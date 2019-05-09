@@ -145,6 +145,9 @@ class SpotShow extends React.Component {
                                 <form>
                                     <div className="book-form">
                                         <div className="form-row">
+                                            <h1>${this.state.price}</h1><p>per night</p> 
+                                        </div>
+                                        <div className="form-row">
                                             <label className="when">
                                                 <DateRangePicker
                                                     startDate={this.state.startDate} // momentPropTypes.momentObj or null,
@@ -158,27 +161,25 @@ class SpotShow extends React.Component {
                                             </label>
                                         </div>
                                         <div className="form-row">
+                                                <select name="guests"
+                                                    className="option-dropdown">
+                                                    <option value="">1 Guest</option>
+                                                </select>
+                                        </div>
+
+                                        <div className="form-row">
                                             <div className="left-form">
-                                                <h3 className="subtotal">${this.state.price} per night</h3>
                                                 <h3 className="subtotal">${this.state.fees} cleaning fee</h3> 
                                                 <h3 className="subtotal">${this.state.taxes} taxes and fees</h3> 
                                                 <hr></hr>
                                                 <h3 className="subtotal">${ this.state.subtotal }</h3>
                                             </div>                                                
                                             <div className="right-form">
-                                                  <label>
-                                                    <select name="guests"
-                                                        className="option-dropdown">
-                                                        <option value="">1 Guest</option>
-                                                    </select>
-                                                </label>                                          
+                                                <input className="search-submit"
+                                                    type="submit"
+                                                    value="Request To Book"
+                                                />                                  
                                             </div> 
-                                        </div>
-                                        <div className="form-row">
-                                            <input className="search-submit"
-                                                type="submit"
-                                                value="Request To Book"
-                                            />
                                         </div>
                                     </div>
                                 </form>
