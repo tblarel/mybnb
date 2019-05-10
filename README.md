@@ -4,7 +4,7 @@
 ![Photo1](https://i.imgur.com/rOiDxBx.png) 
 
 
-**myBnB** is a clone of **Airbnb** built using a Ruby on Rails backend, React/Redux frontend, a PostgreSQL database and ActiveRecord with Amazon S3. 
+**myBnB** is a clone of **Airbnb** built using a Ruby on Rails backend, React/Redux frontend, a PostgreSQL database and Active Storage with Amazon S3. 
 
 The project was planned and carried out within a 10-day timeframe, although improvements and additional features will continue to be fleshed out.
 
