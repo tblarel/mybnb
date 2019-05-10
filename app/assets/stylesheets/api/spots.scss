@@ -370,13 +370,26 @@
     list-style-type: disc;
 }
 
+
 .spot-numbers {
     display: flex;
     justify-content: flex-start;
 }
 
+.spot-number-item{
+    width: 120px;
+}
+
+.spot-number-item:nth-of-type(2) {
+    width: 80px;
+    h3{
+        padding-left:8px;
+    }
+}
+
 .spot-numbers h3 {
-    padding: 0 20px 0 0;
+    padding: 10px 0 0 15px;
+    margin: 0px 20px 0 0;
     font-weight:600;
     font-size:14px;
 }
@@ -422,7 +435,7 @@
 }
 .left-box-img{
     margin: -60px 0px 0px 20px;
-    margin-left:40%;
+    padding-left:35%;
     text-align: center;
     display: flex;
     width: 100px;
