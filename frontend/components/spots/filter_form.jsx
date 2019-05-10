@@ -10,6 +10,7 @@ const FilterForm = ({ minGuest, maxGuest, minPrice, maxPrice, updateFilter }) =>
             <label>Guests</label>
                     <input
                         type="number"
+                        min='1'
                         className="option-dropdown"
                         value={minGuest}
                         onChange={handleChange('minGuest', updateFilter)}
@@ -19,6 +20,7 @@ const FilterForm = ({ minGuest, maxGuest, minPrice, maxPrice, updateFilter }) =>
             <label>Minimum Price</label>
                     <input
                         type="number"
+                        min='1'
                         className="option-dropdown"
                         value={minPrice}
                         onChange={handleChange('minPrice', updateFilter)}

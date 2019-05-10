@@ -89,6 +89,7 @@ class SplashSearch extends React.Component {
                             <label className="guests">Guests:
                                 <input
                                     type="number"
+                                    min='1'
                                     className="option-dropdown"
                                     value={this.state.guests}
                                     onChange={this.update('guests')}

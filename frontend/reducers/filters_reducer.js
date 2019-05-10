@@ -6,7 +6,7 @@ const defaultFilters = Object.freeze({
     bounds: {},
     minGuest: 1,
     maxGuest: 12,
-    minPrice: 0,
+    minPrice: 1,
     maxPrice: 999,
 });
 
