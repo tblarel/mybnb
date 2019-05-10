@@ -1,24 +1,36 @@
-# README
+# **myBnB**
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### [Live App](https://mybnbrails.herokuapp.com/#/)
+![Photo1](https://i.imgur.com/rOiDxBx.png) 
 
-Things you may want to cover:
 
-* Ruby version
+**myBnB** is a clone of **Airbnb** built using a Ruby on Rails backend, React/Redux frontend, a PostgreSQL database and ActiveRecord with Amazon S3. 
 
-* System dependencies
+The project was planned and carried out within a 10-day timeframe, although improvements and additional features will continue to be fleshed out.
 
-* Configuration
 
-* Database creation
+### **Key Features**
+* Secure Signup and Login with full user authentication using BCrypt
+* Browse home listings in multiple cities across the globe
+* Explore and filter listings through integrated GoogleMaps or by number of guests and price.
 
-* Database initialization
+### **Splash Page** 
+![Photo2](https://i.imgur.com/1b1eqX0.jpg)
 
-* How to run the test suite
+### **Locations Page** 
+![Photo3](https://i.imgur.com/1OG68H9.png)
 
-* Services (job queues, cache servers, search engines, etc.)
+### **Search Listings** 
+![Photo4](https://i.imgur.com/jvUwnav.png)
 
-* Deployment instructions
+### **Listing Page** 
+![Photo5](https://i.imgur.com/GROP1Zh.png) 
 
-* ...
+
+
+
+### **Future Features**
+* Book available listings
+* User profile pages to view a host's listings or the logged-in user's bookings.
+* Leave reviews on past bookings and listings 
+

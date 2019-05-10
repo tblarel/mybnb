@@ -8,13 +8,67 @@ class SplashSearch extends React.Component {
         super(props);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.state={
-
+            loc: 'Anywhere',
+            guests: 1,
         };
+        this.update = this.update.bind(this);
+        this.findLatAndLong = this.findLatAndLong.bind(this);
+    }
+
+
+    update(field) {
+        return e => this.setState({
+            [field]: e.currentTarget.value
+        });
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.history.push('/locations')
+        if(this.state.loc === 'Anywhere') {
+            this.props.history.push('/locations')
+        } else {
+            debugger
+            let latlng = this.findLatAndLong(this.state.loc);
+            debugger
+            this.props.history.push({
+                pathname: '/search',
+                state: {
+                    loc: this.state.loc,
+                    lat: latlng[0],
+                    long: latlng[1]
+                }
+            })
+        }
+    }
+
+    findLatAndLong(this_location) {
+        let locations = Object.values(this.props.locations);
+        let idx = -1;
+        for (var i = 0; i < locations.length; i++) {
+            if (locations[i].name === this_location) {
+                idx = i;
+            }
+        } if (idx !== -1) {
+            return ([locations[idx].lat, locations[idx].long])
+        } else {
+            return ([0.0, 0.0])
+        }
+    }
+
+    renderOptions() {
+        return(
+            Object.values(this.props.locations).map( location => {
+                if (location.name === this.state.loc) {
+                    return(
+                        <option value={location.name} selected>{location.name}</option>
+                    )
+                } else {
+                    return(
+                        <option value={location.name}>{location.name}</option>
+                    )
+                }
+            })
+        )
     }
 
     render() {
@@ -22,31 +76,27 @@ class SplashSearch extends React.Component {
             <div className="splash-search-container">
                 <form className="search-form-box" onSubmit={this.handleSubmit}>
                     <h1>Book unique homes and experiences.</h1>
-                    {/* <div id="logo-header"></div> */}
                     <div className="search-form">
-                        <div className="top-options">
-                            <label className="where">
-                                {/* <p>Where:</p> */}
+                        <div className="top-options splash">
+                            <label className="where">Where:                               
                                 <select name="loc"
-                                    // onChange={this.update('password')}
-                                    className="option-dropdown"
-                                >
-                                    <option value="">Where To</option>
+                                    onChange={this.update('loc')}
+                                    className="option-dropdown">
+                                    <option selected disabled >Anywhere</option>
+                                    {this.renderOptions()}
                                 </select>
                             </label>
-                            <label className="guests">
-                                {/* <p>Guests:</p> */}
-                                <select name="guests"
-                                    // onChange={this.update('password')}
+                            <label className="guests">Guests:
+                                <input
+                                    type="number"
                                     className="option-dropdown"
-                                >
-                                    <option value="">How Many Guests</option>
-                                </select>
+                                    value={this.state.guests}
+                                    onChange={this.update('guests')}
+                                />
                             </label>
                         </div>
                         
                         <label className="when"> 
-                            {/* <p>Dates:</p> */}
                             <DateRangePicker
                                         startDate={this.state.startDate} // momentPropTypes.momentObj or null,
                                         startDateId="your_unique_start_date_id" // PropTypes.string.isRequired,
