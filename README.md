@@ -15,7 +15,7 @@ The project was planned and carried out within a 10-day timeframe, although impr
 * Explore and filter listings through integrated GoogleMaps or by number of guests and price.
 
 ### **Splash Page** 
-![Photo2](https://i.imgur.com/1b1eqX0.jpg)
+![Photo2](https://i.imgur.com/UJXjaHf.jpg)
 
 ### **Locations Page** 
 ![Photo3](https://i.imgur.com/1OG68H9.png)
