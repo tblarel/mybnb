@@ -4,12 +4,13 @@ import DarkWelcomeContainer from '../welcome/dark_welcome_container';
 import { DateRangePicker, SingleDatePicker, DayPickerRangeController } from 'react-dates';
 import renderGuestOptions from './render_guest_options';
 import SpotDetails from './spot_details';
+import SpotPhotos from './spot_photos';
+
 class SpotShow extends React.Component {
 
     constructor(props) {
         super(props);
         this.renderFeatures = this.renderFeatures.bind(this);
-        // this.renderGuestOptions = renderGuestOptions.bind(this);
         this.calculateFees = this.calculateFees.bind(this);
         this.updateGuests = this.updateGuests.bind(this);
         this.state = {
@@ -95,28 +96,7 @@ class SpotShow extends React.Component {
                         </Link>
                         <DarkWelcomeContainer />
                     </header>
-                    <div className="photos-container">
-                        <div className="main-photo" id="photo1"
-                            style={{ backgroundImage: `url(${this.props.spot.photo_urls[0]})` }}>
-                        </div>
-                    <div className="photo-row">
-                        <div className="other-photo" id="photo2"
-                            style={{ backgroundImage: `url(${this.props.spot.photo_urls[1]})` }}>
-                        </div>
-                            <div className="other-photo" id="photo3" 
-                            style={{ backgroundImage: `url(${this.props.spot.photo_urls[2]})` }}>
-                        </div>
-                    </div>
-                    <div className="photo-row">                    
-                            <div className="other-photo" id="photo4" 
-                                style={{ backgroundImage: `url(${this.props.spot.photo_urls[3]})` }}>
-                            </div>
-                            <div className="other-photo" id="photo5" 
-                                style={{ backgroundImage: `url(${this.props.spot.photo_urls[4]})` }}>
-                            </div>
-                    </div>
-                    </div>
-
+                    <SpotPhotos spot={this.props.spot} />
                     <div className="spot-details-box">
                         <SpotDetails spot={this.props.spot}/>
                         <div className="right-box">
