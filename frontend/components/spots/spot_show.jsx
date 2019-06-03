@@ -2,13 +2,14 @@ import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import DarkWelcomeContainer from '../welcome/dark_welcome_container';
 import { DateRangePicker, SingleDatePicker, DayPickerRangeController } from 'react-dates';
+import renderGuestOptions from './render_guest_options';
 
 class SpotShow extends React.Component {
 
     constructor(props) {
         super(props);
         this.renderFeatures = this.renderFeatures.bind(this);
-        this.renderGuestOptions = this.renderGuestOptions.bind(this);
+        // this.renderGuestOptions = renderGuestOptions.bind(this);
         this.calculateFees = this.calculateFees.bind(this);
         this.updateGuests = this.updateGuests.bind(this);
         this.state = {
@@ -64,26 +65,6 @@ class SpotShow extends React.Component {
 
     }
 
-    renderGuestOptions() {    
-        let options = [] 
-        for(let i = 1; i <= this.props.spot.num_guest; i++) {
-            if(i === this.state.guests) {
-                if(i == 1){
-                    options.push(<option key={i} value={this.state.guests} selected>{this.state.guests} guest</option>)
-                } else {
-                    options.push(<option key={i} value={this.state.guests} selected>{this.state.guests} guests</option>)
-                }
-            } else {
-                if( i === 1) {
-                    options.push(<option key={i} value={i}>{i} guest</option>);
-
-                } else{
-                    options.push(<option key={i} value={i}>{i} guests</option>);
-                }
-            }
-        }
-        return options;
-    }
 
     updateGuests(e) {
         e.preventDefault();
@@ -206,7 +187,7 @@ class SpotShow extends React.Component {
                                                 <select name="guests"
                                                     className="option-dropdown"
                                                     onChange={(e) => this.updateGuests(e)}>
-                                                    {this.renderGuestOptions()}      
+                                                    {renderGuestOptions(this)}      
                                                 </select>
                                         </div>
 
