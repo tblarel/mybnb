@@ -13,6 +13,7 @@ class SplashSearch extends React.Component {
         };
         this.update = this.update.bind(this);
         this.findLatAndLong = this.findLatAndLong.bind(this);
+        this.updateGuests = this.updateGuests.bind(this);
     }
 
 
@@ -27,12 +28,11 @@ class SplashSearch extends React.Component {
         if(this.state.loc === 'Anywhere') {
             this.props.history.push('/locations')
         } else {
-            debugger
             let latlng = this.findLatAndLong(this.state.loc);
-            debugger
             this.props.history.push({
                 pathname: '/search',
                 state: {
+                    minguest: this.state.guests,
                     loc: this.state.loc,
                     lat: latlng[0],
                     long: latlng[1]
@@ -40,6 +40,12 @@ class SplashSearch extends React.Component {
             })
         }
     }
+
+    updateGuests(e) {
+        debugger
+        this.props.updateFilter('minGuest', parseInt(e.currentTarget.value))
+    }
+
 
     findLatAndLong(this_location) {
         let locations = Object.values(this.props.locations);
@@ -91,8 +97,8 @@ class SplashSearch extends React.Component {
                                     type="number"
                                     min='1'
                                     className="option-dropdown"
-                                    value={this.state.guests}
-                                    onChange={this.update('guests')}
+                                    value={this.props.minGuest}
+                                    onChange={ (e) => this.updateGuests(e)}
                                 />
                             </label>
                         </div>
