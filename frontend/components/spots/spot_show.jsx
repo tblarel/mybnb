@@ -8,14 +8,16 @@ class SpotShow extends React.Component {
     constructor(props) {
         super(props);
         this.renderFeatures = this.renderFeatures.bind(this);
+        this.renderGuestOptions = this.renderGuestOptions.bind(this);
         this.calculateFees = this.calculateFees.bind(this);
+        this.updateGuests = this.updateGuests.bind(this);
         this.state = {
-
+            guests: props.minGuest
         };
     }
     calculateFees(spot) {
         let price = spot.price
-        let fees = spot.num_guest * 5.64;
+        let fees = this.state.guests * 5.64;
         let taxes = (price + fees) * .08;
         let subtotal = price + fees + taxes;
         this.setState({
@@ -24,6 +26,16 @@ class SpotShow extends React.Component {
             taxes: taxes.toFixed(2),
             subtotal: subtotal.toFixed(2)
         }); 
+    }
+ 
+    // Ensure theat incoming # of guest selection does not exceed spot's maximum guests.
+    // if it does, set the selected # of guests to be the spot's maximum.
+    updateDefaultGuests(spot) {
+        if (spot.guests < this.state.guests) {
+            this.setState( {
+                guests: spot.guests
+            });
+        }
     }
 
     componentDidMount() {
@@ -41,20 +53,50 @@ class SpotShow extends React.Component {
         if(this.props.match.params.id !== prevProps.match.params.id) {
             this.props.findASpot(this.props.match.params.id)
             .then( spot => {
-                this.calculateFees(spot)
+                this.calculateFees(spot);
+                this.updateDefaultGuests(spot);
             })
         } if(this.state.price === undefined && this.props.spot) {
+            this.calculateFees(this.props.spot)
+        } if(prevState.guests !== this.state.guests) {
             this.calculateFees(this.props.spot)
         }
 
     }
 
+    renderGuestOptions() {    
+        let options = [] 
+        for(let i = 1; i <= this.props.spot.num_guest; i++) {
+            if(i === this.state.guests) {
+                if(i == 1){
+                    options.push(<option key={i} value={this.state.guests} selected>{this.state.guests} guest</option>)
+                } else {
+                    options.push(<option key={i} value={this.state.guests} selected>{this.state.guests} guests</option>)
+                }
+            } else {
+                if( i === 1) {
+                    options.push(<option key={i} value={i}>{i} guest</option>);
+
+                } else{
+                    options.push(<option key={i} value={i}>{i} guests</option>);
+                }
+            }
+        }
+        return options;
+    }
+
+    updateGuests(e) {
+        e.preventDefault();
+        this.setState({
+            guests: parseInt(e.currentTarget.value)
+        })
+    }
     
 
     renderFeatures() {
         return (
             Object.values(this.props.spot.features).map(feature => (
-                    <li>{feature}</li>     
+                    <li key={feature}>{feature}</li>     
             ))
         )
     }
@@ -115,7 +157,7 @@ class SpotShow extends React.Component {
                                         </div>                            
                                     </div>
                                     <div className="left-box-img">
-                                        <div class="host-img" style={ {backgroundImage: `url(${this.props.spot.host_img_url})`  }}></div>
+                                        <div className="host-img" style={ {backgroundImage: `url(${this.props.spot.host_img_url})`  }}></div>
                                         <h3>{this.props.spot.host} {this.props.spot.host_lname}</h3>
                                     </div>
                                 </div>
@@ -162,8 +204,9 @@ class SpotShow extends React.Component {
                                         </div>
                                         <div className="form-row">
                                                 <select name="guests"
-                                                    className="option-dropdown">
-                                                    <option value="">1 Guest</option>
+                                                    className="option-dropdown"
+                                                    onChange={(e) => this.updateGuests(e)}>
+                                                    {this.renderGuestOptions()}      
                                                 </select>
                                         </div>
 

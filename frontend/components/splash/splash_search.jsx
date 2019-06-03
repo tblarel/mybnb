@@ -42,7 +42,6 @@ class SplashSearch extends React.Component {
     }
 
     updateGuests(e) {
-        debugger
         this.props.updateFilter('minGuest', parseInt(e.currentTarget.value))
     }
 

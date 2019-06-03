@@ -7,7 +7,8 @@ import { fetchAllSpots } from '../../actions/spot_actions';
 
 const mapStateToProps = (state,ownprops) => {
     return {
-        spot: state.entities.spots[ownprops.match.params.id]
+        spot: state.entities.spots[ownprops.match.params.id],
+        minGuest: state.ui.filters.minGuest,
     }
 }
 
