@@ -13,6 +13,7 @@ class SpotShow extends React.Component {
         this.renderFeatures = this.renderFeatures.bind(this);
         this.calculateFees = this.calculateFees.bind(this);
         this.updateGuests = this.updateGuests.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
         this.state = {
             guests: props.minGuest
         };
@@ -62,6 +63,9 @@ class SpotShow extends React.Component {
             this.calculateFees(this.props.spot)
         } if(prevState.guests !== this.state.guests) {
             this.calculateFees(this.props.spot)
+        } if(prevState.startDate !== this.state.startDate || 
+             prevState.endDate !== this.state.endDate) {
+            //debugger
         }
 
     }
@@ -81,6 +85,14 @@ class SpotShow extends React.Component {
                     <li key={feature}>{feature}</li>     
             ))
         )
+    }
+
+    handleSubmit(e) {
+        if(this.state.startDate && this.state.endDate) {
+            debugger
+            console.log(`Booking from ${this.state.startDate} 
+                        to ${this.state.endDate} for $${this.state.guests} guest(s)`)
+        }
     }
 
 
@@ -115,6 +127,7 @@ class SpotShow extends React.Component {
                                                     onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })} // PropTypes.func.isRequired,
                                                     focusedInput={this.state.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
                                                     onFocusChange={focusedInput => this.setState({ focusedInput })} // PropTypes.func.isRequired,
+                                                    enableOutsideDays={false}
                                                 />
                                             </label>
                                         </div>
@@ -137,6 +150,7 @@ class SpotShow extends React.Component {
                                                 <input className="search-submit"
                                                     type="submit"
                                                     value="Request To Book"
+                                                    onClick={ (e) => this.handleSubmit(e)}
                                                 />                                  
                                             </div> 
                                         </div>
