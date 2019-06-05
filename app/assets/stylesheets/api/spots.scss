@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-@media only screen and (max-width: 1250px) { 
+@media only screen and (max-width: 1400px) { 
     .spot-details-box{
         display: block !important;
     }
@@ -18,30 +18,26 @@
     }
 }
 
+@media only screen and (min-width: 1800px) { 
 
-// TEMP STYLES FOR PLACEHOLDER IMAGES
+   .main-photo {
+        background-position-y: -6vw !important;
+   } 
 
-    #photo1{
-        background-image: url(../airbnb.png);
-        background-size:cover;    
-    }
-    #photo2{
-        background-image: url(../cityscape.png);
-        background-size:cover;    
-    }
-    #photo3{
-        background-image: url(../sf2.jpg);
-        background-size:cover;    
-    }
-    #photo4{
-        background-image: url(../spain.png);
-        background-size:cover;    
-    }
-    #photo5{
-        background-image: url(../temp_pic.png);
-        background-size:cover;    
-    }
-//
+   .right-box {
+        padding-right: 20% !important;
+   }
+
+   .left-box{
+       padding-left: 20% !important;
+       width: 30% !important;
+   }
+
+   .other-photo {
+        background-position-y: -6vw !important;
+   }
+}
+
  
 
 #search-spots{
@@ -294,6 +290,7 @@
     height: 100%;
     width: 60%;
     background-color: rgba(240, 128, 128, 0);
+    background-size: cover;
     -webkit-transition: opacity, transform 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
     -moz-transition: opacity, transform 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
     -ms-transition: opacity, transform 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
@@ -302,7 +299,6 @@
 }
 
 .photo-row{
-
     width: 40vw;
     height:50%;
     display: inline-block;
@@ -311,6 +307,7 @@
 .other-photo{
     box-sizing: border-box;
     background-color: rgba(144, 238, 144, 0);
+    background-size: cover;
     // border:1px solid rgba(0, 0, 0, 0.24);
     height: 100%;
     width: 100%;

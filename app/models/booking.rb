@@ -13,4 +13,8 @@
 #
 
 class Booking < ApplicationRecord
+    validates :guest_id, :spot_id, :start, :end, :num_guest, presence: true
+    belongs_to :user,
+        foreign_key: :guest_id,
+        class_name: 'User'
 end

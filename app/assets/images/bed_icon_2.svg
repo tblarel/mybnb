@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="403px" height="380px" viewBox="0 0 403 380" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+    <title>icons</title>
+    <desc>Created with Sketch.</desc>
+    <g id="icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Bed" transform="translate(97.000000, 101.000000)" fill="#333333">
+            <ellipse id="Oval" cx="103.5" cy="26" rx="66.5" ry="26"></ellipse>
+            <path d="M30,20 L177,20 C188.59798,20 198,29.4020203 198,41 L198,83 L169,83 C169,65.6666667 158.666667,57 138,57 C118,57 108,65.6666667 108,83 L103,83 L98,83 C98,65.6666667 87.6666667,57 67,57 C47,57 37,65.6666667 37,83 L9,83 L9,41 C9,29.4020203 18.4020203,20 30,20 Z" id="Rectangle"></path>
+            <rect id="Rectangle" x="0" y="146" width="27" height="38" rx="13.5"></rect>
+            <rect id="Rectangle" x="180" y="146" width="27" height="38" rx="13.5"></rect>
+            <path d="M23.7666667,93 L183.053899,93 C196.179867,93 206.820566,103.640699 206.820566,116.766667 C206.820566,116.766667 206.820566,116.766667 206.820566,116.766667 C206.820566,116.766667 206.820566,124.177778 206.820566,139 L121.5,139 L0,139 L0,116.766667 L0,116.766667 C-1.60746742e-15,103.640699 10.6406991,93 23.7666667,93 Z" id="Rectangle"></path>
+            <polygon id="Rectangle" points="0 146 207 146 207 165 0 165"></polygon>
+        </g>
+    </g>
+</svg>

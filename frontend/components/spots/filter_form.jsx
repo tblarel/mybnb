@@ -1,4 +1,5 @@
 import React from 'react';
+import { DateRangePicker, SingleDatePicker, DayPickerRangeController } from 'react-dates';
 
 const handleChange = (filter, updateFilter) => e => (
     updateFilter(filter, parseInt(e.currentTarget.value))
@@ -34,6 +35,11 @@ const FilterForm = ({ minGuest, maxGuest, minPrice, maxPrice, updateFilter }) =>
                         value={maxPrice}
                         onChange={handleChange('maxPrice', updateFilter)}
                     />
+        </div>
+        <div>
+            {/* <label className="when">
+                
+            </label> */}
         </div>
     </div>
 );

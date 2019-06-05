@@ -4,9 +4,9 @@
     <title>icons</title>
     <desc>Created with Sketch.</desc>
     <g id="icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Bedroom" transform="translate(147.000000, 69.000000)">
-            <rect id="Rectangle" stroke="#333333" stroke-width="9" x="4.5" y="41.5" width="101" height="164"></rect>
-            <polygon id="Rectangle" fill="#333333" points="0 36.8223398 67 0 67 241 0 209.536648"></polygon>
+        <g id="Bedroom" transform="translate(128.000000, 75.000000)">
+            <path d="M6.5,39.5 L6.5,178.5 L137,178.5 C138.380712,178.5 139.5,177.380712 139.5,176 L139.5,42 C139.5,40.6192881 138.380712,39.5 137,39.5 L6.5,39.5 Z" id="Rectangle" stroke="#333333" stroke-width="13"></path>
+            <path d="M0,32.5442256 L93.8910251,2.87810228 C97.5773851,1.71334759 101.509991,3.75751262 102.674745,7.44387266 C102.890308,8.12611067 103,8.83736468 103,9.55284758 L103,203.859521 C103,207.725515 99.8659932,210.859521 96,210.859521 C95.3838247,210.859521 94.7703466,210.778165 94.17547,210.61756 L0,185.192141 L0,32.5442256 Z" id="Rectangle" fill="#333333"></path>
         </g>
     </g>
 </svg>
