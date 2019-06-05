@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :locations, only: [:index, :show] do 
       resources :spots, only: [:index]
     end
+    resources :bookings, only: [:index, :create,:destroy]
   end
   
   
