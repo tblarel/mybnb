@@ -33,7 +33,7 @@
     padding: 0px;
     color: red;
     min-width: 70%;
-    margin: 0px 0px -10px 0px;
+    margin: -10px 0px -10px 0px;
     font-size: 12px;
 }
 
@@ -191,6 +191,28 @@
     background: #133979;
     margin: -.01vw 0px 1vw 0px;
     transition: .5s all ease;
+}
+
+.close-button {     
+    margin: 1% 0 -8% 90%;
+    padding-top:1px;
+    min-width: 40px;
+    height: 40px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    line-height: 2rem;
+    cursor: pointer;
+    z-index: 3;
+    border-radius: 5rem;
+    background-color: #ffffff00;
+    color: #8d8d8d;
+    border: 1.5px solid #c7c2c252;
+    transition: all .5s ease;
+}
+
+.close-button:hover{
+    background-color: #cececea8;
 }
 
 .login-form-box ul {
