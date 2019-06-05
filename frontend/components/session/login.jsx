@@ -68,33 +68,36 @@ class Login extends React.Component {
             <div className="login-form-container">                            
                 <form onSubmit={this.handleSubmit} className="login-form-box">
                     <div id="logo-header"></div>
-                    <div className="login-form">
-                        <label><p>Email:</p>
-                            <input type="email"
-                                value={this.state.email}
-                                onChange={this.update('email')}
-                                className="login-input"
+                        <div className="login-form">
+                            <label>
+                                <input type="email"
+                                    value={this.state.email}
+                                    onChange={this.update('email')}
+                                    className="login-input"
+                                    placeholder="Email"
+                                />
+                            </label>
+                            {emailError}
+                            <label>
+                                <input type="password"
+                                    value={this.state.password}
+                                    onChange={this.update('password')}
+                                    className="login-input"
+                                    placeholder="Password"
+                                />
+                            </label>
+                            {passwordError}
+                            <input className="session-submit"
+                                type="submit"
+                                value={this.props.formType}
                             />
-                        </label>
-                        {emailError}
-                        <label><p>Password:</p>
-                            <input type="password"
-                                value={this.state.password}
-                                onChange={this.update('password')}
-                                className="login-input"
-                            />
-                        </label>
-                        {passwordError}
-                        <input className="session-submit"
-                            type="submit"
-                            value={this.props.formType}
-                        />
+                            <input className="session-submit demo"
+                                type="submit"
+                                value="Demo User"
+                                onClick={this.handleDemoLogin}
+                                />
                     </div>
-                        <input className="session-submit demo"
-                            type="submit"
-                            value="Demo User"
-                            onClick={this.handleDemoLogin}
-                        />
+                    <hr className="thin-line"/>
                     {this.props.otherForm} 
                 </form>
             </div>

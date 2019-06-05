@@ -71,37 +71,41 @@ class Signup extends React.Component {
                 <form onSubmit={this.handleSubmit} className="login-form-box">
                     <div id="logo-header"></div>
                     <div className="login-form">                        
-                        <label><p>Email:</p>
+                        <label>
                             <input  type="email"
                                     value ={this.state.email}
                                     onChange={this.update('email')}
                                     className="login-input"
+                                    placeholder="Email"
                             />
                             
 
                         </label> 
                         {emailError}
-                        <label><p>Password:</p>
+                        <label>
                             <input type="password"
                                 value={this.state.password}
                                 onChange={this.update('password')}
                                 className="login-input"
+                                placeholder="Password"
                             />
                         </label>
                         {passwordError}
-                        <label><p>First Name:</p>
+                        <label>
                             <input type="text"
                                 value={this.state.fname}
                                 onChange={this.update('fname')}
                                 className="login-input"
+                                placeholder="First Name"
                             />
                         </label>
                         {fnameError}
-                        <label><p>Last Name:</p>
+                        <label>
                             <input type="text"
                                 value={this.state.lname}
                                 onChange={this.update('lname')}
                                 className="login-input"
+                                placeholder="Last Name"
                             />
                         </label>
                         {lnameError}
@@ -110,6 +114,7 @@ class Signup extends React.Component {
                                 value={this.props.formType} 
                         />
                     </div>
+                    <hr className="thin-line"/>
                     {this.props.otherForm} 
                 </form>
             </div>
