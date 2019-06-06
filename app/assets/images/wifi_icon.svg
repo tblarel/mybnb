@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="403px" height="380px" viewBox="0 0 403 380" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+    <title>icons</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M5.35896212,72.5572172 C96.7863207,170.185739 142.5,219 142.5,219 C142.5,219 188.832913,170.185739 281.498738,72.5572172 C287.437228,65.1046505 287.808397,65.2099722 280.756427,58.1300201 C262.198646,39.4986034 225.825396,0 143.42885,0 C61.0323041,7.79733332e-15 21.6898091,39.4986034 4.61665089,58.1300201 C-1.26098459,64.5441044 -2.06415015,64.8373302 5.35896212,72.5572172 Z" id="path-1"></path>
+        <ellipse id="path-3" cx="294.628463" cy="294.127215" rx="294.628463" ry="294.127215"></ellipse>
+        <filter x="-1.2%" y="-0.8%" width="102.4%" height="102.4%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.94047619   0 0 0 0 0.94047619   0 0 0 0 0.94047619  0 0 0 0.250028306 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <path d="M143.5,227 C233.798557,227 307,173.053164 307,106.506369 C307,39.9595748 233.798557,-8 143.5,-8 C53.2014434,-8 -20,39.9595748 -20,106.506369 C-20,173.053164 53.2014434,227 143.5,227 Z" id="path-5"></path>
+        <filter x="-5.4%" y="-8.3%" width="110.7%" height="114.9%" filterUnits="objectBoundingBox" id="filter-6">
+            <feOffset dx="0" dy="-2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.394701087 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <ellipse id="path-7" cx="143" cy="167" rx="130" ry="104"></ellipse>
+        <filter x="-6.7%" y="-9.4%" width="113.5%" height="116.8%" filterUnits="objectBoundingBox" id="filter-8">
+            <feOffset dx="0" dy="-2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.394701087 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <ellipse id="path-9" cx="143" cy="213" rx="29" ry="28"></ellipse>
+        <filter x="-30.2%" y="-34.8%" width="160.3%" height="162.5%" filterUnits="objectBoundingBox" id="filter-10">
+            <feOffset dx="0" dy="-2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.394701087 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Wifi" transform="translate(59.000000, 80.000000)">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Mask" fill="#000000" xlink:href="#path-1"></use>
+            <g id="Group-3" mask="url(#mask-2)" opacity="0.76390439">
+                <g transform="translate(-152.000000, -52.000000)" id="Oval">
+                    <g>
+                        <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                        <use fill="#D8D8D8" fill-rule="evenodd" xlink:href="#path-3"></use>
+                    </g>
+                </g>
+            </g>
+            <g id="Oval" mask="url(#mask-2)">
+                <use fill="black" fill-opacity="1" filter="url(#filter-6)" xlink:href="#path-5"></use>
+                <use fill="#333333" fill-rule="evenodd" xlink:href="#path-5"></use>
+            </g>
+            <ellipse id="Oval" fill="#FFFFFF" mask="url(#mask-2)" cx="143" cy="130" rx="135" ry="100"></ellipse>
+            <g id="Oval" mask="url(#mask-2)">
+                <use fill="black" fill-opacity="1" filter="url(#filter-8)" xlink:href="#path-7"></use>
+                <use fill="#333333" fill-rule="evenodd" xlink:href="#path-7"></use>
+            </g>
+            <ellipse id="Oval" fill="#FFFFFF" mask="url(#mask-2)" cx="144" cy="188.5" rx="108" ry="86.5"></ellipse>
+            <ellipse id="Oval" fill="#333333" mask="url(#mask-2)" cx="144" cy="203.5" rx="85" ry="73.5"></ellipse>
+            <ellipse id="Oval" fill="#FFFFFF" mask="url(#mask-2)" cx="144.5" cy="220.5" rx="70.5" ry="61.5"></ellipse>
+            <g id="Oval" mask="url(#mask-2)">
+                <use fill="black" fill-opacity="1" filter="url(#filter-10)" xlink:href="#path-9"></use>
+                <use fill="#333333" fill-rule="evenodd" xlink:href="#path-9"></use>
+            </g>
+        </g>
+    </g>
+</svg>

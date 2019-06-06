@@ -392,11 +392,11 @@
 }
 
 .spot-number-icon{
-    background-size: 40px 40px;
+    background-size: 70px 70px;
     background-position: center;
     background-repeat: no-repeat;
-    width: 35px;
-    height: 30px;
+    width: 75px;
+    height: 70px;
     margin-left:30%;
     margin-bottom: -10px;
 }
@@ -406,15 +406,41 @@
 }
 
 #bed {
-    background-image: url(https://s3-us-west-2.amazonaws.com/mybnb-seeds/bed_icon.svg);
+    background-image: url(https://mybnb-seeds.s3-us-west-2.amazonaws.com/bed_icon_2.svg);
     margin-left:15%;
 }
 
 #guests {
     background-image: url(https://s3-us-west-2.amazonaws.com/mybnb-seeds/guests_icon.svg);
     margin-left:20%;
-
 }
+
+#laundry {
+    background-image: url(https://s3-us-west-2.amazonaws.com/mybnb-seeds/guests_icon.svg);
+    margin-left:15%;
+}
+
+#kitchen {
+    background-image: url(https://mybnb-seeds.s3-us-west-2.amazonaws.com/kitchen_icon.svg);
+    margin-left:15%;
+}
+
+#pool {
+    background-image: url(https://mybnb-seeds.s3-us-west-2.amazonaws.com/pool_icon.svg);
+    margin-left:15%;
+}
+
+#parking {
+    background-image: url(https://mybnb-seeds.s3-us-west-2.amazonaws.com/parking_icon.svg);
+    margin-left:15%;
+}
+
+#wifi {
+    background-image: url(https://mybnb-seeds.s3-us-west-2.amazonaws.com/wifi_icon.svg);
+    margin-left:15%;
+}
+
+
 .left-box {
     width: 50%;
     padding-left: 15%;

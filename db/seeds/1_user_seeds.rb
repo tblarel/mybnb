@@ -7,9 +7,9 @@ users = User.create([   { email: 'email@email.com', password:'password', fname:'
                         { email: 'tblarel@gmail.com', password:'password', fname:'Tristan', lname: 'Blarel' }, 
                         { email: 'ngolo@fff.fr', password:'password', fname:'Ngolo', lname: 'Kanté' },  
                     ])
-file = open('https://s3-us-west-2.amazonaws.com/mybnb-seeds/blank.jpg')
+file = open('https://mybnb-seeds.s3-us-west-2.amazonaws.com/profile_blank.jpg')
 user1 = User.first
-user1.photo.attach(io: file, filename: 'blank.jpg')
+user1.photo.attach(io: file, filename: 'profile_blank.jpg')
 
 file2 = open('https://s3-us-west-2.amazonaws.com/mybnb-seeds/tristan.jpg')
 user2 = User.find(2)

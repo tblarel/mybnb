@@ -29,7 +29,7 @@ class Api::BookingsController < ApplicationController
         params[:host]
     end
 
-    def params
-        params.require(@booking).permit
-    end
+    # def params
+    #     params.require(:booking).permit()
+    # end
 end
