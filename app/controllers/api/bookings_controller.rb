@@ -3,8 +3,8 @@ class Api::BookingsController < ApplicationController
     def index
         if (spot)
             @bookings = Booking.where(spot_id: params[:spot])
-        elsif (host)
-            @bookings = Booking.joins(:host).where(id: params[:host])
+        elsif (guest)
+            @bookings = Booking.joins(:host).where(guest_id: params[:guest])
         else 
             @bookings = Booking.all
         end
@@ -12,7 +12,14 @@ class Api::BookingsController < ApplicationController
     end
 
     def create
-
+        @booking = Booking.new(booking_params)
+         if @booking.save
+            render :json => @booking
+        else
+            debugger
+            # render :errors, status: 422
+            render json: @booking.errors.full_messages, status: 422
+        end
     end
 
     def destroy
@@ -25,11 +32,12 @@ class Api::BookingsController < ApplicationController
         params[:spot]
     end
 
-    def host
-        params[:host]
+    def guest
+        params[:guest]
     end
 
-    # def params
-    #     params.require(:booking).permit()
-    # end
+    def booking_params
+        #  params.require(:booking).permit(:guest_id, :spot_id, :start, :end, :num_guest)
+        params.permit(:guest_id, :spot_id, :start, :end, :num_guest)
+    end
 end

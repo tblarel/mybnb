@@ -15,7 +15,9 @@ class SpotShow extends React.Component {
         this.updateGuests = this.updateGuests.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.state = {
-            guests: props.minGuest
+            guests: props.minGuest,
+            startDate: null,
+            endDate: null
         };
     }
     calculateFees(spot) {
