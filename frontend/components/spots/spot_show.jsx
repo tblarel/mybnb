@@ -2,6 +2,10 @@ import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import DarkWelcomeContainer from '../welcome/dark_welcome_container';
 import { DateRangePicker, SingleDatePicker, DayPickerRangeController } from 'react-dates';
+import isBeforeDay from 'react-dates/lib/utils/isBeforeDay';
+import isSameDay from 'react-dates/lib/utils/isSameDay';
+import isAfterDay from 'react-dates/lib/utils/isAfterDay';
+
 import renderGuestOptions from './render_guest_options';
 import SpotDetails from './spot_details';
 import SpotPhotos from './spot_photos';
@@ -14,11 +18,18 @@ class SpotShow extends React.Component {
         this.calculateFees = this.calculateFees.bind(this);
         this.updateGuests = this.updateGuests.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.isDayBlocked = this.isDayBlocked.bind(this);
+        this.bookedDates = this.bookedDates.bind(this);
+        this.before = this.before.bind(this);
+        this.after = this.after.bind(this);
+
         this.state = {
             guests: props.minGuest,
             startDate: null,
-            endDate: null
+            endDate: null,
         };
+
+        this.blockedDates = []
     }
     calculateFees(spot) {
         let price = spot.price
@@ -33,6 +44,32 @@ class SpotShow extends React.Component {
         }); 
     }
  
+    bookedDates() {
+        var bookingDates;
+        let ctx = this;
+        $.ajax({
+            url: 'http://localhost:3000/api/bookings/',
+            type: 'get',
+            data: {
+                spot: this.props.match.params.id
+            }, success: function(response) {
+                bookingDates = Object.values(response);
+                if (bookingDates && bookingDates.length > 0) {
+                    let tempdates = new Array;
+                    bookingDates.forEach( date => {
+                        tempdates.push([date.start, date.end]);
+                    });
+                    ctx.setState({
+                        dates: tempdates
+                    });
+                }
+            }, erorr: function(xhr) {
+                console.log("error!")
+            }
+        });
+        
+    }
+
     // Ensure theat incoming # of guest selected does not exceed spot's maximum guests.
     // if it does, set the selected # of guests to be the spot's maximum.
     updateDefaultGuests(spot) {
@@ -47,10 +84,12 @@ class SpotShow extends React.Component {
         if (this.props.spot === undefined || this.props.spot.photo_urls === undefined) {
             if(this.props.spot){
                 this.calculateFees(this.props.spot);
+                this.bookedDates(this.props.spot);
             }
             this.props.findASpot(this.props.match.params.id);
         } if( this.props.spot) {
-            this.calculateFees(this.props.spot)
+            this.calculateFees(this.props.spot);
+            this.bookedDates(this.props.spot);
         }
     }
 
@@ -60,14 +99,16 @@ class SpotShow extends React.Component {
             .then( spot => {
                 this.calculateFees(spot);
                 this.updateDefaultGuests(spot);
+                this.bookedDates();
             })
         } if(this.state.price === undefined && this.props.spot) {
             this.calculateFees(this.props.spot)
+        } if(this.state.dates === undefined && this.props.spot) {
+            this.bookedDates(this.props.spot);
         } if(prevState.guests !== this.state.guests) {
             this.calculateFees(this.props.spot)
         } if(prevState.startDate !== this.state.startDate || 
              prevState.endDate !== this.state.endDate) {
-            //debugger
         }
 
     }
@@ -88,13 +129,61 @@ class SpotShow extends React.Component {
             ))
         )
     }
+    
+    before(startDate) {
+        this.blockedDates.forEach (date => {
+            if( new Date(startDate) <= new Date(date)) {
+                return true
+            }
+        });
+        return false
+    }
+
+    after(endDate) {
+        debugger
+        this.blockedDates.forEach(date => {
+            debugger
+            if (new Date(endDate) >= new Date(date)) {
+                return true
+            }
+        });
+        return false
+    }
 
     handleSubmit(e) {
+        e.preventDefault();
         if(this.state.startDate && this.state.endDate) {
             debugger
+            if (this.before(this.state.startDate._d)
+                && this.after(this.state.endDate._d)) {
+                debugger
+                console.log("Cant book around a blocked day")
+            }
             console.log(`Booking from ${this.state.startDate} 
                         to ${this.state.endDate} for $${this.state.guests} guest(s)`)
         }
+    }
+
+    isDayBlocked(day) {
+        let ctx = this;
+        if(ctx !== undefined && ctx.blockedDates){
+            if(ctx.blockedDates.indexOf(day._d) > -1) {
+                return true
+            }
+        } if (ctx.state.dates === undefined ||
+            ctx.state.dates.length === 0) {
+                return false;
+        } else {
+            ctx.state.dates.forEach(date => {
+                if (day._d >= new Date(date[0]) && day._d <= new Date(date[1])) {
+                    if (ctx.blockedDates.indexOf(day._d) === -1) {
+                        ctx.blockedDates = ctx.blockedDates.concat(day._d);
+                        return true;
+                    }
+                } 
+            });
+        }
+        return false;
     }
 
 
@@ -129,6 +218,7 @@ class SpotShow extends React.Component {
                                                     onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })} // PropTypes.func.isRequired,
                                                     focusedInput={this.state.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
                                                     onFocusChange={focusedInput => this.setState({ focusedInput })} // PropTypes.func.isRequired,
+                                                    isDayBlocked={(day) => this.isDayBlocked(day)}
                                                     enableOutsideDays={false}
                                                 />
                                             </label>
