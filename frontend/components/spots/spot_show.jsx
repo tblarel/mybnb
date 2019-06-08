@@ -20,8 +20,7 @@ class SpotShow extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.isDayBlocked = this.isDayBlocked.bind(this);
         this.bookedDates = this.bookedDates.bind(this);
-        this.before = this.before.bind(this);
-        this.after = this.after.bind(this);
+        this.conflict = this.conflict.bind(this);
 
         this.state = {
             guests: props.minGuest,
@@ -130,37 +129,27 @@ class SpotShow extends React.Component {
         )
     }
     
-    before(startDate) {
-        this.blockedDates.forEach (date => {
-            if( new Date(startDate) <= new Date(date)) {
-                return true
+    conflict(startDate, endDate) {
+        for(let i = 0; i < this.state.dates.length; i ++) {
+            let date = this.state.dates[0];
+            if (startDate <= new Date(date[0])
+                && endDate >= new Date(date[1])) {
+                console.log("CONFLICT!!!!");
+                return true;
             }
-        });
-        return false
-    }
-
-    after(endDate) {
-        debugger
-        this.blockedDates.forEach(date => {
-            debugger
-            if (new Date(endDate) >= new Date(date)) {
-                return true
-            }
-        });
-        return false
+        }
+        return false;
     }
 
     handleSubmit(e) {
         e.preventDefault();
         if(this.state.startDate && this.state.endDate) {
-            debugger
-            if (this.before(this.state.startDate._d)
-                && this.after(this.state.endDate._d)) {
-                debugger
-                console.log("Cant book around a blocked day")
+            if (this.conflict(this.state.startDate._d, this.state.endDate._d)) {
+                alert("Cant book around already booked day's. Please try new dates and avoid those that are greyed out.");
+            } else {
+                alert(`Booking from ${this.state.startDate} 
+                      to ${this.state.endDate} for ${this.state.guests} guest(s)`)
             }
-            console.log(`Booking from ${this.state.startDate} 
-                        to ${this.state.endDate} for $${this.state.guests} guest(s)`)
         }
     }
 
