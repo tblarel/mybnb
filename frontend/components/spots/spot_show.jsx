@@ -143,7 +143,9 @@ class SpotShow extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        if(this.state.startDate && this.state.endDate) {
+        if(!this.props.currentUser) { // Prompt User to Login/Signup with modal if booking without a currentUser
+            this.props.openModal('login');
+        } else if(this.state.startDate && this.state.endDate) {
             if (this.conflict(this.state.startDate._d, this.state.endDate._d)) {
                 alert("Cant book around already booked day's. Please try new dates and avoid those that are greyed out.");
             } else {
