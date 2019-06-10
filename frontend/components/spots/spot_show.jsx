@@ -130,15 +130,16 @@ class SpotShow extends React.Component {
     }
     
     conflict(startDate, endDate) {
-        for(let i = 0; i < this.state.dates.length; i ++) {
-            let date = this.state.dates[0];
-            if (startDate <= new Date(date[0])
-                && endDate >= new Date(date[1])) {
-                console.log("CONFLICT!!!!");
-                return true;
+        if(this.state.dates) {
+            for(let i = 0; i < this.state.dates.length; i ++) {
+                let date = this.state.dates[0];
+                if (startDate <= new Date(date[0])
+                    && endDate >= new Date(date[1])) {
+                    console.log("CONFLICT!!!!");
+                    return true;
+                }
             }
-        }
-        return false;
+        } return false;
     }
 
     handleSubmit(e) {
@@ -147,9 +148,9 @@ class SpotShow extends React.Component {
             this.props.openModal('login');
         } else if(this.state.startDate && this.state.endDate) {
             if (this.conflict(this.state.startDate._d, this.state.endDate._d)) {
-                alert("Cant book around already booked day's. Please try new dates and avoid those that are greyed out.");
+                alert("Can't book around already booked day's. Please try new dates and avoid those that are greyed out.");
             } else {
-                alert(`Booking from ${this.state.startDate} 
+                alert(`Booking for user ${this.props.currentUser.id} from ${this.state.startDate} 
                       to ${this.state.endDate} for ${this.state.guests} guest(s)`)
             }
         }

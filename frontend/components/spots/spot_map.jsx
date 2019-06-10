@@ -259,13 +259,6 @@ class SpotMap extends React.Component {
         this.props.history.push(`spots/${spot.id}`);
     }
 
-    handleClick(coords) {
-        this.props.history.push({
-            pathname: 'spots/new',
-            search: `lat=${coords.lat}&lng=${coords.lng}`
-        });
-    }
-
     registerListeners() {
         google.maps.event.addListener(this.map, 'idle', () => {
             const { north, south, east, west } = this.map.getBounds().toJSON();
@@ -274,10 +267,6 @@ class SpotMap extends React.Component {
                 southWest: { lat: south, lng: west }
             };
             this.props.updateFilter('bounds', bounds);
-        });
-        google.maps.event.addListener(this.map, 'click', (event) => {
-            const coords = getCoordsObj(event.latLng);
-            this.handleClick(coords);
         });
     }
 

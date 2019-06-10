@@ -11,6 +11,20 @@
 
 .login-signup{
     align-self: center;
+    a{
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 200;
+        text-decoration: none;
+        h2{
+            font-weight: 100;
+            font-size: 1.8vh;
+        }
+    }
+}
+
+.dark {
+    color: #444;
 }
 
 .login-signup > button {

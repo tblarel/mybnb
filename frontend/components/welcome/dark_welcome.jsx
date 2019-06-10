@@ -13,7 +13,7 @@ const DarkWelcome = ({ currentUser, logout, openModal }) => {
     );
     const customWelcome = () => (
         <hgroup className="header-group login-signup">
-            <h2 className="header-name dark">Hi, {currentUser.fname} {currentUser.lname}!</h2>
+            <Link to="/profile"><h2 className="header-name dark">Hi, {currentUser.fname} {currentUser.lname}!</h2></Link>
             <button className="header-button dark" onClick={logout}>log out</button>
         </hgroup>
     );

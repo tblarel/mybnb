@@ -1,18 +1,11 @@
 import React from 'react';
+import SpotFeatures from './spot_features'
 
 
 class SpotDetails extends React.Component  {
     
     constructor(props) {
         super(props);
-    }
-
-    renderFeatures(spot) {
-        return (
-            Object.values(spot.features).map(feature => (
-                <li key={feature}>{feature}</li>
-            ))
-        )
     }
 
     render() {
@@ -51,18 +44,13 @@ class SpotDetails extends React.Component  {
                     <br />
                 </div>
                 <br /> <br />
-                <hr></hr>
-                <h2>Home Ammeneties</h2>
-                <ul>
-                    {this.renderFeatures(this.props.spot)}
+                <h2><strong>Home Ammeneties</strong></h2>
+                <ul className="feature-list">
+                    <SpotFeatures features={this.props.spot.features} />
                 </ul>
                 <br /> <br />
-
-                <hr></hr>
-                <h2>Reviews</h2>
-                <ul>
-                    {this.renderFeatures(this.props.spot)}
-                </ul>
+                <h2><strong>Reviews</strong></h2>
+                <h3>Under construction and coming soon...</h3>
             </div>
         );
     };
