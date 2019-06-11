@@ -12,7 +12,6 @@ class Profile extends React.Component {
     }
 
     render() {
-        debugger
         if(this.props.currentUser) {
             return(
             <div className="page-content-container">
