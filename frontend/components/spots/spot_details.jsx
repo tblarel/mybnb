@@ -49,6 +49,8 @@ class SpotDetails extends React.Component  {
                     <SpotFeatures features={this.props.spot.features} />
                 </ul>
                 <br /> <br />
+                
+
                 <h2><strong>Reviews</strong></h2>
                 <h3>Under construction and coming soon...</h3>
             </div>

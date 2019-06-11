@@ -5,7 +5,7 @@ import { DateRangePicker, SingleDatePicker, DayPickerRangeController } from 'rea
 import isBeforeDay from 'react-dates/lib/utils/isBeforeDay';
 import isSameDay from 'react-dates/lib/utils/isSameDay';
 import isAfterDay from 'react-dates/lib/utils/isAfterDay';
-
+import moment from 'moment';
 import renderGuestOptions from './render_guest_options';
 import SpotDetails from './spot_details';
 import SpotPhotos from './spot_photos';
@@ -195,51 +195,51 @@ class SpotShow extends React.Component {
                     <div className="spot-details-box">
                         <SpotDetails spot={this.props.spot}/>
                         <div className="right-box">
-                                <form>
-                                    <div className="book-form">
-                                        <div className="form-row">
-                                            <h1>${this.state.price}</h1><p>per night</p> 
-                                        </div>
-                                        <div className="form-row">
-                                            <label className="when">
-                                                <DateRangePicker
-                                                    startDate={this.state.startDate} // momentPropTypes.momentObj or null,
-                                                    startDateId="your_unique_start_date_id" // PropTypes.string.isRequired,
-                                                    endDate={this.state.endDate} // momentPropTypes.momentObj or null,
-                                                    endDateId="your_unique_end_date_id" // PropTypes.string.isRequired,
-                                                    onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })} // PropTypes.func.isRequired,
-                                                    focusedInput={this.state.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
-                                                    onFocusChange={focusedInput => this.setState({ focusedInput })} // PropTypes.func.isRequired,
-                                                    isDayBlocked={(day) => this.isDayBlocked(day)}
-                                                    enableOutsideDays={false}
-                                                />
-                                            </label>
-                                        </div>
-                                        <div className="form-row">
-                                                <select name="guests"
-                                                    className="option-dropdown"
-                                                    onChange={(e) => this.updateGuests(e)}>
-                                                    {renderGuestOptions(this)}      
-                                                </select>
-                                        </div>
-
-                                        <div className="form-row">
-                                            <div className="left-form">
-                                                <h3 className="subtotal">${this.state.fees} cleaning fee</h3> 
-                                                <h3 className="subtotal">${this.state.taxes} taxes and fees</h3> 
-                                                <hr></hr>
-                                                <h3 className="subtotal">${ this.state.subtotal }</h3>
-                                            </div>                                                
-                                            <div className="right-form">
-                                                <input className="search-submit"
-                                                    type="submit"
-                                                    value="Request To Book"
-                                                    onClick={ (e) => this.handleSubmit(e)}
-                                                />                                  
-                                            </div> 
-                                        </div>
+                            <form>
+                                <div className="book-form">
+                                    <div className="form-row">
+                                        <h1>${this.state.price}</h1><p>per night</p> 
                                     </div>
-                                </form>
+                                    <div className="form-row">
+                                        <label className="when">
+                                            <DateRangePicker
+                                                startDate={this.state.startDate} // momentPropTypes.momentObj or null,
+                                                startDateId="your_unique_start_date_id" // PropTypes.string.isRequired,
+                                                endDate={this.state.endDate} // momentPropTypes.momentObj or null,
+                                                endDateId="your_unique_end_date_id" // PropTypes.string.isRequired,
+                                                onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })} // PropTypes.func.isRequired,
+                                                focusedInput={this.state.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
+                                                onFocusChange={focusedInput => this.setState({ focusedInput })} // PropTypes.func.isRequired,
+                                                isDayBlocked={(day) => this.isDayBlocked(day)}
+                                                enableOutsideDays={false}
+                                            />
+                                        </label>
+                                    </div>
+                                    <div className="form-row">
+                                            <select name="guests"
+                                                className="option-dropdown"
+                                                onChange={(e) => this.updateGuests(e)}>
+                                                {renderGuestOptions(this)}      
+                                            </select>
+                                    </div>
+
+                                    <div className="form-row">
+                                        <div className="left-form">
+                                            <h3 className="subtotal">${this.state.fees} cleaning fee</h3> 
+                                            <h3 className="subtotal">${this.state.taxes} taxes and fees</h3> 
+                                            <hr></hr>
+                                            <h3 className="subtotal">${ this.state.subtotal }</h3>
+                                        </div>                                                
+                                        <div className="right-form">
+                                            <input className="search-submit"
+                                                type="submit"
+                                                value="Request To Book"
+                                                onClick={ (e) => this.handleSubmit(e)}
+                                            />                                  
+                                        </div> 
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>

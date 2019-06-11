@@ -27,11 +27,10 @@ class Profile extends React.Component {
                     <div className="row">
                         <div className='two-halves'>
                             <div className='left'> 
-                                <img className="profile-pic"></img>
+                                <div className="profile-img" style={{ backgroundImage: `url(${this.props.currentUser.image_url})` }}></div>
                             </div>
                             <div className='right'>
-                                <h1 className='full-width'>{this.props.currentUser.fname}</h1><br></br>
-                                <h2 className='full-width'>{this.props.currentUser.lname}</h2><br></br>
+                                    <h1 className='full-width'>Hello {this.props.currentUser.fname} {this.props.currentUser.lname}</h1><br></br>
                                 <h4 className='full-width'>joined on {' '}
                                     {new Date(this.props.currentUser.created_at).toDateString()}
                                 </h4>
