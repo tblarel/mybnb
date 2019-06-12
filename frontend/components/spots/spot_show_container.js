@@ -4,13 +4,14 @@ import SpotShow from './spot_show';
 import { fetchASpot } from '../../actions/spot_actions';
 import { fetchAllSpots } from '../../actions/spot_actions';
 import { openModal } from '../../actions/modal_actions';
-import { createABooking } from '../../actions/booking_actions';
+import { createABooking, fetchSpotBookings } from '../../actions/booking_actions';
 
 const mapStateToProps = (state,ownprops) => {
     return {
         spot: state.entities.spots[ownprops.match.params.id],
         currentUser: state.entities.users[state.session.id],
         minGuest: state.ui.filters.minGuest,
+        bookingDates: state.entities.bookings
     }
 }
 
@@ -19,7 +20,8 @@ const mapDispatchToProps = dispatch => {
         findASpot: id => dispatch(fetchASpot(id)),
         findAllSpots: () => dispatch(fetchAllSpots()),
         openModal: modal => dispatch(openModal(modal)),
-        createABooking: booking => dispatch(createABooking(booking))
+        createABooking: booking => dispatch(createABooking(booking)),
+        fetchSpotBookings: spot_id => dispatch(fetchSpotBookings(spot_id))
     }
 }
 

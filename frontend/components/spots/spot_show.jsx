@@ -44,30 +44,7 @@ class SpotShow extends React.Component {
     }
  
     bookedDates() {
-        var bookingDates;
-        let ctx = this;
-        $.ajax({
-            // url: 'http://localhost:3000/api/bookings/', FOR LOCALHOST
-            url: 'https://mybnbrails.herokuapp.com/api/bookings',
-            type: 'get',
-            data: {
-                spot: this.props.match.params.id
-            }, success: function(response) {
-                bookingDates = Object.values(response);
-                if (bookingDates && bookingDates.length > 0) {
-                    let tempdates = new Array;
-                    bookingDates.forEach( date => {
-                        tempdates.push([date.start, date.end]);
-                    });
-                    ctx.setState({
-                        dates: tempdates
-                    });
-                }
-            }, erorr: function(xhr) {
-                console.log("error!")
-            }
-        });
-        
+        this.props.fetchSpotBookings(this.props.match.params.id);
     }
 
     // Ensure theat incoming # of guest selected does not exceed spot's maximum guests.
@@ -81,15 +58,16 @@ class SpotShow extends React.Component {
     }
 
     componentDidMount() {
+        this.bookedDates();
         if (this.props.spot === undefined || this.props.spot.photo_urls === undefined) {
             if(this.props.spot){
                 this.calculateFees(this.props.spot);
-                this.bookedDates(this.props.spot);
+                this.bookedDates();
             }
             this.props.findASpot(this.props.match.params.id);
-        } if( this.props.spot) {
+        } if(this.props.spot) {
             this.calculateFees(this.props.spot);
-            this.bookedDates(this.props.spot);
+            this.bookedDates();
         }
     }
 
@@ -103,14 +81,20 @@ class SpotShow extends React.Component {
             })
         } if(this.state.price === undefined && this.props.spot) {
             this.calculateFees(this.props.spot)
-        } if(this.state.dates === undefined && this.props.spot) {
-            this.bookedDates(this.props.spot);
         } if(prevState.guests !== this.state.guests) {
             this.calculateFees(this.props.spot)
-        } if(prevState.startDate !== this.state.startDate || 
-             prevState.endDate !== this.state.endDate) {
+        } if (prevProps.bookingDates !== this.props.bookingDates) {
+            var bookingDates = Object.values(this.props.bookingDates);
+            if (bookingDates && bookingDates.length > 0) {
+                let tempdates = new Array;
+                bookingDates.forEach(date => {
+                    tempdates.push([date.start, date.end]);
+                });
+                this.setState({
+                    dates: tempdates
+                });
+            }   
         }
-
     }
 
 
@@ -160,8 +144,6 @@ class SpotShow extends React.Component {
                 }
                 this.props.createABooking(data);
                 this.props.openModal('confirm',data);
-                // alert(`Booking for user ${this.props.currentUser.id} from ${this.state.startDate} 
-                //       to ${this.state.endDate} for ${this.state.guests} guest(s)`);
             }
         }
     }
