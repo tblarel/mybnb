@@ -27,13 +27,6 @@ import profile_container from './profile/profile_container';
 const App = () => (
     <div id="app">
         <Modal />
-        {/* <header>
-            <Link to="/" className="header-link">
-                
-                <div className="icon"></div>
-            </Link>
-            <WelcomeContainer />
-        </header> */}
         <Switch>
             <Route exact path="/spots" component={SpotsContainer} />
             <Route exact path="/locations" component={LocationsContainer} />

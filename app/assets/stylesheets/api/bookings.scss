@@ -1,3 +1,74 @@
 // Place all the styles related to the Api::Bookings controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.booking-confirm-container{
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 3px;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    font-family: 'Montserrat', sans-serif;
+    color: #444;
+    text-align: center;
+    h1 {
+        font-weight: 700;
+        margin: 2vw 5vw 1vw 5vw;
+    }
+
+    h3 {
+        font-weight: 100;
+        margin: 5px 0;
+    }
+
+    br {
+        height: 80%;
+    }
+
+    strong{
+        font-weight: 600;
+    }
+
+    .top-options {
+        justify-content: space-around;
+    }
+
+    .not-full-width {
+        margin: 7px 5vw 0 5vw;
+        max-width: 75%;
+    }
+
+    hr {
+        display: block;
+        margin: 0 10vw 1vw 10vw;
+        min-width: 75%;
+    }
+
+    a {
+        color: #f7441c;
+    }
+
+    .name h2{
+        margin: 0;
+    }
+
+    .city {
+        margin: 0;
+    }
+}
+
+.animation {
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin: 0 5vw -3% 5vw;
+}
+
+.block{
+    h3{
+        margin: 2px 0;
+    }
+}
+

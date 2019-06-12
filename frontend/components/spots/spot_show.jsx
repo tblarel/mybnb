@@ -157,12 +157,10 @@ class SpotShow extends React.Component {
                     end: this.state.endDate._d,
                     num_guest: this.state.guests
                 }
-
-                debugger
                 this.props.createABooking(data);
-                debugger
-                alert(`Booking for user ${this.props.currentUser.id} from ${this.state.startDate} 
-                      to ${this.state.endDate} for ${this.state.guests} guest(s)`);
+                this.props.openModal('confirm',data);
+                // alert(`Booking for user ${this.props.currentUser.id} from ${this.state.startDate} 
+                //       to ${this.state.endDate} for ${this.state.guests} guest(s)`);
             }
         }
     }

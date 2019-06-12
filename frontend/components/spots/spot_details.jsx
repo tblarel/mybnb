@@ -31,6 +31,7 @@ class SpotDetails extends React.Component  {
                             </div>
                         </div>
                         <div className="left-box-img">
+                            <h2>Your Host</h2>
                             <div className="host-img" style={{ backgroundImage: `url(${this.props.spot.host_img_url})` }}></div>
                             <h3>{this.props.spot.host} {this.props.spot.host_lname}</h3>
                         </div>

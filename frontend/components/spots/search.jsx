@@ -111,7 +111,6 @@ class Search extends React.Component {
 
 
     render() {
-        debugger
             return(
                 <div className="page-content-container">
                     <h1>hi</h1>
