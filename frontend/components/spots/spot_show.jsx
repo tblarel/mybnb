@@ -47,7 +47,7 @@ class SpotShow extends React.Component {
         var bookingDates;
         let ctx = this;
         $.ajax({
-            url: 'http://localhost:3000/api/bookings/',
+            url: '/api/bookings/',
             type: 'get',
             data: {
                 spot: this.props.match.params.id
