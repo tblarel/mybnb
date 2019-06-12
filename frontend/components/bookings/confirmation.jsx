@@ -64,7 +64,7 @@ class Confirmation extends React.Component {
                     </video>
                     <h1>Your Reservation Is Confirmed!</h1>
                     <hr className="thin-line"></hr>
-                    <h3>{this.props.currentUser.fname} {this.props.currentUser.lname},</h3>
+                    <h3 className="not-full-width">{this.props.currentUser.fname} {this.props.currentUser.lname},</h3>
                     <h3 className="not-full-width">Thanks for booking with <strong>MyBnB</strong>. Please review and save your reservation's details: </h3>
                     <div className="top-options name">
                         <h2>{this.state.name}</h2>
