@@ -48,7 +48,7 @@ class SpotShow extends React.Component {
         let ctx = this;
         $.ajax({
             // url: 'http://localhost:3000/api/bookings/', FOR LOCALHOST
-            url: 'https://mybnbrails.herokuapp.com/api/bookings/',
+            url: 'https://mybnbrails.herokuapp.com/api/bookings',
             type: 'get',
             data: {
                 spot: this.props.match.params.id
