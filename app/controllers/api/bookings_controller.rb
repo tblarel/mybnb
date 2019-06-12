@@ -16,8 +16,6 @@ class Api::BookingsController < ApplicationController
          if @booking.save
             render :json => @booking
         else
-            debugger
-            # render :errors, status: 422
             render json: @booking.errors.full_messages, status: 422
         end
     end

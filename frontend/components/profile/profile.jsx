@@ -7,8 +7,29 @@ class Profile extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-
+            bookings: true,
+            listings: false,
         }
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick(e) {
+        if (!Array.from(e.currentTarget.classList).includes("inactive")) {
+            let other_button = document.getElementsByClassName("inactive");
+            other_button[0].classList.toggle("inactive");
+            e.currentTarget.classList.toggle("inactive");
+            if (e.currentTarget.innerText.includes("Listings")) {
+                this.setState ({
+                    listings: true,
+                    bookings: false
+                });
+            } else {
+                this.setState({
+                    listings: false,
+                    bookings: true
+                });
+            }
+        } 
     }
 
     render() {
@@ -37,9 +58,13 @@ class Profile extends React.Component {
                         </div>
                     </div>
                     <div className="row">
+                        <div className="toggle inactive" onClick={this.handleClick}>Your Bookings</div>
+                        <div className="toggle" onClick={this.handleClick}>Your Listings</div>
                     </div>
-    
-    
+                    <div className="row">
+                        {/* <ListingsList listings={this.state.listings} />
+                        <BookingsList bookings={this.state.bookings} /> */}
+                    </div>
                 </div>
             </div>
             )

@@ -29,7 +29,6 @@ class SpotsIndex extends React.Component {
     }
 
     componentDidMount() {
-        this.props.findAllSpots();
         if (_.isEmpty(this.props.locations) ) {
             this.props.findAllLocations();
         }

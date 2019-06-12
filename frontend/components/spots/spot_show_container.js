@@ -4,6 +4,7 @@ import SpotShow from './spot_show';
 import { fetchASpot } from '../../actions/spot_actions';
 import { fetchAllSpots } from '../../actions/spot_actions';
 import { openModal } from '../../actions/modal_actions';
+import { createABooking } from '../../actions/booking_actions';
 
 const mapStateToProps = (state,ownprops) => {
     return {
@@ -17,7 +18,8 @@ const mapDispatchToProps = dispatch => {
     return {
         findASpot: id => dispatch(fetchASpot(id)),
         findAllSpots: () => dispatch(fetchAllSpots()),
-        openModal: modal => dispatch(openModal(modal))
+        openModal: modal => dispatch(openModal(modal)),
+        createABooking: booking => dispatch(createABooking(booking))
     }
 }
 

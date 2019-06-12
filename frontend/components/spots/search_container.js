@@ -15,7 +15,7 @@ const mapStateToProps = state => {
         minGuest: state.ui.filters.minGuest,
         maxGuest: state.ui.filters.maxGuest,
         minPrice: state.ui.filters.minPrice,
-        maxPrice: state.ui.filters.maxPrice
+        maxPrice: state.ui.filters.maxPrice,
     }
 }
 

@@ -150,8 +150,19 @@ class SpotShow extends React.Component {
             if (this.conflict(this.state.startDate._d, this.state.endDate._d)) {
                 alert("Can't book around already booked day's. Please try new dates and avoid those that are greyed out.");
             } else {
+                let data = {
+                    guest_id: this.props.currentUser.id,
+                    spot_id: parseInt(this.props.match.params.id),
+                    start: this.state.startDate._d,
+                    end: this.state.endDate._d,
+                    num_guest: this.state.guests
+                }
+
+                debugger
+                this.props.createABooking(data);
+                debugger
                 alert(`Booking for user ${this.props.currentUser.id} from ${this.state.startDate} 
-                      to ${this.state.endDate} for ${this.state.guests} guest(s)`)
+                      to ${this.state.endDate} for ${this.state.guests} guest(s)`);
             }
         }
     }

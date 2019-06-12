@@ -26,6 +26,7 @@
     display: flex;
     justify-content: center;
     width: 100%;
+    margin: 3vw 0;
     color: #444;
     h4{
         font-weight: 100;
@@ -67,4 +68,41 @@
     width:100%;
     margin: .4vw 0 .4vw 0;
     height: auto;
+}
+
+.toggle {
+    padding: 15px 20px 15px 20px;
+    margin: 10px 5vw;
+    width: 10vw;
+    border-radius: 2px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    color: white;
+    background: #f7441c;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .25s ease all;
+    
+}
+.toggle:hover{
+    background: #df4421;
+}
+
+
+.inactive {
+    background: none;
+    border: 2px solid #f5542f;
+    color: #f5542f;
+    font-weight: 600;
+}
+
+.inactive:hover{
+    border: 2px solid #df4421;
+    color: #df4421;
+    background: none;
 }
