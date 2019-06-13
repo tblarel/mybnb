@@ -45,6 +45,15 @@ class SplashSearch extends React.Component {
         this.props.updateFilter('minGuest', parseInt(e.currentTarget.value))
     }
 
+    updateMin(e) {
+        this.props.updateFilter('minPrice', parseInt(e.currentTarget.value))
+
+    }
+
+    updateMax(e) {
+        this.props.updateFilter('maxPrice', parseInt(e.currentTarget.value))
+    }
+
 
     findLatAndLong(this_location) {
         let locations = Object.values(this.props.locations);
@@ -65,11 +74,11 @@ class SplashSearch extends React.Component {
             Object.values(this.props.locations).map( location => {
                 if (location.name === this.state.loc) {
                     return(
-                        <option value={location.name} selected>{location.name}</option>
+                        <option key={location.id} value={location.name} selected>{location.name}</option>
                     )
                 } else {
                     return(
-                        <option value={location.name}>{location.name}</option>
+                        <option key={location.id} value={location.name}>{location.name}</option>
                     )
                 }
             })
@@ -101,8 +110,26 @@ class SplashSearch extends React.Component {
                                 />
                             </label>
                         </div>
-                        
-                        <label className="when"> 
+                        <div className="bot-options splash">
+                            <label className="min">Min Price:
+                                <input
+                                    type="number"
+                                    min='1'
+                                    className="option-dropdown"
+                                    value={this.props.minPrice}
+                                    onChange={(e) => this.updateMin(e)}
+                                />
+                            </label>
+                            <label className="max">Max Price:
+                                <input
+                                    type="number"
+                                    className="option-dropdown"
+                                    value={this.props.maxPrice}
+                                    onChange={(e) => this.updateMax(e)}
+                                />
+                            </label>
+                        </div>
+                        {/* <label className="when"> 
                             <DateRangePicker
                                         startDate={this.state.startDate} // momentPropTypes.momentObj or null,
                                         startDateId="your_unique_start_date_id" // PropTypes.string.isRequired,
@@ -112,7 +139,7 @@ class SplashSearch extends React.Component {
                                         focusedInput={this.state.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
                                         onFocusChange={focusedInput => this.setState({ focusedInput })} // PropTypes.func.isRequired,
                                     />
-                        </label>
+                        </label> */}
 
                         <input className="search-submit"
                             type="submit"

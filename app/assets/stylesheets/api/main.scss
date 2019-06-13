@@ -99,6 +99,7 @@ header > a:first-of-type{
 }
 
 .splash-search-container {
+    color: #484848;
     padding: 180px 0 0 10vw;
     max-width: 500px;
 }
@@ -161,6 +162,13 @@ header > a:first-of-type{
     width: 100%;
 }
 
+.bot-options{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    width: 100%;
+}
+
 .search-form p {
     font-size: 14px;
     font-weight: 400;
@@ -194,11 +202,10 @@ header > a:first-of-type{
     -webkit-box-shadow: 2px 2px 5px 0px #3b353546;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
     -moz-box-shadow:    2px 2px 5px 0px #3b353546;  /* Firefox 3.5 - 3.6 */
     box-shadow:         2px 2px 5px 0px #3b353546;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
-    min-width: 40%;
-    max-width: 45%;
-    margin: 30px auto 15px 52.5% ;
+    min-width: 86%;
+    margin: 30px auto 10px auto ;
     padding: 15px 20px 15px 20px;
-    border-radius:2px;
+    border-radius: 2px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     font-size: 13px;
@@ -217,13 +224,13 @@ header > a:first-of-type{
     .where{
         margin-left: 31px;
         select{
-            width:100%;
+            width: 98%;
             height: 45px;
         }
     }
     .guests{
         input{
-            width: 72%;
+            width: 74%;
             display: block;
         }
     }
@@ -231,5 +238,17 @@ header > a:first-of-type{
         font-size:14px;
         font-weight: 400;
 
+    }
+    .min{
+        input{
+            width: 90%;
+            display: block;
+        }
+    }
+    .max{
+        input{
+            width: 90%;
+            display: block;
+        }
     }
 }

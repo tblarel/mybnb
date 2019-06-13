@@ -9,6 +9,8 @@ const mapStateToProps = ({ errors, session, entities: { users }, ui }) => {
     return {
         currentUser: users[session.id],
         minGuest: ui.filters.minGuest,
+        minPrice: ui.filters.minPrice,
+        maxPrice: ui.filters.maxPrice,
     };
 };
 

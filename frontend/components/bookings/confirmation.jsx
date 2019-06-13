@@ -60,7 +60,7 @@ class Confirmation extends React.Component {
                     <span class="close-button" onClick={this.props.closeModal}>&times;</span>
                     <video src="https://mybnb-seeds.s3-us-west-2.amazonaws.com/check_white.webm"
                         className="animation"  type="video/webm"
-                        muted="muted" autoPlay="autoPlay" loop="loop">    
+                        muted="muted" autoPlay="autoPlay">    
                     </video>
                     <h1>Your Reservation Is Confirmed!</h1>
                     <hr className="thin-line"></hr>
