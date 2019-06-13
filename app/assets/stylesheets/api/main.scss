@@ -203,7 +203,7 @@ header > a:first-of-type{
     -moz-box-shadow:    2px 2px 5px 0px #3b353546;  /* Firefox 3.5 - 3.6 */
     box-shadow:         2px 2px 5px 0px #3b353546;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
     min-width: 86%;
-    margin: 30px auto 10px auto ;
+    margin: 15px auto 25px auto ;
     padding: 15px 20px 15px 20px;
     border-radius: 2px;
     font-family: 'Montserrat', sans-serif;
@@ -237,7 +237,6 @@ header > a:first-of-type{
     label{
         font-size:14px;
         font-weight: 400;
-
     }
     .min{
         input{

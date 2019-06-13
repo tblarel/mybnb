@@ -13,7 +13,7 @@ const mapStateToProps = ({ session, entities: { users, bookings } }) => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchUserBookings: () => dispatch(fetchUserBookings())
+        fetchUserBookings: (user_id) => dispatch(fetchUserBookings(user_id))
     };
 };
 

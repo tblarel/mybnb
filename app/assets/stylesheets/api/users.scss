@@ -2,9 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-
-
 .profile {
     max-width: 75vw;
     margin: 6vw auto 0 auto;
@@ -20,7 +17,6 @@
     h4 {
         font-size: 1.2vw;
     }
-
 }
 
 .row {
@@ -95,10 +91,10 @@
     transition: .4s ease all;
     
 }
+
 .toggle:hover{
     background: rgb(240, 78, 84);
 }
-
 
 .inactive {
     background: none;
@@ -132,6 +128,7 @@
         margin: 0;
         text-align: center;
     }
+
     .profile {
         max-width: 85vw;
         margin: 6vw auto 0 auto;
@@ -151,5 +148,26 @@
 
     .toggle{
         width: 16vw;
+    }
+}
+
+.bookings-list {
+    width: 75vw;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.spot-item strong {
+    font-weight: 900;
+}
+
+.labelline {
+    display: flex;
+    justify-content: space-between;
+    p {
+        margin: 0;
     }
 }

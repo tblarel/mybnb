@@ -7,6 +7,8 @@
         json.end booking.end
         json.host_fname booking.host.fname
         json.host_lname booking.host.lname
+        json.spot_name booking.spot.title
         json.num_guest booking.num_guest
+        json.photo_url url_for(booking.spot.photos.first) 
     end
 end
