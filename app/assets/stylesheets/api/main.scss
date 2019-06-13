@@ -203,18 +203,13 @@ header > a:first-of-type{
     font-weight: 400;
     font-size: 13px;
     color: white;
-    background: rgb(247,68,28);
-    background: linear-gradient(315deg,
-                 rgba(247,68,28,1) 0%,
-                 rgba(248,75,81,1) 100%);
+    background: rgb(255, 90, 95);
     text-align: center;
     border: none;
+    transition: .2s ease all;
 }
 .search-submit:hover{
-    background: rgb(218, 62, 27);
-    background: linear-gradient(315deg,
-                rgb(243, 74, 37) 0%, 
-                rgb(230, 70, 76) 100%);
+    background: rgb(240, 77, 83);
     cursor: pointer;
 }
 

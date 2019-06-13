@@ -45,9 +45,7 @@ class Profile extends React.Component {
                 </header>
                 <div className="profile">
                     <div className="row">
-                        <div className='two-halves'>
-                            <div className='left'> 
-                                <div className="profile-img" style={{ backgroundImage: `url(${this.props.currentUser.image_url})` }}></div>
+                            <div className="profile-img" style={{ backgroundImage: `url(${this.props.currentUser.image_url})` }}>
                             </div>
                             <div className='right'>
                                     <h1 className='full-width'>Hello {this.props.currentUser.fname} {this.props.currentUser.lname}</h1><br></br>
@@ -55,7 +53,6 @@ class Profile extends React.Component {
                                     {new Date(this.props.currentUser.created_at).toDateString()}
                                 </h4>
                             </div>
-                        </div>
                     </div>
                     <div className="row">
                         <div className="toggle inactive" onClick={this.handleClick}>Your Bookings</div>

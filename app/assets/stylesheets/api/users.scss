@@ -2,20 +2,23 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+
+
 .profile {
     max-width: 75vw;
     margin: 6vw auto 0 auto;
     h1{
-        font-size: 2.5em;
+        font-size: 2.5vw;
     }
     h2 {
-        font-size: 2em;
+        font-size: 2vw;
     }
     h3 {
-        font-size: 1.5em;
+        font-size: 1.5vw;
     }
     h4 {
-        font-size: 1.2em;
+        font-size: 1.2vw;
     }
 
 }
@@ -25,6 +28,7 @@
     font-weight: 200;
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 100%;
     margin: 3vw 0;
     color: #444;
@@ -40,6 +44,7 @@
 
 .profile-img {
     border-radius: 50%;
+    margin: 0 4vw 0 12vw;
     width: 10vw;
     height: 10vw;
     background-size: cover;
@@ -49,7 +54,7 @@
 }
 
 .left {
-    width: 50%;
+    width: 30vw;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -57,7 +62,8 @@
 }
 
 .right {
-    width: 50%;
+    width: 30vw;
+    margin-left: 2vw;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -79,25 +85,25 @@
     font-weight: 400;
     font-size: 15px;
     color: white;
-    background: #f7441c;
+    background: rgb(255, 90, 95);
     text-align: center;
     border: none;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: .25s ease all;
+    transition: .4s ease all;
     
 }
 .toggle:hover{
-    background: #df4421;
+    background: rgb(240, 78, 84);
 }
 
 
 .inactive {
     background: none;
-    border: 2px solid #f5542f;
-    color: #f5542f;
+    border: 2px solid rgb(255, 90, 95);
+    color: rgb(255, 90, 95);
     font-weight: 600;
 }
 
@@ -105,4 +111,45 @@
     border: 2px solid #df4421;
     color: #df4421;
     background: none;
+}
+
+@media only screen and (max-width: 1400px) { 
+
+    .row{
+        flex-wrap: wrap;
+    }
+
+    .profile-img{
+        width: 20vw;
+        height: 20vw;
+        border-radius: 50vw;
+        margin: 2vw 20vw;
+        display: block;
+    }
+
+    .right {
+        width: 60vw;
+        margin: 0;
+        text-align: center;
+    }
+    .profile {
+        max-width: 85vw;
+        margin: 6vw auto 0 auto;
+        h1{
+            font-size: 2.5em;
+        }
+        h2 {
+            font-size: 2em;
+        }
+        h3 {
+            font-size: 1.5em;
+        }
+        h4 {
+            font-size: 1.2em;
+        }
+    }
+
+    .toggle{
+        width: 16vw;
+    }
 }
