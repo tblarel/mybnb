@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import DarkWelcomeContainer from '../welcome/dark_welcome_container';
 import BookingsList from './bookings_list';
+import ListingsList from './listings_list';
 
 class Profile extends React.Component {
     constructor(props) {
@@ -39,14 +40,20 @@ class Profile extends React.Component {
             this.setState({
                 bookings_list: this.props.bookings
             });
+        } if(prevProps.spots !== this.props.spots) {
+            this.setState({
+                spots_list: this.props.spots
+            });
         }
     }
 
     componentDidMount() {
         this.props.fetchUserBookings(this.props.currentUser.id);
+        this.props.fetchUserSpots(this.props.currentUser.id);
     }
 
     render() {
+        
         if(this.props.currentUser) {
             return(
             <div className="page-content-container">
@@ -73,7 +80,11 @@ class Profile extends React.Component {
                         <div className="toggle" onClick={this.handleClick}>Your Listings</div>
                     </div>
                     <div className="row">
-                        {/* <ListingsList render={this.state.listings} /> */}
+                        <ListingsList 
+                            render={this.state.listings} 
+                            spots={this.props.spots}
+                            ctx={this}
+                        />
                         <BookingsList   
                             render={this.state.bookings} 
                             bookings={this.state.bookings_list} 

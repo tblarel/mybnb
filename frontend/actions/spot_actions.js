@@ -25,3 +25,8 @@ export const fetchASpot = id => dispatch => {
     APIUtil.fetchSpot(id)
         .then(spot => dispatch(receiveASpot(spot)));
 }
+
+export const fetchUserSpots = id => dispatch => {
+    APIUtil.fetchUserSpots(id)
+        .then( spots => dispatch(receiveAllSpots(spots)));
+}

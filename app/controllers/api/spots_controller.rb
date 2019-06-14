@@ -7,6 +7,10 @@ class Api::SpotsController < ApplicationController
         if params[:minPrice] && params[:maxPrice]
             @spots = @spots.where(price: price_range)
         end
+        if params[:host_id]
+            @spots = Spot.all
+            @spots = @spots.where(host_id: params[:host_id])
+        end
         render "api/spots/index"
     end
 
