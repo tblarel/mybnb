@@ -14,14 +14,17 @@ class ListingIndexItem extends React.Component {
     }
 
     render() {
-        const { name, photo_url } = this.props.spot;
+        const { name, photo_url,city } = this.props.spot;
         return (
             <div className="spot-item" onClick={this.handleClick} >
+                <div className="spot-details-line top">
+                    <h4 className="centered">{name}</h4>
+                </div>
                 <div className="spot-img"
                     style={{ backgroundImage: `url(${photo_url})` }}>
                 </div>
-                <div className="features">
-                    <h3>{name} </h3>
+                <div className="spot-details-line bottom">
+                    <p className="centered">{city}</p>
                 </div>
             </div>
         )

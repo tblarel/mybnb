@@ -152,17 +152,44 @@
 }
 
 .bookings-list {
-    width: 75vw;
+    width: 85vw;
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
     justify-content: center;
     align-items: center;
+
+    .spot-item{
+        padding: 15px;
+    }
 }
 
 .spot-item strong {
     font-weight: 900;
 }
+
+.spot-item{
+    .bottom{
+        width: 96%;
+        padding-top: 5px;
+        margin: -10px auto -5px auto;
+    }
+
+    .top > * {
+        margin-bottom: 10px;
+    }
+
+    .from{
+        margin-bottom: 5px;
+        display: flex;
+        justify-content: space-between;
+        p{
+            margin: 0;
+        }
+    }
+}
+
+
 
 .labelline {
     display: flex;
@@ -170,4 +197,9 @@
     p {
         margin: 0;
     }
+}
+
+.centered {
+    width: 100%;
+    text-align: center;
 }

@@ -21,6 +21,7 @@ class BookingsList extends React.Component {
                         <BookingIndexItem
                             booking={booking}
                             key={booking.id}
+                            ctx={this.props.ctx}
                         />
                     ))}
                 </div>

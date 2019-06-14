@@ -87,7 +87,8 @@ class Profile extends React.Component {
                         />
                         <BookingsList   
                             render={this.state.bookings} 
-                            bookings={this.state.bookings_list} 
+                            bookings={this.state.bookings_list}
+                            ctx={this} 
                         />
                     </div>
                 </div>
