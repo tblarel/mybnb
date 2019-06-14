@@ -10,27 +10,58 @@ The project was planned and carried out within a 10-day timeframe, although impr
 
 
 ### **Key Features**
-* Secure Signup and Login with full user authentication using BCrypt
+* Secure User Sign Up and Login with full user authentication using BCrypt
 * Browse home listings in multiple cities across the globe
-* Explore and filter listings through integrated GoogleMaps or by number of guests and price.
+* Explore and filter listings through integrated GoogleMaps and by number of guests and price.
+* Book available homes and view your bookings & listings through your User profile page
 
-### **Splash Page** 
-![Photo2](https://i.imgur.com/UJXjaHf.jpg)
+### **Search Functionality** 
+![GIF](https://media.giphy.com/media/f6UShQk3eRIfJF7QXM/giphy.gif)
 
-### **Locations Page** 
-![Photo3](https://i.imgur.com/1OG68H9.png)
+### **Booking and Confirmation Animation** 
+![GIF](http://giphygifs.s3.amazonaws.com/media/2yvNnw0BN80IiZ4AMv/giphy.gif)
 
-### **Search Listings** 
-![Photo4](https://i.imgur.com/jvUwnav.png)
+### **Responsive Design** 
+![GIF](https://media.giphy.com/media/coC1Zl9tiaAt9sOqu7/giphy.gif)
+### By leveraging FlexBox and Media Queries, the app is responsive and optimized for many screen sizes.
 
-### **Listing Page** 
-![Photo5](https://i.imgur.com/GROP1Zh.png) 
+
+### **Code Snippet**
+
+**Method for ReactDates calendar to block prebooked dates**
+``` javascript
+from `/frontend/components/spots/spot_show.jsx`
+
+isDayBlocked(day) {
+        let ctx = this;
+        if(ctx !== undefined && ctx.blockedDates){
+            if(ctx.blockedDates.indexOf(day._d) > -1) {
+                return true
+            }
+        } if (ctx.state.dates === undefined ||
+            ctx.state.dates.length === 0) {
+                return false;
+        } else {
+            ctx.state.dates.forEach(date => {
+                if (day._d >= new Date(date[0]) && day._d <= new Date(date[1])) {
+                    if (ctx.blockedDates.indexOf(day._d) === -1) {
+                        ctx.blockedDates = ctx.blockedDates.concat(day._d);
+                        return true;
+                    }
+                } 
+            });
+        }
+        return false;
+    }
+
+```
 
 
 
 
 ### **Future Features**
-* Book available listings
-* User profile pages to view a host's listings or the logged-in user's bookings.
 * Leave reviews on past bookings and listings 
+* Image carousel/modal for listings page
+* View other user's profiles and browse their listings
+* Upload your own new listings
 
