@@ -558,6 +558,29 @@
     display: flex;
 }
 
+.spread {
+    justify-content: space-between;
+}
+
+.left-row {
+    display: flex;
+    align-items: center;
+    margin-left: 5%;
+}
+
+.left-row > * {
+    padding: 0 2px;
+}
+.right-row > * {
+    padding: 0 2px;
+}
+
+.right-row {
+    display: flex;
+    align-items: center;
+    margin-right: 10%;
+}
+
 .book-form > .form-row:nth-of-type(3){
     margin: 10px 29px 0 18px;
 }

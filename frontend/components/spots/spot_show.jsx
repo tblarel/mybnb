@@ -20,21 +20,24 @@ class SpotShow extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.isDayBlocked = this.isDayBlocked.bind(this);
         this.bookedDates = this.bookedDates.bind(this);
+        this.updateNights = this.updateNights.bind(this);
         this.conflict = this.conflict.bind(this);
 
         this.state = {
             guests: props.minGuest,
+            nights: 1,
             startDate: null,
             endDate: null,
         };
 
         this.blockedDates = []
     }
-    calculateFees(spot) {
-        let price = spot.price
+    calculateFees(spot, nights = this.state.nights) {
+        debugger
+        let price = spot.price;
         let fees = this.state.guests * 5.64;
         let taxes = (price + fees) * .08;
-        let subtotal = price + fees + taxes;
+        let subtotal = price * nights + fees + taxes;
         this.setState({
             price: price,
             fees: fees.toFixed(2),
@@ -170,6 +173,18 @@ class SpotShow extends React.Component {
         return false;
     }
 
+    updateNights(dates) {
+        let nights = this.state.nights;
+        debugger
+        if(dates !== null && dates.endDate !== null && dates.endDate !== undefined && dates.startDate !== null && dates.startDate !== undefined) {
+            nights = new moment(dates.endDate._d - dates.startDate._d).dayOfYear()
+        }
+        this.calculateFees(this.props.spot, nights);
+        this.setState({
+            nights:  nights
+        });
+    }
+
 
     render() {
         if (this.props.spot !== undefined 
@@ -189,8 +204,13 @@ class SpotShow extends React.Component {
                         <div className="right-box">
                             <form>
                                 <div className="book-form">
-                                    <div className="form-row">
-                                        <h1>${this.state.price}</h1><p>per night</p> 
+                                    <div className="form-row spread">
+                                        <div className="left-row">
+                                            <h1>${this.state.price}</h1><p>per night</p>
+                                        </div>
+                                        <div className="right-row">
+                                            <h1>{this.state.nights}</h1><p> nights</p>
+                                        </div>
                                     </div>
                                     <div className="form-row">
                                         <label className="when">
@@ -203,6 +223,7 @@ class SpotShow extends React.Component {
                                                 focusedInput={this.state.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
                                                 onFocusChange={focusedInput => this.setState({ focusedInput })} // PropTypes.func.isRequired,
                                                 isDayBlocked={(day) => this.isDayBlocked(day)}
+                                                onClose={(startDate) => this.updateNights(startDate)}
                                                 enableOutsideDays={false}
                                             />
                                         </label>

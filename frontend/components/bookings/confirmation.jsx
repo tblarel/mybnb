@@ -103,7 +103,7 @@ class Confirmation extends React.Component {
         } else {
             return(
                 <div className="booking-confirm-container">
-                    <span class="close-button" onClick={this.props.closeModal}>&times;</span>
+                    <span className="close-button" onClick={this.props.closeModal}>&times;</span>
                     <h3>Loading...</h3>
                 </div>
             );
