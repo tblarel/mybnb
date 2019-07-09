@@ -4,11 +4,20 @@ class SpotPhotos extends React.Component {
 
     constructor(props) {
         super(props);
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick(e) {
+        var photoNumber = e.target.id.split('')[e.target.id.length - 1];
+        var photoUrl = this.props.spot.photo_urls[photoNumber];
+        var otherPhotos = this.props.spot.photo_urls;
+        otherPhotos = otherPhotos.slice(photoNumber, 1);
+        debugger
     }
 
     render() {
         return (
-            <div className="photos-container">
+            <div className="photos-container" onClick={this.handleClick}>
                 <div className="main-photo" id="photo1"
                     style={{ backgroundImage: `url(${this.props.spot.photo_urls[0]})` }}>
                 </div>

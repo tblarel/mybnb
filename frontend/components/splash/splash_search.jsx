@@ -74,11 +74,11 @@ class SplashSearch extends React.Component {
             Object.values(this.props.locations).map( location => {
                 if (location.name === this.state.loc) {
                     return(
-                        <option key={location.id} value={location.name} selected>{location.name}</option>
+                        <option key={location.name} value={location.name} selected>{location.name}</option>
                     )
                 } else {
                     return(
-                        <option key={location.id} value={location.name}>{location.name}</option>
+                        <option key={location.name} value={location.name}>{location.name}</option>
                     )
                 }
             })
@@ -96,7 +96,7 @@ class SplashSearch extends React.Component {
                                 <select name="loc"
                                     onChange={this.update('loc')}
                                     className="option-dropdown">
-                                    <option selected disabled >Anywhere</option>
+                                    <option key="Anywhere" value="Anywhere" selected>Anywhere</option>
                                     {this.renderOptions()}
                                 </select>
                             </label>
@@ -129,18 +129,6 @@ class SplashSearch extends React.Component {
                                 />
                             </label>
                         </div>
-                        {/* <label className="when"> 
-                            <DateRangePicker
-                                        startDate={this.state.startDate} // momentPropTypes.momentObj or null,
-                                        startDateId="your_unique_start_date_id" // PropTypes.string.isRequired,
-                                        endDate={this.state.endDate} // momentPropTypes.momentObj or null,
-                                        endDateId="your_unique_end_date_id" // PropTypes.string.isRequired,
-                                        onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })} // PropTypes.func.isRequired,
-                                        focusedInput={this.state.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
-                                        onFocusChange={focusedInput => this.setState({ focusedInput })} // PropTypes.func.isRequired,
-                                    />
-                        </label> */}
-
                         <input className="search-submit"
                             type="submit"
                             value="Search"

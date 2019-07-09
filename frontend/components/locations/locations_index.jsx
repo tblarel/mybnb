@@ -57,7 +57,7 @@ class LocationsIndex extends React.Component {
            Object.values(this.state.currentlyDisplayed).map(location => (
                <LocationIndexItem
                    loc={location}
-                   key={location.id}
+                   key={location.name}
                />
            ))
 

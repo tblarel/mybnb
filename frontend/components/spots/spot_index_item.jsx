@@ -22,7 +22,7 @@ class SpotIndexItem extends React.Component {
                 Object.values(features).map( (feature, index) => {
                     if (index <= 3) {
                         return(
-                            <h3 key={feature.id}>{feature}</h3>
+                            <h3 key={feature}>{feature}</h3>
                         ) 
                     }else {
                         return;

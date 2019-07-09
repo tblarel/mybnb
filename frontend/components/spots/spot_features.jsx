@@ -12,7 +12,7 @@ class SpotFeatures extends React.Component {
         return(
             Object.values(this.props.features).map(feature => (
                 <li className="feature-list-item" key={feature}>
-                    <div class="spot-number-icon" id={feature}></div>
+                    <div className="spot-number-icon" id={feature}></div>
                     <h3>{feature}</h3>
                 </li>
              ))

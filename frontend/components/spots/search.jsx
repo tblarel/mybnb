@@ -58,9 +58,9 @@ class Search extends React.Component {
     renderDropdowns(locations) {
         return (locations.map(location => {
             if (location.name !== this.state.loc)
-                return (<option value={location.name}> {location.name} </option>)
+                return (<option key={location.name} value={location.name}> {location.name} </option>)
             else
-                return (<option value={location.name} selected="selected"> {location.name} </option>)
+                return (<option key={location.name} value={location.name} selected="selected"> {location.name} </option>)
         }))
     }
 
