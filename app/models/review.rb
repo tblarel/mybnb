@@ -25,5 +25,9 @@ class Review < ApplicationRecord
     has_one :host,
         through: :booking,
         source: :host
+
+    has_one :spot,
+        through: :booking,
+        source: :spot
     
 end
