@@ -2,14 +2,11 @@ class Api::ReviewsController < ApplicationController
 
     def index
         if(guest)
-            @reviews = Review.where(Review.guest.id: params[:guest])
-        end
+            @reviews = Review.joins(:bookings).where(guest_id: params[:guest])
         elsif(host)
-            @reviews = Review.where(Review.host.id: params[:host])
-        end
+            @reviews = Review.joins(:bookings).where(host_id: params[:host])
         elsif(spot)
-            @reviews = Review.where(Review.spot.id: params[:spot])
-        end
+            @reviews = Review.joings(:bookings).where(spot_id: params[:spot])
         else
             @reviews = Review.all
         end
