@@ -11,4 +11,19 @@
 #
 
 class Review < ApplicationRecord
+    validates :booking_id, uniqueness: true
+    validates :rating, presence: true
+    
+    belongs_to :booking,
+        foreign_key: :booking_id,
+        class_name: 'Booking'
+
+    has_one :guest, 
+        through: :booking, 
+        source: :guest
+
+    has_one :host,
+        through: :booking,
+        source: :host
+    
 end
