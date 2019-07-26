@@ -1,5 +1,5 @@
 @reviews.each do |review|
-    json.set! review.id do
+    json.set! review.booking_id do
         json.guest_id review.booking.guest_id
         json.guest_fname review.booking.guest.fname
         json.guest_lname review.booking.guest.lname
