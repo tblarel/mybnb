@@ -4,7 +4,7 @@ class Api::BookingsController < ApplicationController
         if (spot)
             @bookings = Booking.where(spot_id: params[:spot])
         elsif (guest)
-            @bookings = Booking.joins(:host).where(guest_id: params[:guest])
+            @bookings = Booking.where(guest_id: params[:guest])
         else 
             @bookings = Booking.all
         end

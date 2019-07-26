@@ -2,11 +2,17 @@ class Api::ReviewsController < ApplicationController
 
     def index
         if(guest)
-            @reviews = Review.joins(:bookings).where(guest_id: params[:guest])
+            @reviews = Review.find_by_sql(["SELECT * FROM reviews 
+                INNER JOIN bookings ON booking_id = bookings.id
+                WHERE bookings.guest_id = ?", guest])
         elsif(host)
-            @reviews = Review.joins(:bookings).where(host_id: params[:host])
+            @reviews = Review.find_by_sql(["SELECT * FROM reviews 
+                INNER JOIN bookings ON booking_id = bookings.id
+                WHERE bookings.host_id = ?", host])
         elsif(spot)
-            @reviews = Review.joings(:bookings).where(spot_id: params[:spot])
+           @reviews = Review.find_by_sql(["SELECT * FROM reviews 
+                INNER JOIN bookings ON booking_id = bookings.id
+                WHERE bookings.spot_id = ?", spot])
         else
             @reviews = Review.all
         end
