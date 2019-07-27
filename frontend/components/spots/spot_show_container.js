@@ -11,7 +11,7 @@ const mapStateToProps = (state,ownprops) => {
     return {
         spot: state.entities.spots[ownprops.match.params.id],
         currentUser: state.entities.users[state.session.id],
-        eviews: state.entities.reviews,
+        reviews: state.entities.reviews,
         minGuest: state.ui.filters.minGuest,
         bookingDates: state.entities.bookings
     }
@@ -21,10 +21,10 @@ const mapDispatchToProps = dispatch => {
     return {
         findASpot: id => dispatch(fetchASpot(id)),
         findAllSpots: () => dispatch(fetchAllSpots()),
-        findSpotReviews: id => dispatch(fetchSpotReviews(id)),
         openModal: modal => dispatch(openModal(modal)),
         createABooking: booking => dispatch(createABooking(booking)),
-        fetchSpotBookings: spot_id => dispatch(fetchSpotBookings(spot_id))
+        fetchSpotBookings: spot_id => dispatch(fetchSpotBookings(spot_id)),
+        fetchSpotReviews: spot_id => dispatch(fetchSpotReviews(spot_id))
     }
 }
 

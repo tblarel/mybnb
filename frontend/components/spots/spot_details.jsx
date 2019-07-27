@@ -1,6 +1,6 @@
 import React from 'react';
-import SpotFeatures from './spot_features'
-
+import SpotFeatures from './spot_features';
+import SpotReviews from './spot_reviews';
 
 class SpotDetails extends React.Component  {
     
@@ -53,7 +53,7 @@ class SpotDetails extends React.Component  {
                 
 
                 <h2><strong>Reviews</strong></h2>
-                <h3>Under construction and coming soon...</h3>
+                    <SpotReviews reviews={this.props.reviews} />
             </div>
         );
     };

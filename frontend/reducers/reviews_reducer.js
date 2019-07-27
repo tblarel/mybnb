@@ -5,7 +5,7 @@ import {
 } from '../actions/review_actions';
 
 
-const bookingsReducer = (state = {}, action) => {
+const reviewsReducer = (state = {}, action) => {
     Object.freeze(state);
     switch (action.type) {
         case CREATE_REVIEW:

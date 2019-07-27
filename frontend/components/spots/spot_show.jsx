@@ -22,7 +22,7 @@ class SpotShow extends React.Component {
         this.bookedDates = this.bookedDates.bind(this);
         this.updateNights = this.updateNights.bind(this);
         this.conflict = this.conflict.bind(this);
-
+        this.spotReviews = this.spotReviews.bind(this);
         this.state = {
             guests: props.minGuest,
             nights: 1,
@@ -33,7 +33,6 @@ class SpotShow extends React.Component {
         this.blockedDates = []
     }
     calculateFees(spot, nights = this.state.nights) {
-        debugger
         let price = spot.price;
         let fees = this.state.guests * 5.64;
         let taxes = (price + fees) * .08;
@@ -50,6 +49,10 @@ class SpotShow extends React.Component {
         this.props.fetchSpotBookings(this.props.match.params.id);
     }
 
+    spotReviews() {
+        this.props.fetchSpotReviews(this.props.match.params.id);
+    }
+
     // Ensure theat incoming # of guest selected does not exceed spot's maximum guests.
     // if it does, set the selected # of guests to be the spot's maximum.
     updateDefaultGuests(spot) {
@@ -63,14 +66,17 @@ class SpotShow extends React.Component {
     componentDidMount() {
         this.bookedDates();
         if (this.props.spot === undefined || this.props.spot.photo_urls === undefined) {
-            if(this.props.spot){
+            if(this.props.spot) {
+                this.spotReviews();
                 this.calculateFees(this.props.spot);
                 this.bookedDates();
             }
             this.props.findASpot(this.props.match.params.id);
         } if(this.props.spot) {
+            debugger
             this.calculateFees(this.props.spot);
             this.bookedDates();
+            this.spotReviews();
         }
     }
 
@@ -80,10 +86,12 @@ class SpotShow extends React.Component {
             .then( spot => {
                 this.calculateFees(spot);
                 this.updateDefaultGuests(spot);
+                this.spotReviews();
                 this.bookedDates();
             })
         } if(this.state.price === undefined && this.props.spot) {
-            this.calculateFees(this.props.spot)
+            this.calculateFees(this.props.spot);
+            this.spotReviews();
         } if(prevState.guests !== this.state.guests) {
             this.calculateFees(this.props.spot)
         } if (prevProps.bookingDates !== this.props.bookingDates) {
@@ -200,7 +208,7 @@ class SpotShow extends React.Component {
                     </header>
                     <SpotPhotos spot={this.props.spot} openModal={this.props.openModal} ctx={this}/>
                     <div className="spot-details-box">
-                        <SpotDetails spot={this.props.spot}/>
+                        <SpotDetails spot={this.props.spot} reviews={this.props.reviews}/>
                         <div className="right-box">
                             <form>
                                 <div className="book-form">
