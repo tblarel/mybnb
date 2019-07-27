@@ -7,7 +7,7 @@ class SpotReviews extends React.Component {
 
     constructor(props) {
         super(props);
-        this.renderReviews = this.renderReviews.bind(this);
+        this.renderReviews = this.renderReviews.bind(this);    
     }
 
     renderReviews() {

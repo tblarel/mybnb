@@ -53,6 +53,21 @@ class SpotShow extends React.Component {
         this.props.fetchSpotReviews(this.props.match.params.id);
     }
 
+    calculateAvg(reviews) {
+        let total = 0;
+        let keys = Object.keys(reviews);
+        let length = keys.length;
+        for (let i = 0; i < length; i++) {
+            let rating = reviews[keys[i]].rating;
+            total += rating;
+        }
+        let avg = total / length;
+        this.setState({
+            avg: avg
+        });
+    }
+
+
     // Ensure theat incoming # of guest selected does not exceed spot's maximum guests.
     // if it does, set the selected # of guests to be the spot's maximum.
     updateDefaultGuests(spot) {
@@ -94,6 +109,8 @@ class SpotShow extends React.Component {
             this.spotReviews();
         } if(prevState.guests !== this.state.guests) {
             this.calculateFees(this.props.spot)
+        } if(prevProps.reviews !== this.props.reviews) {
+            this.calculateAvg(this.props.reviews);
         } if (prevProps.bookingDates !== this.props.bookingDates) {
             var bookingDates = Object.values(this.props.bookingDates);
             if (bookingDates && bookingDates.length > 0) {
@@ -208,7 +225,7 @@ class SpotShow extends React.Component {
                     </header>
                     <SpotPhotos spot={this.props.spot} openModal={this.props.openModal} ctx={this}/>
                     <div className="spot-details-box">
-                        <SpotDetails spot={this.props.spot} reviews={this.props.reviews}/>
+                        <SpotDetails spot={this.props.spot} reviews={this.props.reviews} avg={this.state.avg} />
                         <div className="right-box">
                             <form>
                                 <div className="book-form">
