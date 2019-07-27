@@ -59,6 +59,10 @@
     align-items: center;
 }
 
+$react-rater-link: #ccc !important; // color of star not rated
+$react-rater-hover: rgb(255, 223, 79) !important; // color of star on hover
+$react-rater-active: rgb(248, 225, 15) !important; // color of star rated
+
 .review-item  .review-body {
     font-weight: 200;
     font-size: 12px;
