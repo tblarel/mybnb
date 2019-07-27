@@ -11,6 +11,7 @@
         json.end review.booking.end
         json.host_fname review.booking.host.fname
         json.host_lname review.booking.host.lname
-        json.photo_url url_for(review.booking.spot.photos.first) 
+        json.photo_url url_for(review.booking.guest.photo) 
+        json.date review.created_at
     end
 end

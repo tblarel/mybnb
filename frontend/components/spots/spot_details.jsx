@@ -52,7 +52,7 @@ class SpotDetails extends React.Component  {
                 <br /> <br />
                 
 
-                <h2><strong>Reviews</strong></h2>
+                <h2><strong>{Object.values(this.props.reviews).length} Reviews</strong></h2>
                     <SpotReviews reviews={this.props.reviews} />
             </div>
         );

@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 
 
 class SpotReviews extends React.Component {
@@ -11,8 +12,20 @@ class SpotReviews extends React.Component {
     renderReviews() {
         return (
             Object.values(this.props.reviews).map(review => (
-                <li className="feature-list-item" key={review.id}>
-                    <h3>{review.rating} Stars -{review.guest_fname} {review.guest_lname}</h3>
+                <li className="review-item" key={review.id}>
+                    <div className="two-half-review-container">
+                        <div className="left-half-container">
+                            <div className="author-img" style={{ backgroundImage: `url(${review.photo_url})` }}></div>
+                        </div>
+                        <div className="right-half-container">
+                            <div className="review-row">
+                                <h3 className="review-author">{review.guest_fname} {review.guest_lname}</h3> 
+                                <h4 className="review-date">{new moment(review.date).format('LL')}</h4>
+                            </div>
+                            <h4 className="review-rating">{review.rating} Stars </h4>
+                            <h4 className="review-body">{review.body} </h4>
+                        </div>
+                    </div>
                 </li>
             ))
         )
