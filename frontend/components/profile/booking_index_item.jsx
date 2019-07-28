@@ -1,4 +1,6 @@
 import React from 'react';
+import moment from 'moment';
+
 
 class BookingIndexItem extends React.Component {
     
@@ -11,7 +13,21 @@ class BookingIndexItem extends React.Component {
         this.end_month = new Date(this.props.booking.end).toString().split(' ')[1];
         this.end_day = new Date(this.props.booking.end).toString().split(' ')[2];
         this.end_year = new Date(this.props.booking.end).toString().split(' ')[3];
-        this.handleClick = this.handleClick.bind(this)
+        this.handleClick = this.handleClick.bind(this);
+        let past = this.checkPast(this.props.booking.end);
+        this.state = {   
+            past: past
+        };
+    }
+
+    checkPast(date) {
+        var checkDate = new moment(date);
+        var currentDate = moment();
+        if (checkDate._d < currentDate._d) {
+            return true
+        } else {
+            return false;
+        }
     }
 
     handleClick(e) {
@@ -22,6 +38,10 @@ class BookingIndexItem extends React.Component {
 
     render() {
         const { spot_name, start, end, host_fname, host_lname, num_guest, photo_url } = this.props.booking;
+        let reviewButton;
+        if(this.state.past) {
+            reviewButton = <div className="review-button">Review Your Stay</div>
+        }
         return(
             <div className="spot-item" onClick={this.handleClick}>
                 <div className="spot-details-line top">
@@ -41,6 +61,9 @@ class BookingIndexItem extends React.Component {
                 <div className="labelline bottom">
                     <p>{this.start_month} / {this.start_day} / {this.start_year} </p>
                     <p>{this.end_month} / {this.end_day} / {this.end_year} </p>
+                </div>
+                <div className="review-button-row">
+                    {reviewButton}
                 </div>
 
             </div>

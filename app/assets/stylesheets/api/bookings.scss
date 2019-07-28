@@ -72,3 +72,30 @@
     }
 }
 
+.review-button-row {
+    margin: 10px 0 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.review-button {
+    color: white;
+    background: #ff6b70;
+    border-radius: 5px;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    padding: 8px 14px 8px 14px;
+    animation: ease all .45s;
+    position: relative;
+    top: -190px;
+      -webkit-box-shadow: 1px 4px 4px 1px #3c3c3ca6;;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow:    1px 4px 4px 1px #3c3c3ca6;;  /* Firefox 3.5 - 3.6 */
+    box-shadow:         1px 4px 4px 1px #3c3c3ca6;;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+}
+
+.review-button:hover {
+    background: #fa575c;
+    transform: scale(1.02);
+   
+}
