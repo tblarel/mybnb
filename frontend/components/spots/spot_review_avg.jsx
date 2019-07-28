@@ -11,7 +11,9 @@ class SpotReviewsAvg extends React.Component {
     render() {
         if (isNaN(this.props.avg)) {
             return(
-                <p className="avg-review-num">'No Reviews yet'</p>
+                <div className='rating-avg-row'>
+                    <p className="avg-review-num">No Reviews Yet</p>
+                </div>
             )
         } else {
             return(

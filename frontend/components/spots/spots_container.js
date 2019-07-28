@@ -4,7 +4,6 @@ import SpotsIndex from './spots_index';
 import { fetchAllSpots } from '../../actions/spot_actions';
 import { fetchAllLocations } from '../../actions/location_actions';
 
-
 const mapStateToProps = state => {
     return {
         spots: state.entities.spots,
