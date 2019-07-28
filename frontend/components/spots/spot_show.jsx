@@ -9,6 +9,8 @@ import moment from 'moment';
 import renderGuestOptions from './render_guest_options';
 import SpotDetails from './spot_details';
 import SpotPhotos from './spot_photos';
+import SpotReviewsAvg from './spot_review_avg';
+
 
 class SpotShow extends React.Component {
 
@@ -63,7 +65,8 @@ class SpotShow extends React.Component {
         }
         let avg = total / length;
         this.setState({
-            avg: avg
+            avg: avg,
+            num: length
         });
     }
 
@@ -200,7 +203,6 @@ class SpotShow extends React.Component {
 
     updateNights(dates) {
         let nights = this.state.nights;
-        debugger
         if(dates !== null && dates.endDate !== null && dates.endDate !== undefined && dates.startDate !== null && dates.startDate !== undefined) {
             nights = new moment(dates.endDate._d - dates.startDate._d).dayOfYear()
         }
@@ -225,7 +227,10 @@ class SpotShow extends React.Component {
                     </header>
                     <SpotPhotos spot={this.props.spot} openModal={this.props.openModal} ctx={this}/>
                     <div className="spot-details-box">
-                        <SpotDetails spot={this.props.spot} reviews={this.props.reviews} avg={this.state.avg} />
+                        <SpotDetails    spot = {this.props.spot} 
+                                        reviews = {this.props.reviews} 
+                                        avg = {this.state.avg} 
+                                        num = {this.state.num} />
                         <div className="right-box">
                             <form>
                                 <div className="book-form">
@@ -236,6 +241,9 @@ class SpotShow extends React.Component {
                                         <div className="right-row">
                                             <h1>{this.state.nights}</h1><p> nights</p>
                                         </div>
+                                    </div>
+                                    <div className="form-row">
+                                        <SpotReviewsAvg avg={this.state.avg} num={this.state.num}/>
                                     </div>
                                     <div className="form-row">
                                         <label className="when">

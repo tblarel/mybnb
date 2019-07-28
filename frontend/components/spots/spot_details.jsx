@@ -1,6 +1,9 @@
 import React from 'react';
 import SpotFeatures from './spot_features';
 import SpotReviews from './spot_reviews';
+import Rater from 'react-rater'
+import 'react-rater/lib/react-rater.css'
+import SpotReviewsAvg from './spot_review_avg';
 
 class SpotDetails extends React.Component  {
     
@@ -9,13 +12,6 @@ class SpotDetails extends React.Component  {
     }
 
     render() {
-        let avg;
-        if(isNaN(this.props.avg)) {
-            avg = 'N/A';
-        } else {
-            avg = this.props.avg + '  Stars'
-        }
-
         return(
             <div className="left-box">
                 <div className="left-box-text">
@@ -45,12 +41,6 @@ class SpotDetails extends React.Component  {
                     </div>
                 </div>
                 <h3>{this.props.spot.description}</h3>
-                <div className="review-score">
-                    <div className="stars"></div>
-                    <p className="star-score"><strong>Average Review:</strong> <br>
-                    </br> {avg}</p>
-                    <br />
-                </div>
                 <br /> <br />
                 <h2><strong>Home Ammeneties</strong></h2>
                 <ul className="feature-list">
@@ -59,7 +49,7 @@ class SpotDetails extends React.Component  {
                 <br /> <br />
                 
 
-                <h2><strong>{Object.values(this.props.reviews).length} Reviews</strong></h2>
+                <h2><strong>{this.props.num} Reviews</strong></h2>
                     <SpotReviews reviews={this.props.reviews} />
             </div>
         );

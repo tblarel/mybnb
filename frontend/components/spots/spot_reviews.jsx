@@ -13,7 +13,7 @@ class SpotReviews extends React.Component {
     renderReviews() {
         return (
             Object.values(this.props.reviews).map(review => (
-                <li className="review-item" key={review.id}>
+                <li className="review-item" key={review.date}>
                     <div className="two-half-review-container">
                         <div className="left-half-container">
                             <div className="author-img" style={{ backgroundImage: `url(${review.photo_url})` }}></div>
@@ -37,7 +37,7 @@ class SpotReviews extends React.Component {
     render() {
         if(Object.keys(this.props.reviews).length === 0) {
             return(
-                <li className="feature-list-item" >
+                <li className="feature-list-item" key={1}>
                     <h3>No Reviews for this property yet...</h3>
                 </li>
             )} else {

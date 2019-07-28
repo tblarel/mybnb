@@ -78,3 +78,20 @@ $react-rater-active: rgb(248, 225, 15) !important; // color of star rated
     -moz-box-shadow:     1px 2px 6px 0px #24202057;  /* Firefox 3.5 - 3.6 */
     box-shadow:          1px 2px 6px 0px #24202057;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
 }
+
+.rating-avg-row {
+    display: flex;
+    justify-content: left;
+    align-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    height: 16px;
+    margin: -5px 0px 5px 16px;
+    transform: scale(.8);
+
+}
+
+.book-form .avg-review-num {
+    margin-bottom: 12px;
+}
