@@ -59,10 +59,6 @@
     align-items: center;
 }
 
-$react-rater-link: #ccc !important; // color of star not rated
-$react-rater-hover: rgb(255, 223, 79) !important; // color of star on hover
-$react-rater-active: rgb(248, 225, 15) !important; // color of star rated
-
 .review-item  .review-body {
     font-weight: 200;
     font-size: 12px;
@@ -94,4 +90,65 @@ $react-rater-active: rgb(248, 225, 15) !important; // color of star rated
 
 .book-form .avg-review-num {
     margin-bottom: 12px;
+}
+
+.two-half-modal-container {
+    padding: 20px 0 20px 0;
+    background-color: #ffffff;
+    border-radius: 3px;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    font-family: 'Montserrat', sans-serif;
+    color: #444;
+    text-align: center;
+    h1 {
+        font-weight: 700;
+        margin: 2vw 5vw 1vw 5vw;
+    }
+
+    h3 {
+        font-weight: 100;
+        margin: 5px 0;
+    }
+
+    br {
+        height: 80%;
+    }
+
+    strong{
+        font-weight: 600;
+    }
+
+
+    .not-full-width {
+        margin: 7px 10vw 0 10vw;
+        max-width: 75%;
+    }
+
+}
+
+.left-half-modal-container {
+    display: flex;
+    justify-content: center;
+    width: 40%;
+    flex-wrap: wrap;
+    text-align: center;
+    h3 {
+        width: 100%;
+    }
+    margin-top: 20px;
+}
+
+.right-half-modal-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 60px;
+
+}
+
+.review-textarea {
+    background-color: #bdbbbb24;
+    margin-top: 10px;
 }

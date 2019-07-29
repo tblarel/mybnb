@@ -78,24 +78,87 @@
     justify-content: center;
 }
 
+.modal-child .react-rater {
+    transform: scale(1.6);
+}
+
 .review-button {
-    color: white;
-    background: #ff6b70;
+    color: black;
+    background: white;
     border-radius: 5px;
     font-size: 14px;
     display: flex;
     justify-content: center;
     padding: 8px 14px 8px 14px;
-    animation: ease all .45s;
+    transition: ease all .45s;
     position: relative;
     top: -190px;
-      -webkit-box-shadow: 1px 4px 4px 1px #3c3c3ca6;;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
-    -moz-box-shadow:    1px 4px 4px 1px #3c3c3ca6;;  /* Firefox 3.5 - 3.6 */
-    box-shadow:         1px 4px 4px 1px #3c3c3ca6;;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+    -webkit-box-shadow: 0px 4px 7px 1px #3c3c3c69;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow:    0px 4px 7px 1px #3c3c3c69;  /* Firefox 3.5 - 3.6 */
+    box-shadow: 0px 4px 7px 1px #3c3c3c69;
 }
 
 .review-button:hover {
-    background: #fa575c;
+    background: whitesmoke;
     transform: scale(1.02);
-   
+}
+
+.darkened-img {
+    filter: brightness(65%);
+}
+
+.review-container{
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 3px;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    font-family: 'Montserrat', sans-serif;
+    color: #444;
+    text-align: center;
+    h1 {
+        font-weight: 700;
+        margin: 2vw 5vw 1vw 5vw;
+    }
+
+    h3 {
+        font-weight: 100;
+        margin: 5px 0;
+    }
+
+    br {
+        height: 80%;
+    }
+
+    strong{
+        font-weight: 600;
+    }
+
+    .top-options {
+        justify-content: space-around;
+    }
+
+    .not-full-width {
+        margin: 7px 10vw 0 10vw;
+        max-width: 75%;
+    }
+
+    hr {
+        display: block;
+        margin: 0 10vw 1vw 10vw;
+        min-width: 75%;
+    }
+
+    a {
+        color: #f7441c;
+    }
+
+    .name h2{
+        margin: 0;
+    }
+
+    .city {
+        margin: 0;
+    }
 }

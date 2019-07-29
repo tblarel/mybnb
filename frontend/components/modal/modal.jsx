@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import LoginFormContainer from '../session/login_container';
 import SignupFormContainer from '../session/signup_container';
 import ConfirmationContainer from '../bookings/confirmation_modal';
+import ReviewContainer from '../reviews/reviews_modal';
+
 function Modal({ modal, closeModal }) {
     if (!modal) {
         return null;
@@ -18,6 +20,9 @@ function Modal({ modal, closeModal }) {
             break;
         case 'confirm':
             component = <ConfirmationContainer />;
+            break;
+        case 'review':
+            component = <ReviewContainer />;
             break;
         default:
             return null;

@@ -14,6 +14,7 @@ class BookingIndexItem extends React.Component {
         this.end_day = new Date(this.props.booking.end).toString().split(' ')[2];
         this.end_year = new Date(this.props.booking.end).toString().split(' ')[3];
         this.handleClick = this.handleClick.bind(this);
+        this.handleReviewClick = this.handleReviewClick.bind(this);
         let past = this.checkPast(this.props.booking.end);
         this.state = {   
             past: past
@@ -36,18 +37,34 @@ class BookingIndexItem extends React.Component {
         });
     }
 
+    handleReviewClick(e) {
+        e.stopPropagation();
+        let data = {
+            spot_name: this.props.booking.spot_name,
+            booking_id: this.props.booking.id,
+            start: this.props.booking.start,
+            end: this.props.booking.end,
+            host_fname: this.props.booking.host_fname,
+            host_lname: this.props.booking.host_lname,
+            photo_url: this.props.booking.photo_url
+        }
+        this.props.postTempData(data);
+        this.props.openModal('review');
+    }
+
     render() {
         const { spot_name, start, end, host_fname, host_lname, num_guest, photo_url } = this.props.booking;
-        let reviewButton;
+        let reviewButton, darkClass;
         if(this.state.past) {
-            reviewButton = <div className="review-button">Review Your Stay</div>
+            reviewButton = <div className="review-button" onClick={this.handleReviewClick}>Review Your Stay</div>
+            darkClass = ' darkened-img';
         }
         return(
             <div className="spot-item" onClick={this.handleClick}>
                 <div className="spot-details-line top">
                     <h4 className="centered">{spot_name}</h4>
                 </div>
-                <div className="spot-img"
+                <div className={"spot-img " + darkClass}
                     style={{ backgroundImage: `url(${photo_url})` }}>
                 </div>
                 <div className="spot-details-line bottom">

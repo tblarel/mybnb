@@ -208,10 +208,12 @@
 }
 
 .close-button {     
-    margin: 1% 0 -8% 90%;
+    margin: 1% 0 -10% 90%;
     padding-top:1px;
-    min-width: 40px;
-    height: 40px;
+    max-width: 40px;
+    min-width: 44px;
+    height: 42px;
+    position: relative;
     align-items: center;
     display: flex;
     justify-content: center;

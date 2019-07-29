@@ -89,6 +89,8 @@ class Profile extends React.Component {
                             render={this.state.bookings} 
                             bookings={this.state.bookings_list}
                             ctx={this} 
+                            openModal={this.props.openModal}
+                            postTempData={this.props.postTempData}
                         />
                     </div>
                 </div>
