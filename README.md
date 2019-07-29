@@ -12,8 +12,9 @@ The project was planned and carried out within a 10-day timeframe, although impr
 ### **Key Features**
 * Secure User Sign Up and Login with full user authentication using BCrypt
 * Browse home listings in multiple cities across the globe
-* Explore and filter listings through integrated GoogleMaps and by number of guests and price.
+* Explore and filter listings through integrated GoogleMaps and by number of guests and price
 * Book available homes and view your bookings & listings through your User profile page
+* Leave ratings and reviews for your past bookings
 
 ### **Search Functionality** 
 ![GIF](https://media.giphy.com/media/f6UShQk3eRIfJF7QXM/giphy.gif)
@@ -59,9 +60,7 @@ isDayBlocked(day) {
 
 
 
-### **Future Features**
-* Leave reviews on past bookings and listings 
-* Image carousel/modal for listings page
-* View other user's profiles and browse their listings
-* Upload your own new listings
+### **Future Features & Improvements**
+- &#9745; Leave reviews on past bookings/listings 
+- &#9744; Image carousel/modal for listings page
 
