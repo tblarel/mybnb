@@ -22,6 +22,7 @@ class BookingsList extends React.Component {
                             booking={booking}
                             key={booking.id}
                             ctx={this.props.ctx}
+                            review={this.props.reviews[booking.id]}
                             openModal={this.props.openModal}
                             postTempData={this.props.postTempData}
                         />

@@ -1,6 +1,7 @@
 import React from 'react';
 import moment from 'moment';
-
+import Rater from 'react-rater'
+import 'react-rater/lib/react-rater.css'
 
 class BookingIndexItem extends React.Component {
     
@@ -56,7 +57,13 @@ class BookingIndexItem extends React.Component {
         const { spot_name, start, end, host_fname, host_lname, num_guest, photo_url } = this.props.booking;
         let reviewButton, darkClass;
         if(this.state.past) {
-            reviewButton = <div className="review-button" onClick={this.handleReviewClick}>Review Your Stay</div>
+            if(this.props.review) {
+                reviewButton =  <div className="review-button">
+                                    <Rater total={5} rating={this.props.review.rating} interactive={false} ></Rater>
+                                </div>
+            } else {
+                reviewButton = <div className="review-button" onClick={this.handleReviewClick}>Review Your Stay</div>
+            }
             darkClass = ' darkened-img';
         }
         return(

@@ -20,13 +20,13 @@ export const createReview = review => ({
 });
 
 export const createAReview = review => dispatch => (
-    APIUtil.createReview(review).then(review => (
-        dispatch(receiveReview(review))
+    APIUtil.createReview(review).then(reviews => (
+        dispatch(receiveReviews(reviews))
     ))
 );
 
 export const fetchGuestReviews = user_id => dispatch => (
-    APIUtil.fetchUserReviews(user_id).then(reviews => (
+    APIUtil.fetchGuestReviews(user_id).then(reviews => (
         dispatch(receiveReviews(reviews))
     ))
 );

@@ -12,6 +12,7 @@ class Profile extends React.Component {
             listings: false,
             listings_list: {},
             bookings_list: {},
+            reviews_list: {}
         }
         this.handleClick = this.handleClick.bind(this);
     }
@@ -44,12 +45,17 @@ class Profile extends React.Component {
             this.setState({
                 spots_list: this.props.spots
             });
+        } if(prevProps.reviews !== this.props.reviews) {
+            this.setState({
+                reviews_list: this.props.reviews
+            });
         }
     }
 
     componentDidMount() {
         this.props.fetchUserBookings(this.props.currentUser.id);
         this.props.fetchUserSpots(this.props.currentUser.id);
+        this.props.fetchUserReviews(this.props.currentUser.id);
     }
 
     render() {
@@ -88,6 +94,7 @@ class Profile extends React.Component {
                         <BookingsList   
                             render={this.state.bookings} 
                             bookings={this.state.bookings_list}
+                            reviews={this.state.reviews_list}
                             ctx={this} 
                             openModal={this.props.openModal}
                             postTempData={this.props.postTempData}

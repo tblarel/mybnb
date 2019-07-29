@@ -22,7 +22,11 @@ class Api::ReviewsController < ApplicationController
     def create
         @review = Review.new(review_params)
          if @review.save
-            render :json => @review
+            guestId = @review.booking.guest_id
+            @reviews = Review.find_by_sql(["SELECT * FROM reviews 
+                INNER JOIN bookings ON booking_id = bookings.id
+                WHERE bookings.guest_id = ?", guestId])
+            render "api/reviews/index"
         else
             render json: @review.errors.full_messages, status: 422
         end
