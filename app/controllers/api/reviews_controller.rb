@@ -20,7 +20,7 @@ class Api::ReviewsController < ApplicationController
     end
 
     def create
-        @review = Booking.new(review_params)
+        @review = Review.new(review_params)
          if @review.save
             render :json => @review
         else

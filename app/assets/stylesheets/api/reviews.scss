@@ -2,6 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@media only screen and (max-width: 1460px) { 
+    .right-half-modal-container {
+        max-width: 75% !important;
+    }
+}
+
 .two-half-review-container {
     display: flex;
     width: 80%;
@@ -126,6 +132,15 @@
         max-width: 75%;
     }
 
+    .row {
+        margin: 1vw 0;
+    }
+    
+    textarea {
+        resize: none;
+        padding: 4px;
+    }
+
 }
 
 .left-half-modal-container {
@@ -133,22 +148,70 @@
     justify-content: center;
     width: 40%;
     flex-wrap: wrap;
+    margin-top: -20px;
     text-align: center;
     h3 {
         width: 100%;
     }
-    margin-top: 20px;
 }
 
 .right-half-modal-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin-top: 60px;
-
+    max-width: 50%;
 }
 
 .review-textarea {
     background-color: #bdbbbb24;
     margin-top: 10px;
+}
+
+.close-row {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.sm-row {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin:  0;
+    color: #444;
+
+    .session-submit {
+        min-width: 30%;
+        margin: 10px 0;
+        padding: 10px 0;
+    }
+
+    .review-form-errors {
+        color:red;
+    }
+}
+
+.modal-close-button {     
+    padding-top: 4px;
+    height: 42px;
+    width: 46px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    line-height: 2rem;
+    cursor: pointer;
+    margin: 0 30px 0 0;
+    z-index: 3;
+    border-radius: 5rem;
+    background-color: #ffffff00;
+    color: #8d8d8d;
+    border: 1.5px solid #c7c2c252;
+    transition: all .5s ease;
+}
+
+.modal-close-button:hover{
+    background-color: #cececea8;
 }

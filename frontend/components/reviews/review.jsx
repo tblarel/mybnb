@@ -9,6 +9,10 @@ class Review extends React.Component {
         this.handleReview = this.handleReview.bind(this);
         this.handle
         this.state = {
+            rating: 0,
+            text: '',
+            charCount: 0,
+            errors: '',
             review: {
                 booking_id: this.props.data.booking_id,
                 rating: 0,
@@ -38,14 +42,42 @@ class Review extends React.Component {
             review: review,
             rating: rating
         });
-        debugger
+    }
+
+    handleText(e) {
+        let text = e.currentTarget.value;
+        let review = this.state.review;
+        review.body = text;
+        this.setState({
+            text: text,
+            charCount: text.length,
+            review: review
+        });
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+        if(this.state.rating === 0) {
+            this.setState({
+                errors: 'Please provide a star rating'
+            })
+        } else {
+            let data = {
+                body: this.state.review.body,
+                rating: this.state.review.rating,
+                booking_id: this.state.review.booking_id
+            }
+            this.props.createAReview(data)
+                .then(() => this.props.closeModal());
+        }
     }
 
     render() {
         return (
-            <div>
-                <span className="close-button" onClick={this.props.closeModal}>&times;</span>
                 <div className="two-half-modal-container">
+                    <div className="close-row">
+                        <span className="modal-close-button" onClick={this.props.closeModal}>&times;</span>
+                    </div>
                     <div className="left-half-modal-container">
                         <h3>How was your stay at <strong>{this.props.data.spot_name}</strong></h3>
                         <div className={"spot-img "}
@@ -59,14 +91,23 @@ class Review extends React.Component {
                         <div className="row">
                             <textarea   value={this.state.text}
                                         placeholder={"Any thoughts to share about your stay?"} 
-                                        className="review-textarea" ></textarea>
+                                        className="review-textarea" rows="8" cols="30"
+                                        maxlength="256" onChange={this.handleText.bind(this)}>
+                            </textarea>
                         </div>
-                        <div className="row">
-                            <input className="session-submit" type="submit" value="Submit" onClick={this.handleReview}></input>
+                        <div className="sm-row">
+                            <p class="char-count">{256-this.state.charCount} characters left</p>
+                        </div>
+                        <div className="sm-row">
+                            <p class="review-form-errors">{this.state.errors}</p>
+                        </div>
+                        <div className="sm-row">
+                            <input  className="session-submit" type="submit" 
+                                    value="Submit" onClick={this.handleSubmit.bind(this)}>
+                            </input>
                         </div>
                     </div>
                 </div>
-            </div>
         );
     }
 };
