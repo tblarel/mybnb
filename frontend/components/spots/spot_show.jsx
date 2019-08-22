@@ -225,7 +225,10 @@ class SpotShow extends React.Component {
                         </Link>
                         <DarkWelcomeContainer />
                     </header>
-                    <SpotPhotos spot={this.props.spot} openModal={this.props.openModal} ctx={this}/>
+                    <SpotPhotos spot={this.props.spot} 
+                                openModal={this.props.openModal} 
+                                ctx={this}
+                                postTempData={this.props.postTempData}/>
                     <div className="spot-details-box">
                         <SpotDetails    spot = {this.props.spot} 
                                         reviews = {this.props.reviews} 

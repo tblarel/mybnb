@@ -8,11 +8,16 @@ class SpotPhotos extends React.Component {
     }
 
     handleClick(e) {
-        var photoNumber = e.target.id.split('')[e.target.id.length - 1];
-        var photoUrl = this.props.spot.photo_urls[photoNumber];
-        var otherPhotos = this.props.spot.photo_urls;
-        otherPhotos = otherPhotos.slice(photoNumber, 1);
-        debugger
+        var photoNumber = e.target.id.split('')[e.target.id.length - 1]-1;
+        // var photoUrl = this.props.spot.photo_urls[photoNumber];
+        let data = {
+            photos: this.props.spot.photo_urls,
+            idx: photoNumber
+        }
+        // var otherPhotos = this.props.spot.photo_urls;
+        // otherPhotos = otherPhotos.slice(photoNumber, 1);
+        this.props.postTempData(data)
+        this.props.openModal('photos');
     }
 
     render() {

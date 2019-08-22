@@ -6,6 +6,7 @@ import { fetchAllSpots } from '../../actions/spot_actions';
 import { openModal } from '../../actions/modal_actions';
 import { createABooking, fetchSpotBookings } from '../../actions/booking_actions';
 import { fetchSpotReviews } from '../../actions/review_actions';
+import { postTempData } from '../../actions/temp_actions';
 
 const mapStateToProps = (state,ownprops) => {
     return {
@@ -24,7 +25,8 @@ const mapDispatchToProps = dispatch => {
         openModal: modal => dispatch(openModal(modal)),
         createABooking: booking => dispatch(createABooking(booking)),
         fetchSpotBookings: spot_id => dispatch(fetchSpotBookings(spot_id)),
-        fetchSpotReviews: spot_id => dispatch(fetchSpotReviews(spot_id))
+        fetchSpotReviews: spot_id => dispatch(fetchSpotReviews(spot_id)),
+        postTempData: data => dispatch(postTempData(data)),
     }
 }
 
