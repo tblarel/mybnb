@@ -23,7 +23,7 @@ class Photos extends React.Component {
 
     render() {
         return(
-            <div className="tmodal-container">
+            <div className="modal-container">
                 <div className="close-row">
                     <span className="modal-close-button" onClick={this.props.closeModal}>&times;</span>
                 </div>

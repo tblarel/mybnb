@@ -15,15 +15,13 @@
 
     .photo-row{
         display: block !important;
-        width: 20% !important;
+        width: 30% !important;
     }
+
+    
 }
 
 @media only screen and (min-width: 1800px) { 
-
-   .main-photo {
-        background-position-y: -6vw !important;
-   } 
 
    .right-box {
         padding-right: 20% !important;
@@ -34,8 +32,16 @@
        width: 30% !important;
    }
 
+   .half-photo-container {
+       width: 75% !important;
+   }
+
+   .photo-row {
+       width: 40% !important;
+   }
+
    .other-photo {
-        background-position-y: -6vw !important;
+        background-position-y: -2vw !important;
    }
 }
 
@@ -67,6 +73,45 @@
     font-size: 20px;
     text-align: center;
     margin: 40px auto;
+}
+
+
+.modal-container {
+    padding: 20px 0 20px 0;
+    background-color: #ffffff;
+    border-radius: 3px;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    font-family: 'Montserrat', sans-serif;
+    color: #444;
+    text-align: center;
+    h1 {
+        font-weight: 700;
+        margin: 2vw 5vw 1vw 5vw;
+    }
+
+    h3 {
+        font-weight: 100;
+        margin: 5px 0;
+    }
+
+    br {
+        height: 80%;
+    }
+
+    strong{
+        font-weight: 600;
+    }
+
+    .row {
+        margin: 1vw 0;
+    }
+    
+    textarea {
+        resize: none;
+        padding: 4px;
+    }
 }
 
 .spot-item{
@@ -285,13 +330,27 @@
     height: 500px;
     width: 100%;
     display: flex;
+    overflow: hidden;
+}
+
+.half-photo-container {
+    width: 40%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.photo-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
 .main-photo{
     height: 100%;
-    width: 60%;
+    width: 100%;
     background-color: rgba(240, 128, 128, 0);
     background-size: cover;
+    overflow: hidden;
     -webkit-transition: opacity, transform 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
     -moz-transition: opacity, transform 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
     -ms-transition: opacity, transform 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
@@ -312,15 +371,15 @@
     // border:1px solid rgba(0, 0, 0, 0.24);
     height: 100%;
     width: 100%;
-    -webkit-transition: opacity, transform 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
-    -moz-transition: opacity, transform 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
-    -ms-transition: opacity, transform 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
-    -o-transition: opacity, transform 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
-    transition: opacity, transform 0.8s cubic-bezier(0.18, 0.63, 0.38, 0.91);
+    transition: all .5s ease-in;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    -webkit-transition: all .5s ease;
 }
 
 .other-photo:hover, .main-photo:hover{
-    transform:scale(1.05);
+    transform: scale(1.1);
     cursor: pointer;
 }
 
