@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
+import Slide from './slide';
 
 class Photos extends React.Component {
 
@@ -23,11 +24,12 @@ class Photos extends React.Component {
 
     render() {
         return(
-            <div className="modal-container">
-                <div className="close-row">
-                    <span className="modal-close-button" onClick={this.props.closeModal}>&times;</span>
-                </div>
-                <h1>This is the Photos Modal</h1>
+            <div className="photo-modal-container">
+                {/* <div className="close-row"> */}
+                    <span className="photo-modal-close-button" onClick={this.props.closeModal}>&times;</span>
+                {/* </div> */}
+                <Slide image = {this.props.data.photos[this.props.data.idx]}
+                />
             </div>
         );
     }

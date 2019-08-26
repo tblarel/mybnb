@@ -8,6 +8,17 @@
     }
 }
 
+@media only screen and (max-width: 1200px) { 
+    .photo-modal-close-button {
+        top: 4% !important;
+        left: 44vw !important;
+        height: 32px !important;
+        width: 36px !important;
+        padding-top: 4px !important;
+    }
+
+}
+
 .two-half-review-container {
     display: flex;
     width: 80%;
@@ -210,6 +221,31 @@
     color: #8d8d8d;
     border: 1.5px solid #c7c2c252;
     transition: all .5s ease;
+}
+
+.photo-modal-close-button {  
+    position: absolute;
+    padding-top: 4px;
+    top: 1vw;
+    left: 45vw;
+    height: 42px;
+    width: 46px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    line-height: 2rem;
+    cursor: pointer;
+    margin: 0;
+    z-index: 3;
+    border-radius: 5rem;
+    background-color: #ffffff00;
+    color: #ffffff;
+    border: 1.5px solid #ffffff;
+    transition: all .5s ease;
+}
+
+.photo-modal-close-button:hover {
+    background-color: #cececea8;
 }
 
 .modal-close-button:hover{
